@@ -1,4 +1,4 @@
 package Model;
 
-public class Registros_entrada {
+public class Registros_entrada extends Registros {
 }

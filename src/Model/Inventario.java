@@ -11,6 +11,7 @@ public class Inventario implements InventarioDAO {
     private int quantity;
     private Date expirationDate;
     private int productoID;
+    private Productos producto;
 
     public Inventario() {
     }
@@ -30,9 +31,8 @@ public class Inventario implements InventarioDAO {
     public void printInventario(){
         ArrayList<Inventario> inventarios = showInventario();
         System.out.println("::INVENTARIO::");
-        for (int i=0;i<inventarios.size();i++){
-            System.out.println(i+1 +". " + inventarios.get(i).getId()+" "+inventarios.get(i).getQuantity());
-        }
+        //mediante utilizacion de lambdas, de 3 lineas de codigo a 1, mismo resultado
+        inventarios.forEach(i -> System.out.println(i.getId()+" "+i.getQuantity()));
     }
 
     public int getId() {

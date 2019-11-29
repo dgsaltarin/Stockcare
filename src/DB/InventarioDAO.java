@@ -30,4 +30,6 @@ public interface InventarioDAO extends IDBConection {
         }
         return inventarios;
     }
+
+
 }
