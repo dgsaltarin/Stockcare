@@ -17,7 +17,7 @@ public class DataBase {
     public static final String TPRODUCTOS_NOMBRE = "nombre_producto";
     public static final String TPRODUCTOS_CODIGO = "id";
     public static final String TPRODUCTOS_PRECIO = "precio_producto";
-    public static final String TPRODUCTOS_TIPO = "tipo_producto";
+    public static final String TPRODUCTOS_TIPO = "tipo_de_producto";
 
     public static final String TUSUARIOS = "usuarios";
     public static final String TUSUARIOS_ID = "usuarios";

@@ -14,8 +14,8 @@ public class InterfazPrincipalController {
     public void ProductsWindow(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Ui/ProductsWindow.fxml"));
-        stage.setTitle("Productos");
-        stage.setScene(new Scene(root, 600, 600));
+        stage.setTitle("Products");
+        stage.setScene(new Scene(root, 600, 450));
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();

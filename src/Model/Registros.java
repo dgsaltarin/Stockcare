@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Registros {
 
-    private Productos producto;
+    private Products producto;
     private Date date;
     private Users user;
     private int quantity;

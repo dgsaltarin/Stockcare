@@ -11,7 +11,7 @@ public class Inventario implements InventarioDAO {
     private int quantity;
     private Date expirationDate;
     private int productoID;
-    private Productos producto;
+    private Products producto;
 
     public Inventario() {
     }

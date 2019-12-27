@@ -2,35 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="821890af-6477-4b23-8bb2-9584082a9b2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Ui/InterfazPrincipal.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ui/ProductsWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DB/ProductsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Products.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/Model/ProductsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StockCare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StockCare.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/DB/DataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/DB/DataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/DB/IDBConection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/DB/IDBConection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/DB/InventarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/DB/InventarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Areas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Areas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/DB/ProductosDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Inventario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Inventario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Productos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Productos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Proveedores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Proveedores.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Productos.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Registros.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Registros.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Registros_entrada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Registros_entrada.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Registros_salida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Registros_salida.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/Interfaz_principal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/Productos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/Registros.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/InterfazPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Ui/InterfazPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/ProductsWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Ui/ProductsWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/InterfazPrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/InterfazPrincipalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/ProductsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DB/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/Interfaz_principal.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/Interfaz_principal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/Productos.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/Productos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/Registros.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/Registros.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB/ProductosDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Inventario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Inventario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Productos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Registros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Registros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ui/InterfazPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/InterfazPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ui/ProductsWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/ProductsWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductsController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,63 +38,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Proveedores.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-              <folding>
-                <element signature="e#201#202#0" expanded="true" />
-                <element signature="e#241#242#0" expanded="true" />
-                <element signature="e#273#274#0" expanded="true" />
-                <element signature="e#303#304#0" expanded="true" />
-                <element signature="e#329#330#0" expanded="true" />
-                <element signature="e#367#368#0" expanded="true" />
-                <element signature="e#397#398#0" expanded="true" />
-                <element signature="e#429#430#0" expanded="true" />
-                <element signature="e#457#458#0" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#533#534#0" expanded="true" />
-                <element signature="e#565#566#0" expanded="true" />
-                <element signature="e#593#594#0" expanded="true" />
-                <element signature="e#635#636#0" expanded="true" />
-                <element signature="e#669#670#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Registros.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Registros_entrada.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Registros_salida.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+            <state relative-caret-position="121">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,29 +50,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DB/DataBase.java">
+        <entry file="file://$PROJECT_DIR$/src/controllers/ProductsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ui/ProductsWindow.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="-163">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,13 +62,51 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ui/InterfazPrincipal.fxml">
+        <entry file="file://$PROJECT_DIR$/src/Model/Products.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="80" selection-start-line="13" selection-start-column="80" selection-end-line="13" selection-end-column="80" />
+            <state relative-caret-position="459">
+              <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#833#834#0" expanded="true" />
+                <element signature="e#869#870#0" expanded="true" />
+                <element signature="e#925#926#0" expanded="true" />
+                <element signature="e#975#976#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ui/ProductsWindow.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ui/InterfazPrincipal.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DB/ProductsDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -155,6 +117,7 @@
         <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -174,14 +137,18 @@
         <option value="$PROJECT_DIR$/src/Model/Registros_salida.java" />
         <option value="$PROJECT_DIR$/src/Model/Users.java" />
         <option value="$PROJECT_DIR$/src/Model/Proveedores.java" />
-        <option value="$PROJECT_DIR$/src/Model/Productos.java" />
         <option value="$PROJECT_DIR$/src/Ui/Interfaz_principal.java" />
         <option value="$PROJECT_DIR$/src/Ui/Interfaz_principal.form" />
-        <option value="$PROJECT_DIR$/src/Ui/ProductsWindow.fxml" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Ui/InterfazPrincipal.fxml" />
-        <option value="$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java" />
         <option value="$PROJECT_DIR$/src/DB/DataBase.java" />
+        <option value="$PROJECT_DIR$/src/tests/Model/ProductosTest.java" />
+        <option value="$PROJECT_DIR$/src/DB/ProductosDAO.java" />
+        <option value="$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java" />
+        <option value="$PROJECT_DIR$/src/Model/Productos.java" />
+        <option value="$PROJECT_DIR$/src/DB/ProductsDAO.java" />
+        <option value="$PROJECT_DIR$/src/Ui/ProductsWindow.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/ProductsController.java" />
       </list>
     </option>
   </component>
@@ -196,12 +163,40 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="StockCare" type="b2602c69:ProjectViewProjectNode" />
               <item name="StockCare" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StockCare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StockCare" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StockCare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StockCare" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StockCare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StockCare" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="StockCare" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StockCare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StockCare" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="StockCare" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StockCare" type="b2602c69:ProjectViewProjectNode" />
@@ -240,18 +235,30 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575464603653" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577418491498" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hamcrest-core-1.3.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Model" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -265,7 +272,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="StockCare" />
@@ -273,9 +280,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StockCare" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.ProductsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductsTest.showProducts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StockCare" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.ProductsTest" />
+      <option name="METHOD_NAME" value="showProducts" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ProductsTest.showProducts" />
+        <item itemvalue="JUnit.ProductsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -292,11 +332,28 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ProductosTest_showProducts - 2019.12.04 at 12h 16m 35s.xml">
+      <configuration name="ProductosTest.showProducts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductosTest_showProducts - 2019.12.04 at 13h 49m 00s.xml">
+      <configuration name="ProductosTest.showProducts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductosTest_showProducts - 2019.12.04 at 13h 59m 59s.xml">
+      <configuration name="ProductosTest.showProducts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductosTest_showProducts - 2019.12.04 at 14h 02m 31s.xml">
+      <configuration name="ProductosTest.showProducts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductosTest_showProducts - 2019.12.04 at 14h 08m 19s.xml">
+      <configuration name="ProductosTest.showProducts" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19818456" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21331316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -304,8 +361,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32569557" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32569557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -386,37 +443,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB/IDBConection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DB/InformesDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB/InventarioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB/ProductosDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -441,43 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Inventario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Productos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <element signature="e#168#169#0" expanded="true" />
-            <element signature="e#205#206#0" expanded="true" />
-            <element signature="e#237#238#0" expanded="true" />
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#335#336#0" expanded="true" />
-            <element signature="e#367#368#0" expanded="true" />
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/ProductsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -533,14 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ui/ProductsWindow.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -551,18 +536,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3162" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/Model/ProductsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Inventario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB/InventarioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/test/StockCare/Model/ProductosTest.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ui/InterfazPrincipal.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="80" selection-start-line="13" selection-start-column="80" selection-end-line="13" selection-end-column="80" />
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java">
+    <entry file="file://$PROJECT_DIR$/src/DB/IDBConection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -571,8 +591,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DB/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+        <state relative-caret-position="170">
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB/ProductsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Products.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#833#834#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ui/ProductsWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/ProductsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -653,7 +725,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>mysql-connector-java-5.1.48</last-edited>
+          <last-edited>hamcrest-core-1.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

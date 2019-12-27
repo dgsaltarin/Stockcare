@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProductsController">
    <children>
-      <TableView layoutX="15.0" layoutY="94.0" prefHeight="292.0" prefWidth="570.0">
+      <TableView fx:id="tableProducts" layoutX="15.0" layoutY="94.0" prefHeight="292.0" prefWidth="570.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn id="productsTable" fx:id="codeColumn" prefWidth="112.0" text="Código" />
+          <TableColumn fx:id="nameColumn" prefWidth="238.0" text="Nombre" />
+            <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="108.0" text="Precio" />
+            <TableColumn fx:id="clasificationColumn" prefWidth="111.0" text="Clasificación VEN" />
         </columns>
       </TableView>
-      <Label layoutX="14.0" layoutY="43.0" text="Seleccione el tipo de producto que desea ver:" />
-      <RadioButton layoutX="269.0" layoutY="14.0" mnemonicParsing="false" text="Medicamento" />
-      <RadioButton layoutX="269.0" layoutY="43.0" mnemonicParsing="false" text="Dispositivo Médico" />
-      <RadioButton layoutX="273.0" layoutY="69.0" mnemonicParsing="false" text="Insumos" />
-      <Button layoutX="418.0" layoutY="39.0" mnemonicParsing="false" text="Aceptar" />
+      <Label layoutX="15.0" layoutY="14.0" text="Seleccione el tipo de producto que desea ver:" />
+      <Group id="group" />
+      <RadioButton id="medicamentos" fx:id="medicamentos" layoutX="269.0" layoutY="14.0" mnemonicParsing="false" text="Medicamento">
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton id="dispositivo_medico" fx:id="dispositivo_medico" layoutX="269.0" layoutY="43.0" mnemonicParsing="false" text="Dispositivo Médico" toggleGroup="$group" />
+      <RadioButton id="insumos" fx:id="insumos" layoutX="269.0" layoutY="69.0" mnemonicParsing="false" text="Insumos" toggleGroup="$group" />
+      <Button id="butttonAcept" fx:id="acceptButton" layoutX="418.0" layoutY="65.0" mnemonicParsing="false" onAction="#fillTable" text="Aceptar" />
    </children>
 </AnchorPane>
