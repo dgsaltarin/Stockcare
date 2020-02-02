@@ -12,12 +12,22 @@
           <Menu id="menuSee" mnemonicParsing="false" text="Ver">
             <items>
               <MenuItem id="menuProducts" mnemonicParsing="false" onAction="#ProductsWindow" text="Productos" />
-                  <MenuItem id="menuRecords" mnemonicParsing="false" text="Registros" />
+                  <MenuItem id="menuRecords" mnemonicParsing="false" onAction="#recordsWindow" text="Registros" />
+                  <MenuItem mnemonicParsing="false" onAction="#inventoryWindow" text="Inventario" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Operaciones">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="Orden De Compra" />
+                <MenuItem mnemonicParsing="false" text="Entrada de Productos" />
+                  <MenuItem mnemonicParsing="false" text="Salida de Productos" />
+              </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Análisis">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" text="Análisis de Comportamiento" />
+                  <MenuItem mnemonicParsing="false" text="Análisis ABC" />
+                  <MenuItem mnemonicParsing="false" text="Politicas de Inventario" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Agregar">

@@ -18,15 +18,17 @@ public class DataBase {
     public static final String TPRODUCTOS_CODIGO = "id";
     public static final String TPRODUCTOS_PRECIO = "precio_producto";
     public static final String TPRODUCTOS_TIPO = "tipo_de_producto";
+    public static final String TPRODUCTOS_CLASIFICACION = "clasificacion_ven";
+    public static final String TPRODUCTOS_NOMBRE_EXTERNO = "productos.nombre_producto";
 
     public static final String TUSUARIOS = "usuarios";
-    public static final String TUSUARIOS_ID = "usuarios";
-    public static final String TUSUARIOS_NOMBRE= "usuarios";
+    public static final String TUSUARIOS_ID = "id";
+    public static final String TUSUARIOS_NOMBRE= "nombre_usuarios";
     public static final String TUSUARIOS_TIPO = "usuarios";
 
     public static final String TAREAS = "areas";
-    public static final String TAREAS_NOMBRE = "id";
-    public static final String TAREAS_ID = "nombre_area";
+    public static final String TAREAS_NOMBRE = "nombre_area";
+    public static final String TAREAS_ID = "id";
 
     public static final String TPROVEEDORES = "proveedores";
     public static final String TPROVEEDORES_ID = "id";
@@ -35,5 +37,21 @@ public class DataBase {
     public static final String TPROVEEDORES_DIRECCIÓN = "direccion";
     public static final String TPROVEEDORES_NIT = "NIT";
     public static final String TPROVEEDORES_TELEFONO = "telefono";
+
+    public static final String TSALIDAS = "salidas";
+    public static final String TSALIDAS_ID = "id";
+    public static final String TSALIDAS_FECHA = "fecha_salida";
+    public static final String TSALIDAS_CANTIDAD = "cantidad_salida";
+    public static final String TSALIDAS_PRODUCTO = "productos_id";
+    public static final String TSALIDAS_USUARIO = "usuarios_id";
+    public static final String TSALIDAS_AREA = "areas_id";
+
+    public static final String TENTRADAS = "entradas";
+    public static final String TENTRADAS_ID = "id";
+    public static final String TENTRADAS_FECHA = "fecha_entrada";
+    public static final String TENTRADAS_CANTIDAD = "cantidad_entrada";
+    public static final String TENTRADAS_PRODUCTO = "productos_id";
+    public static final String TENTRADAS_USUARIO = "Usuarios_id";
+    public static final String TENTRADAS_PROVEEDOR = "proveedores_id";
 }
 

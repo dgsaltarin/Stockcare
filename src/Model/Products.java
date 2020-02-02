@@ -9,7 +9,7 @@ public class Products implements ProductsDAO {
     private int code;
     private String name;
     private double price;
-    private char clasification;
+    private String clasification;
 
     public Products(){}
 
@@ -17,6 +17,13 @@ public class Products implements ProductsDAO {
         this.code = code;
         this.name = name;
         this.price = price;
+    }
+
+    public Products(int code, String name, double price, String clasification) {
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.clasification = clasification;
     }
 
     public int getCode() {
@@ -44,16 +51,11 @@ public class Products implements ProductsDAO {
     }
 
 
-    public char getClasification() {
+    public String getClasification() {
         return clasification;
     }
 
-    public void setClasification(char clasification) {
+    public void setClasification(String clasification) {
         this.clasification = clasification;
-    }
-
-    public void showProducts(String tipo){
-        ArrayList<Products> productos = productsList(tipo);
-        productos.forEach(i -> System.out.println(i.getCode()+" "+i.getName()));
     }
 }
