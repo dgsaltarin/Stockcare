@@ -39,4 +39,27 @@ public interface ProductsDAO extends IDBConection {
         }
         return products;
     }
+
+    default ArrayList<Products> productsNames(String typeOfProduct){
+        ArrayList<Products> products = new ArrayList<>();
+
+        try(Connection connection = conectToDB()) {
+            String sql = "SELECT * FROM " + TPRODUCTOS + " WHERE " + TPRODUCTOS_TIPO + "= '" + typeOfProduct +"'";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()){
+                Products producto = new Products(rs.getString(TPRODUCTOS_NOMBRE),
+                        rs.getInt(TPRODUCTOS_CODIGO));
+                products.add(producto);
+            }
+
+        }catch (SQLDataException e){
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
 }

@@ -10,16 +10,11 @@ public class Records {
     private int quantity;
     private String userName;
     private String areaName;
+    private String productName;
 
     public String getProductName() {
         return productName;
     }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    private String productName;
 
     public  Records(){}
 
@@ -61,5 +56,25 @@ public class Records {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getAreaName() {
+        return areaName;
+    }
+
+    public void setAreaName(String areaName) {
+        this.areaName = areaName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 }

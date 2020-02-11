@@ -13,10 +13,9 @@ public class Products implements ProductsDAO {
 
     public Products(){}
 
-    public Products(int code, String name, double price) {
-        this.code = code;
+    public Products(String name, int code) {
         this.name = name;
-        this.price = price;
+        this.code = code;
     }
 
     public Products(int code, String name, double price, String clasification) {

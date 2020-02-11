@@ -28,7 +28,7 @@ public class RecordsController implements Initializable, RecordsDAO {
     @FXML private TableColumn<Records, String> dateColumn;
     @FXML private TableColumn<Records, String> userColumn;
     @FXML private TextField filterTextField;
-    private ObservableList<String> typeOfProducts = FXCollections.observableArrayList("Salidas", "entradas");
+    private ObservableList<String> typeOfProducts = FXCollections.observableArrayList("Salidas", "Entradas");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -106,8 +106,8 @@ public class RecordsController implements Initializable, RecordsDAO {
         productColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         areaColumn.setCellValueFactory(new PropertyValueFactory<>("areaName"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        userColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("dateOfRecord"));
+        userColumn.setCellValueFactory(new PropertyValueFactory<>("userName"));
 
         recordsTableView.setItems(recordsList);
 

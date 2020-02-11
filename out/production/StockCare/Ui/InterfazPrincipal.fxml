@@ -18,7 +18,7 @@
           </Menu>
             <Menu mnemonicParsing="false" text="Operaciones">
               <items>
-                  <MenuItem mnemonicParsing="false" text="Orden De Compra" />
+                  <MenuItem mnemonicParsing="false" onAction="#purchaseOrderWindow" text="Orden De Compra" />
                 <MenuItem mnemonicParsing="false" text="Entrada de Productos" />
                   <MenuItem mnemonicParsing="false" text="Salida de Productos" />
               </items>

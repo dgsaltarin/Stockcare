@@ -32,6 +32,7 @@ public class DataBase {
 
     public static final String TPROVEEDORES = "proveedores";
     public static final String TPROVEEDORES_ID = "id";
+    public static final String TPROVEEDORES_CIUDAD = "ciudad";
     public static final String TPROVEEDORES_NOMBRE = "nombre_proveedor";
     public static final String TPROVEEDORES_EMAIL = "email";
     public static final String TPROVEEDORES_DIRECCIÓN = "direccion";
@@ -53,5 +54,12 @@ public class DataBase {
     public static final String TENTRADAS_PRODUCTO = "productos_id";
     public static final String TENTRADAS_USUARIO = "Usuarios_id";
     public static final String TENTRADAS_PROVEEDOR = "proveedores_id";
+
+    public static final String TORDEN_COMPRA = "orden_compra";
+    public static final String TORDEN_COMPRA_ID = "id";
+    public static final String TORDEN_COMPRA_NUMERO = "numero_orden";
+    public static final String TORDEN_COMPRA_CANTIDAD = "cantidad";
+    public static final String TORDEN_COMPRA_PROVEEDOR = "proveedor_id";
+    public static final String TORDEN_COMPRA_PRODUCTO = "producto_id";
 }
 

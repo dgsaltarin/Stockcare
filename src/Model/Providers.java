@@ -1,11 +1,26 @@
 package Model;
 
-public class Proveedores {
+public class Providers {
 
     private String name;
     private String nit;
     private String email;
     private String phone;
+    private String city;
+    private String address;
+
+    public Providers(String name) {
+        this.name = name;
+    }
+
+    public Providers(String name, String nit, String email, String phone, String city, String address) {
+        this.name = name;
+        this.nit = nit;
+        this.email = email;
+        this.phone = phone;
+        this.city = city;
+        this.address = address;
+    }
 
     public String getName() {
         return name;
