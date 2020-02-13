@@ -21,7 +21,7 @@
           <TableColumn fx:id="productsColumnP" prefWidth="253.0" text="Productos" />
         </columns>
       </TableView>
-      <Label layoutX="296.0" layoutY="72.0" text="Escoja el producto:" />
+      <Label layoutX="300.0" layoutY="64.0" text="Escoja el producto:" />
       <Label layoutX="587.0" layoutY="23.0" text="Orden N°:" />
       <Label fx:id="orderNumber" layoutX="645.0" layoutY="24.0" text="0" />
       <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="369.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
@@ -30,8 +30,8 @@
          </image>
       </ImageView>
       <TextField fx:id="filterTextField" layoutX="405.0" layoutY="19.0" />
-      <ComboBox fx:id="providersCB" layoutX="126.0" layoutY="68.0" prefWidth="150.0" />
-      <Label layoutX="61.0" layoutY="72.0" text="Proveedor:" />
+      <ComboBox fx:id="providersCB" layoutX="126.0" layoutY="60.0" prefWidth="150.0" />
+      <Label layoutX="61.0" layoutY="64.0" text="Proveedor:" />
       <Separator layoutX="22.0" layoutY="191.0" prefHeight="0.0" prefWidth="626.0" />
       <TableView fx:id="ordersTableView" layoutX="24.0" layoutY="200.0" prefHeight="220.0" prefWidth="637.0">
         <columns>
@@ -40,7 +40,7 @@
             <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="126.0" text="Cantidad " />
         </columns>
       </TableView>
-      <Button fx:id="generateOrderButton" layoutX="566.0" layoutY="429.0" mnemonicParsing="false" text="Generar Orden" />
+      <Button fx:id="generateOrderButton" layoutX="566.0" layoutY="429.0" mnemonicParsing="false" onAction="#generateOrder" text="Generar Orden" />
       <Button fx:id="clearTableButton" layoutX="466.0" layoutY="429.0" mnemonicParsing="false" onAction="#clearTable" text="Limpiar Tabla" />
    </children>
 </AnchorPane>

@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="435.0" prefWidth="600.0" style="-fx-background-color: #03A9F4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProductsController">
+<AnchorPane prefHeight="469.0" prefWidth="597.0" style="-fx-background-color: #03A9F4;" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProductsController">
    <children>
-      <TableView fx:id="tableProducts" layoutX="17.0" layoutY="129.0" prefHeight="292.0" prefWidth="570.0" style="-fx-background-color: #FFFFFF;">
+      <TableView fx:id="tableProducts" layoutX="17.0" layoutY="136.0" prefHeight="292.0" prefWidth="570.0" style="-fx-background-color: #FFFFFF;">
         <columns>
           <TableColumn id="productsTable" fx:id="codeColumn" editable="false" prefWidth="112.0" resizable="false" style="-fx-background-color: #B3E5FC;" text="Código" />
           <TableColumn fx:id="nameColumn" editable="false" prefWidth="238.0" resizable="false" style="-fx-background-color: #B3E5FC;" text="Nombre" />
@@ -49,12 +49,17 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <TextField fx:id="filterField" layoutX="62.0" layoutY="98.0" />
+      <TextField fx:id="filterField" layoutX="62.0" layoutY="105.0" />
       <Separator layoutX="17.0" layoutY="91.0" prefHeight="1.0" prefWidth="570.0" style="-fx-border-color: #BDBDBD;" />
-      <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="24.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="24.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/search_26px.png" />
          </image>
       </ImageView>
+      <Button layoutX="467.0" layoutY="434.0" onAction="#generateReport" mnemonicParsing="false" style="-fx-background-color: #B3E5FC;" text="Generar Informe" textFill="#212121">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -8,12 +8,6 @@ public class PurchaseOrder {
     private String productName;
     private String providerName;
 
-    public PurchaseOrder(int quantity, int productCode, String productName) {
-        this.quantity = quantity;
-        this.productCode = productCode;
-        this.productName = productName;
-    }
-
     public PurchaseOrder(int orderNumber, int productCode, String productName, String providerName) {
         this.orderNumber = orderNumber;
         this.productCode = productCode;

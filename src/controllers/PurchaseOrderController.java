@@ -23,11 +23,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PurchaseOrderController implements Initializable, ProvidersDAO, ProductsDAO, PurchaseOrderDAO {
+public class PurchaseOrderController extends Operations implements Initializable, ProvidersDAO, ProductsDAO, PurchaseOrderDAO {
 
-    private ObservableList<String> typeOfProducts = FXCollections.observableArrayList("medicamento", "dispositivo medico",
-            "insumo");
-    @FXML private ComboBox typeOfProductCB;
+    /*private ObservableList<String> typeOfProducts = FXCollections.observableArrayList("medicamento", "dispositivo medico",
+            "insumo");*/
+    //@FXML private ComboBox typeOfProductCB;
     @FXML private ComboBox providersCB;
     @FXML private TableView<Products> productsTableView;
     @FXML private TableColumn<Products, String> productsColumnP;
@@ -42,20 +42,17 @@ public class PurchaseOrderController implements Initializable, ProvidersDAO, Pro
     private String productName;
     private String provider;
     private ObservableList<PurchaseOrder> purchaseOrders = FXCollections.observableArrayList();
+    ObservableList<String> providerNames = FXCollections.observableArrayList(providerName());
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         typeOfProductCB.setItems(typeOfProducts);
-        providersCB.setItems(providerName());
+        providersCB.setItems(providerNames);
         orderNumber.setText(orderNumber());
         codeColumn.setCellValueFactory(new PropertyValueFactory<>("productCode"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         ordersTableView.setItems(purchaseOrders);
-    }
-
-    public PurchaseOrder getPurchaseOrder() {
-        return purchaseOrder;
     }
 
     public PurchaseOrder purchaseOrder;
@@ -95,12 +92,13 @@ public class PurchaseOrderController implements Initializable, ProvidersDAO, Pro
     @FXML
     public void clickItem(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         if(mouseEvent.getClickCount()==2){
-
+            //get the init data for the purchase order
             productCode = productsTableView.getSelectionModel().getSelectedItem().getCode();
             productName = productsTableView.getSelectionModel().getSelectedItem().getName();
             provider = providersCB.getValue().toString();
-            purchaseOrder = new PurchaseOrder(Integer.parseInt(orderNumber()), productCode, productName, "proveedor1" );
+            purchaseOrder = new PurchaseOrder(Integer.parseInt(orderNumber()), productCode, productName, provider );
 
+            //create an instance of the quantityController
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("Ui/quantityWindow.fxml"));
             Parent view = loader.load();
@@ -108,6 +106,8 @@ public class PurchaseOrderController implements Initializable, ProvidersDAO, Pro
             Scene scene = new Scene(view);
 
             QuantityController  controller = loader.getController();
+
+            //set the init data
             controller.initData(purchaseOrder, purchaseOrders);
 
             Stage window = new Stage();
@@ -118,9 +118,14 @@ public class PurchaseOrderController implements Initializable, ProvidersDAO, Pro
     }
 
 
-
+    /**
+     * @description clear the table in case of a mistake
+     * */
     public void clearTable(ActionEvent actionEvent) {
         ordersTableView.getSelectionModel().clearSelection();
         ordersTableView.getItems().clear();
+    }
+
+    public void generateOrder(ActionEvent actionEvent) {
     }
 }

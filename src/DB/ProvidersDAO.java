@@ -39,8 +39,8 @@ public interface ProvidersDAO extends IDBConection  {
         }
         return providersL;
     }
-    default ObservableList<Providers> providerName(){
-        ObservableList<Providers> providersL = FXCollections.observableArrayList();
+    default ArrayList<String> providerName(){
+        ArrayList<String> providersL = new ArrayList<>();
 
         try{
             Connection connection = conectToDB();
@@ -52,7 +52,7 @@ public interface ProvidersDAO extends IDBConection  {
             while (rs.next()){
                 Providers provider = new Providers(
                         rs.getString(TPROVEEDORES_NOMBRE));
-                providersL.add(provider);
+                providersL.add(provider.getName());
             }
 
         } catch (SQLDataException e){

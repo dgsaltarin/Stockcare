@@ -2,6 +2,8 @@ package controllers;
 
 import DB.ProductsDAO;
 import Model.Products;
+import Model.Report;
+import Model.ReportPdf;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -13,8 +15,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import java.io.IOException;
 
-public class ProductsController implements ProductsDAO {
+public class ProductsController implements ProductsDAO, ReportPdf {
 
     @FXML private RadioButton medicamentos;
     @FXML private RadioButton dispositivo_medico;
@@ -26,6 +29,9 @@ public class ProductsController implements ProductsDAO {
     @FXML private TableColumn<Products, String> clasificationColumn;
     @FXML private TextField filterField;
 
+    /**
+     * @description get the list of products and put them on a table 
+     * */
     public void fillTable(ActionEvent actionEvent) {
         String typeofProduct = "";
         if (medicamentos.isSelected()){
@@ -36,9 +42,6 @@ public class ProductsController implements ProductsDAO {
         }
         if (insumos.isSelected()){
             typeofProduct = "insumo";
-        }
-        else {
-            System.out.println("debe seleccionar alguna de las categorias de products");
         }
 
         ObservableList<Products> productsList = FXCollections.observableArrayList(productsList(typeofProduct));
@@ -74,5 +77,11 @@ public class ProductsController implements ProductsDAO {
         sortedData.comparatorProperty().bind(tableProducts.comparatorProperty());
 
         tableProducts.setItems(sortedData);
+    }
+
+    public void generateReport(ActionEvent actionEvent) throws IOException {
+        ObservableList<Products> selectedProducts = tableProducts.getItems();
+        Report.callReportWindow("products", selectedProducts);
+        System.out.println(selectedProducts.size());
     }
 }

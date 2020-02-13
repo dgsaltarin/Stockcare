@@ -3,6 +3,7 @@ package DB;
 import Model.PurchaseOrder;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import static DB.DataBase.*;
 
@@ -35,5 +36,14 @@ public interface PurchaseOrderDAO extends IDBConection {
         }
 
         return orderNumerString;
+    }
+
+    default void setPurchaseOrder(){
+
+    }
+
+    default ArrayList<PurchaseOrder> getPurchaseOrder(){
+        ArrayList<PurchaseOrder> purchaseOrderArrayList = new ArrayList<>();
+        return  purchaseOrderArrayList;
     }
 }
