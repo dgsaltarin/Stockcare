@@ -28,7 +28,7 @@ public interface ReportPdf {
             Document document = new Document(PageSize.LETTER);//tamaño del documento
             File file = new File(Report.url+"\\Listado de productos");
             file.mkdirs();
-            PdfWriter s = PdfWriter.getInstance(document, new FileOutputStream(Report.url+"\\Listado de productos\\"+reportName));// ubicación a guardar
+            PdfWriter s = PdfWriter.getInstance(document, new FileOutputStream(Report.url+"Listado de productos\\"+reportName));// ubicación a guardar
 
             document.open();
             Paragraph encabezado = new Paragraph();

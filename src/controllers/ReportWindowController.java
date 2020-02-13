@@ -27,6 +27,12 @@ public class ReportWindowController implements ReportExcel, ReportPdf {
     }
 
     public void generateExcelReport(ActionEvent actionEvent) {
+        switch (typeOfReport){
+            case "products":
+                productsReportExcel("Listado de Productos", date, dataList);
+                break;
+        }
+        closeWindow();
     }
 
     private void closeWindow(){
