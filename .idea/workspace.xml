@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="821890af-6477-4b23-8bb2-9584082a9b2d" name="Default Changelist" comment="agrega los productos a lista de orden de compra de manera exitosa, sigue almacenar la orden en la base de datos y generar pdf">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_collections4_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_compress_1_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/poi_4_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/poi_ooxml_4_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/poi_ooxml_schemas_4_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/xmlbeans_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DB/HospitalDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Hospital.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockCare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StockCare.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/ReportExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/ReportExcel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/ReportWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/ReportWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ReportExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ReportExcel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/DataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/ReportPdf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ReportPdf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ReportWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ReportWindowController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,46 +21,47 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/ProductsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ui/ReportWindow.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Google Drive/StockCare 2.0/src/stockcare/pkg2/pkg0/informeExcel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="65" column="5" selection-start-line="23" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#2500#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/ReportExcel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
+            <state relative-caret-position="578">
               <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Hospital.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+              <folding>
+                <element signature="e#229#230#0" expanded="true" />
+                <element signature="e#256#257#0" expanded="true" />
+                <element signature="e#296#297#0" expanded="true" />
+                <element signature="e#328#329#0" expanded="true" />
+                <element signature="e#358#359#0" expanded="true" />
+                <element signature="e#384#385#0" expanded="true" />
+                <element signature="e#422#423#0" expanded="true" />
+                <element signature="e#452#453#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
+                <element signature="e#516#517#0" expanded="true" />
+                <element signature="e#562#563#0" expanded="true" />
+                <element signature="e#600#601#0" expanded="true" />
+                <element signature="e#638#639#0" expanded="true" />
+                <element signature="e#672#673#0" expanded="true" />
+                <element signature="e#726#727#0" expanded="true" />
+                <element signature="e#772#773#0" expanded="true" />
+                <element signature="e#803#804#0" expanded="true" />
+                <element signature="e#830#831#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
+                <element signature="e#902#903#0" expanded="true" />
+                <element signature="e#934#935#0" expanded="true" />
+                <element signature="e#962#963#0" expanded="true" />
+                <element signature="e#1004#1005#0" expanded="true" />
+                <element signature="e#1038#1039#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,8 +83,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/ReportPdf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="30" column="68" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
+            <state relative-caret-position="274">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DB/HospitalDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DB/InventoryDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,8 +119,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/ReportWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="121">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,8 +147,8 @@
       <list>
         <option value="JUnit4 Test Class" />
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -142,8 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Model/Inventario.java" />
-        <option value="$PROJECT_DIR$/src/Model/Areas.java" />
         <option value="$PROJECT_DIR$/src/Model/Registros_entrada.java" />
         <option value="$PROJECT_DIR$/src/Model/Registros_salida.java" />
         <option value="$PROJECT_DIR$/src/Model/Users.java" />
@@ -165,7 +179,6 @@
         <option value="$PROJECT_DIR$/src/DB/RecordsDAO.java" />
         <option value="$PROJECT_DIR$/src/controllers/RecordsController.java" />
         <option value="$PROJECT_DIR$/src/Model/Records.java" />
-        <option value="$PROJECT_DIR$/src/DB/DataBase.java" />
         <option value="$PROJECT_DIR$/src/Model/PucharseOrder.java" />
         <option value="$PROJECT_DIR$/src/Model/Products.java" />
         <option value="$PROJECT_DIR$/src/DB/ProductsDAO.java" />
@@ -191,8 +204,11 @@
         <option value="$PROJECT_DIR$/src/Model/Report.java" />
         <option value="$PROJECT_DIR$/src/controllers/ProductsController.java" />
         <option value="$PROJECT_DIR$/src/controllers/ReportWindowController.java" />
-        <option value="$PROJECT_DIR$/src/Model/ReportPdf.java" />
         <option value="$PROJECT_DIR$/src/Model/ReportExcel.java" />
+        <option value="$PROJECT_DIR$/src/DB/DataBase.java" />
+        <option value="$PROJECT_DIR$/src/Model/Hospital.java" />
+        <option value="$PROJECT_DIR$/src/Model/ReportPdf.java" />
+        <option value="$PROJECT_DIR$/src/DB/HospitalDAO.java" />
       </list>
     </option>
   </component>
@@ -262,12 +278,6 @@
               <item name="StockCare" type="b2602c69:ProjectViewProjectNode" />
               <item name="StockCare" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockCare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockCare" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -293,7 +303,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581558693427" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581616587732" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../poi-4.1.0/ooxml-lib/xmlbeans-3.1.0.jar!/" />
@@ -467,21 +477,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="agrega los productos a lista de orden de compra de manera exitosa, sigue almacenar la orden en la base de datos y generar pdf" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Ui/Interfaz_principal.java" />
-    <entry file="file://$PROJECT_DIR$/src/DB/AreasDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB/InformesDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Areas.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -564,16 +559,6 @@
             <element signature="e#1454#1455#0" expanded="true" />
             <element signature="e#1508#1509#0" expanded="true" />
             <element signature="e#1554#1555#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB/InventoryDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -751,13 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB/DataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="55" column="53" lean-forward="true" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/RecordsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-391">
@@ -856,16 +834,6 @@
     <entry file="jar://$PROJECT_DIR$/../poi-4.1.0/poi-4.1.0.jar!/org/apache/poi/ss/usermodel/CellBase.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ReportPdf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="30" column="68" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -883,16 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/ReportWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Report.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -905,8 +863,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/ReportExcel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
+        <state relative-caret-position="578">
           <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB/DataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Hospital.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding>
+            <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#902#903#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+            <element signature="e#1004#1005#0" expanded="true" />
+            <element signature="e#1038#1039#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB/InformesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/ReportWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ReportPdf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB/InventoryDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB/HospitalDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

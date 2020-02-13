@@ -7,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import DB.HospitalDAO;
 import Model.Report.*;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -15,7 +17,7 @@ import javafx.collections.ObservableList;
 
 import javax.swing.*;
 
-public interface ReportPdf {
+public interface ReportPdf extends HospitalDAO {
 
     SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 
@@ -23,8 +25,6 @@ public interface ReportPdf {
 
         String reportName = tittle + formato.format(date)+".pdf";
         try{
-            //empresa datosEMpresa = new empresa();//conecta con los datos de la empresa
-            //datosEMpresa.ConseguirEmpresa();// trae los datos de la empresa
             Document document = new Document(PageSize.LETTER);//tamaño del documento
             File file = new File(Report.url+"\\Listado de productos");
             file.mkdirs();
@@ -36,11 +36,11 @@ public interface ReportPdf {
             encabezado.setAlignment(Element.ALIGN_CENTER);
             document.add(encabezado);
             document.add(new Paragraph("\n\n"));
-            //document.add(new Paragraph("EMPRESA: "+datosEMpresa.nombre));
-            //document.add(new Paragraph("NIT: "+datosEMpresa.nit));
-            //document.add(new Paragraph("TELÉFONO: "+datosEMpresa.telefono));
-            //document.add(new Paragraph("DIRECCIÓN: "+datosEMpresa.direccion));
-            //document.add(new Paragraph("FECHA: "+formato2.format(fecha)));
+            document.add(new Paragraph("EMPRESA: "+ getHospitalInformation().getName()));
+            document.add(new Paragraph("NIT: "+ getHospitalInformation().getNIT()));
+            document.add(new Paragraph("TELÉFONO: "+ getHospitalInformation().getPhoneNumber()));
+            document.add(new Paragraph("DIRECCIÓN: "+ getHospitalInformation().getAddress()));
+            document.add(new Paragraph("FECHA: "+ formato.format(date)));
             document.add(new Paragraph("\n\n"));
 
             PdfPTable tabla = new PdfPTable(3);
