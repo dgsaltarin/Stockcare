@@ -1,6 +1,7 @@
 package controllers;
 
 import DB.RecordsDAO;
+import Model.Alerts;
 import Model.Records;
 import Model.Report;
 import javafx.collections.FXCollections;
@@ -30,6 +31,9 @@ public class RecordsController implements Initializable, RecordsDAO {
     @FXML private TableColumn<Records, String> unitPriceColumn;
     @FXML private TableColumn<Records, String> totalPriceColumn;
     @FXML private TextField filterTextField;
+    @FXML private DatePicker initDate;
+    @FXML private DatePicker finalDate;
+
     private ObservableList<String> typeOfProducts = FXCollections.observableArrayList("Salidas", "Entradas");
 
     @Override
@@ -52,12 +56,7 @@ public class RecordsController implements Initializable, RecordsDAO {
         ObservableList<Records> recordsList = null;
 
         if(comboBox.getSelectionModel().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Información");
-            alert.setHeaderText(null);
-            alert.setContentText("Debe seleccionar el tipo de registro!");
-
-            alert.showAndWait();
+            Alerts.notSelectionAlert("Escoja el tipo de registro!");
             return;
         }
         else {
@@ -108,5 +107,9 @@ public class RecordsController implements Initializable, RecordsDAO {
     public void generateReport(javafx.event.ActionEvent actionEvent) throws IOException {
         ObservableList<Records> observableList = recordsTableView.getItems();
         Report.callReportWindow("records", observableList);
+    }
+
+    public void filtrateByDate(javafx.event.ActionEvent actionEvent){
+        fillTable(actionEvent);
     }
 }

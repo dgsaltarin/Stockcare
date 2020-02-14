@@ -9,7 +9,22 @@ public class Providers {
     private String city;
     private String address;
 
-    public Providers(String name) {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    private Integer id;
+
+    public Providers(String name, Integer id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public Providers(String name){
         this.name = name;
     }
 

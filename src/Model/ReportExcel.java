@@ -57,4 +57,8 @@ public interface ReportExcel {
     }
 
     default void reportInventoryExcel(){}
+
+    default void reportRecordsExcel(){}
+
+    default void purchaseOrderReportExcel(){}
 }

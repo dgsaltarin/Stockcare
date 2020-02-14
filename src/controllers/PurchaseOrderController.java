@@ -3,8 +3,7 @@ package controllers;
 import DB.ProductsDAO;
 import DB.ProvidersDAO;
 import DB.PurchaseOrderDAO;
-import Model.Products;
-import Model.PurchaseOrder;
+import Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -42,11 +41,18 @@ public class PurchaseOrderController extends Operations implements Initializable
     private String productName;
     private String provider;
     private ObservableList<PurchaseOrder> purchaseOrders = FXCollections.observableArrayList();
-    ObservableList<String> providerNames = FXCollections.observableArrayList(providerName());
+    ObservableList<Providers> providers;
+    ObservableList<String> providerNames;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        providers = FXCollections.observableArrayList(providers());
         typeOfProductCB.setItems(typeOfProducts);
+        for(int i=0;i<providers.size();i++){
+            providerNames.add(providers.get(i).getName());
+        }
+        //providers().forEach((o) -> providerNames.add(o.getName()));
         providersCB.setItems(providerNames);
         orderNumber.setText(orderNumber());
         codeColumn.setCellValueFactory(new PropertyValueFactory<>("productCode"));
@@ -92,28 +98,35 @@ public class PurchaseOrderController extends Operations implements Initializable
     @FXML
     public void clickItem(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         if(mouseEvent.getClickCount()==2){
-            //get the init data for the purchase order
-            productCode = productsTableView.getSelectionModel().getSelectedItem().getCode();
-            productName = productsTableView.getSelectionModel().getSelectedItem().getName();
-            provider = providersCB.getValue().toString();
-            purchaseOrder = new PurchaseOrder(Integer.parseInt(orderNumber()), productCode, productName, provider );
+            if(!providersCB.getSelectionModel().isEmpty()&&!typeOfProductCB.getSelectionModel().isEmpty()) {
+                //get the init data for the purchase order
+                productCode = productsTableView.getSelectionModel().getSelectedItem().getCode();
+                productName = productsTableView.getSelectionModel().getSelectedItem().getName();
+                provider = providersCB.getValue().toString();
+                purchaseOrder = new PurchaseOrder(Integer.parseInt(orderNumber()), productCode, productName, provider);
 
-            //create an instance of the quantityController
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getClassLoader().getResource("Ui/quantityWindow.fxml"));
-            Parent view = loader.load();
+                //create an instance of the quantityController
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getClassLoader().getResource("Ui/quantityWindow.fxml"));
+                Parent view = loader.load();
 
-            Scene scene = new Scene(view);
+                Scene scene = new Scene(view);
 
-            QuantityController  controller = loader.getController();
+                QuantityController controller = loader.getController();
 
-            //set the init data
-            controller.initData(purchaseOrder, purchaseOrders);
+                //set the init data
+                controller.initData(purchaseOrder, purchaseOrders);
 
-            Stage window = new Stage();
-            window.initModality(Modality.APPLICATION_MODAL);
-            window.setScene(scene);
-            window.showAndWait();
+                Stage window = new Stage();
+                window.initModality(Modality.APPLICATION_MODAL);
+                window.setScene(scene);
+                window.showAndWait();
+            }else if(providersCB.getSelectionModel().isEmpty()){
+                Alerts.notSelectionAlert("Seleccione un proveedor!");
+            }
+            else if(typeOfProductCB.getSelectionModel().isEmpty()){
+                Alerts.notSelectionAlert("Seleccione el tipo de producto!");
+            }
         }
     }
 
@@ -126,6 +139,9 @@ public class PurchaseOrderController extends Operations implements Initializable
         ordersTableView.getItems().clear();
     }
 
-    public void generateOrder(ActionEvent actionEvent) {
+    public void generateOrder(ActionEvent actionEvent) throws IOException {
+        ObservableList<PurchaseOrder> observableList = ordersTableView.getItems();
+        Report.callReportWindow("purchaseOrder", observableList);
+        setPurchaseOrderInDB(observableList);
     }
 }

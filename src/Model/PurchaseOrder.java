@@ -7,6 +7,7 @@ public class PurchaseOrder {
     private int productCode;
     private String productName;
     private String providerName;
+    private String providerCode;
 
     public PurchaseOrder(int orderNumber, int productCode, String productName, String providerName) {
         this.orderNumber = orderNumber;

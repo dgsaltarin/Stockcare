@@ -25,6 +25,9 @@ public class ReportWindowController implements ReportExcel, ReportPdf {
             case "inventory":
                 reportInventoryPDF();
                 break;
+            case "records":
+                reportRecordsPDF();
+                break;
         }
         closeWindow();
     }
@@ -36,6 +39,9 @@ public class ReportWindowController implements ReportExcel, ReportPdf {
                 break;
             case "inventory":
                 reportInventoryExcel();
+                break;
+            case "records":
+                reportRecordsExcel();
                 break;
         }
         closeWindow();

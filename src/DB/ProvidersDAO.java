@@ -1,9 +1,6 @@
 package DB;
 
 import Model.Providers;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 import java.sql.*;
 import java.util.ArrayList;
 import static DB.DataBase.*;
@@ -39,20 +36,22 @@ public interface ProvidersDAO extends IDBConection  {
         }
         return providersL;
     }
-    default ArrayList<String> providerName(){
-        ArrayList<String> providersL = new ArrayList<>();
+
+    default ArrayList<Providers> providers(){
+        ArrayList<Providers> providersL = new ArrayList<>();
 
         try{
             Connection connection = conectToDB();
-            String sql = "SELECT "+ TPROVEEDORES_NOMBRE +" FROM " + TPROVEEDORES;
+            String sql = "SELECT * FROM " + TPROVEEDORES;
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()){
                 Providers provider = new Providers(
-                        rs.getString(TPROVEEDORES_NOMBRE));
-                providersL.add(provider.getName());
+                        rs.getString(TPROVEEDORES_NOMBRE),
+                        rs.getInt(TPROVEEDORES_ID));
+                providersL.add(provider);
             }
 
         } catch (SQLDataException e){

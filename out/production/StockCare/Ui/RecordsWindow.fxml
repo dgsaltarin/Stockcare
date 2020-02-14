@@ -74,8 +74,8 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <DatePicker layoutX="592.0" layoutY="56.0" style="-fx-background-color: #BBDEFB;" />
-      <DatePicker layoutX="592.0" layoutY="100.0" style="-fx-background-color: #BBDEFB;" />
+      <DatePicker layoutX="592.0" fx:id="initDate" layoutY="56.0" style="-fx-background-color: #BBDEFB;" />
+      <DatePicker layoutX="592.0" fx:id="finalDate" layoutY="100.0" style="-fx-background-color: #BBDEFB;" />
       <Label layoutX="592.0" layoutY="33.0" text="Inicio:" textFill="#212121">
          <font>
             <Font name="System Bold" size="13.0" />

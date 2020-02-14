@@ -18,7 +18,7 @@ public interface RecordsDAO extends IDBConection {
                      +", areas.nombre_area, "+ TSALIDAS_FECHA + ", usuarios.nombre_usuarios " + " FROM " + TSALIDAS
                      + " INNER JOIN " +TAREAS + " ON salidas.areas_id = areas.id " + " INNER JOIN " + TUSUARIOS +
                      " ON salidas.Usuarios_id=usuarios.id " + " INNER JOIN " + TPRODUCTOS +" ON salidas.productos_id=productos.id where"+
-                     " productos.tipo_de_producto = '" + typeOfProduct +"' ORDER BY " +TSALIDAS_FECHA;
+                     " productos.tipo_de_producto = '" + typeOfProduct +"' ORDER BY " +TSALIDAS_FECHA + " DESC";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
@@ -50,7 +50,7 @@ public interface RecordsDAO extends IDBConection {
             String sql = "SELECT productos.nombre_producto, " + TENTRADAS_CANTIDAD + ", " + TENTRADAS_PRECIO_UNITARIO + ", " + TENTRADAS_PRECIO_TOTAL
                     +", proveedores.nombre_proveedor, "+ TENTRADAS_FECHA + ", usuarios.nombre_usuarios " + " FROM " + TENTRADAS + " INNER JOIN " +TPROVEEDORES+
                     " ON entradas.proveedores_id = proveedores.id " + " INNER JOIN " + TUSUARIOS +" ON entradas.Usuarios_id = usuarios.id"
-                    +" INNER JOIN " + TPRODUCTOS +" ON entradas.productos_id=productos.id where productos.tipo_de_producto = '" +typeOfProduct+"' ORDER BY " +TENTRADAS_FECHA;
+                    +" INNER JOIN " + TPRODUCTOS +" ON entradas.productos_id=productos.id where productos.tipo_de_producto = '" +typeOfProduct+"' ORDER BY " +TENTRADAS_FECHA +" DESC";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
