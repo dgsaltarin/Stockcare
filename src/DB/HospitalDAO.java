@@ -10,6 +10,11 @@ import java.sql.SQLException;
 
 public interface HospitalDAO extends IDBConection {
 
+
+    /**
+     * @description get the information in relation with the hospital
+     * @return and object of the class Hospital
+     */
     default Hospital getHospitalInformation(){
         Hospital hospital = null;
 

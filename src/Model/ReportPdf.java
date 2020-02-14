@@ -70,4 +70,6 @@ public interface ReportPdf extends HospitalDAO {
             }
         }
     }
+
+    default void reportInventoryPDF(){}
 }

@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="467.0" prefWidth="600.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RecordsController">
+<AnchorPane prefHeight="501.0" prefWidth="776.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RecordsController">
    <children>
-      <TableView fx:id="recordsTableView" layoutX="26.0" layoutY="181.0" prefHeight="276.0" prefWidth="548.0">
+      <TableView fx:id="recordsTableView" layoutX="26.0" layoutY="181.0" prefHeight="276.0" prefWidth="744.0">
         <columns>
-          <TableColumn fx:id="productColumn" prefWidth="120.0" style="-fx-background-color: #BBDEFB;" text="Producto" />
-          <TableColumn fx:id="quantityColumn" prefWidth="113.0" style="-fx-background-color: #BBDEFB;" text="Cantidad" />
-            <TableColumn fx:id="areaColumn" prefWidth="116.0" style="-fx-background-color: #BBDEFB;" text="Area" />
-            <TableColumn fx:id="dateColumn" prefWidth="106.0" style="-fx-background-color: #BBDEFB;" text="Fecha" />
-            <TableColumn fx:id="userColumn" prefWidth="92.0" style="-fx-background-color: #BBDEFB;" text="Usuario" />
+          <TableColumn fx:id="productColumn" editable="false" prefWidth="219.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Producto" />
+          <TableColumn fx:id="quantityColumn" editable="false" prefWidth="65.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Cantidad" />
+            <TableColumn fx:id="unitPriceColumn" editable="false" prefWidth="65.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Precio u." />
+            <TableColumn fx:id="totalPriceColumn" editable="false" prefWidth="81.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Total" />
+            <TableColumn fx:id="areaColumn" editable="false" prefWidth="112.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Area" />
+            <TableColumn fx:id="dateColumn" editable="false" prefWidth="85.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Fecha" />
+            <TableColumn fx:id="userColumn" editable="false" prefWidth="116.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Usuario" />
         </columns>
       </TableView>
-      <ComboBox fx:id="comboBox" layoutX="14.0" layoutY="54.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboBox" layoutX="14.0" layoutY="54.0" prefWidth="150.0" style="-fx-background-color: #BBDEFB;" />
       <Label layoutX="14.0" layoutY="22.0" text="Tipo de registro:" textFill="#212121">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -33,29 +38,63 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>
+      <Group />
       <RadioButton fx:id="medicamentos" layoutX="338.0" layoutY="14.0" mnemonicParsing="false" text="Medicamentos" textFill="#212121">
          <font>
             <Font name="System Bold" size="13.0" />
-         </font></RadioButton>
-      <RadioButton fx:id="dispositivosM" layoutX="338.0" layoutY="41.0" mnemonicParsing="false" text="Dispositivos Médicos" textFill="#212121">
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="dispositivosM" layoutX="338.0" layoutY="41.0" mnemonicParsing="false" text="Dispositivos Médicos" textFill="#212121" toggleGroup="$group">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="insumos" layoutX="338.0" layoutY="70.0" mnemonicParsing="false" text="Insumos" textFill="#212121" toggleGroup="$group">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></RadioButton>
-      <RadioButton fx:id="insumos" layoutX="338.0" layoutY="70.0" mnemonicParsing="false" text="Insumos" textFill="#212121">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></RadioButton>
-      <Button fx:id="aceptButton" layoutX="508.0" layoutY="19.0" mnemonicParsing="false" onAction="#fillTable" text="Aceptar">
+      <Button fx:id="aceptButton" layoutX="508.0" layoutY="19.0" mnemonicParsing="false" onAction="#fillTable" style="-fx-background-color: #BBDEFB;" text="Aceptar" textFill="#212121">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
       <Separator layoutX="184.0" layoutY="16.0" orientation="VERTICAL" prefHeight="105.0" prefWidth="2.0" />
       <Separator layoutX="29.0" layoutY="125.0" prefHeight="0.0" prefWidth="534.0" />
-      <TextField fx:id="filterTextField" layoutX="71.0" layoutY="137.0" />
+      <TextField fx:id="filterTextField" layoutX="71.0" layoutY="137.0" style="-fx-background-color: #BBDEFB;" />
       <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="29.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/search_26px.png" />
          </image>
       </ImageView>
+      <Separator layoutX="583.0" layoutY="14.0" orientation="VERTICAL" prefHeight="105.0" prefWidth="2.0" />
+      <Label layoutX="590.0" layoutY="14.0" text="Filtrar por fecha:" textFill="#212121">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <DatePicker layoutX="592.0" layoutY="56.0" style="-fx-background-color: #BBDEFB;" />
+      <DatePicker layoutX="592.0" layoutY="100.0" style="-fx-background-color: #BBDEFB;" />
+      <Label layoutX="592.0" layoutY="33.0" text="Inicio:" textFill="#212121">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="590.0" layoutY="81.0" text="Fin:" textFill="#212121">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="592.0" layoutY="138.0" mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" text="Filtrar" textFill="#212121">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="generateReportButton" layoutX="653.0" layoutY="464.0" mnemonicParsing="false" onAction="#generateReport" style="-fx-background-color: #BBDEFB;" text="Generar Informe" textFill="#212121">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

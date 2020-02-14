@@ -46,6 +46,8 @@ public class DataBase {
     public static final String TSALIDAS_PRODUCTO = "productos_id";
     public static final String TSALIDAS_USUARIO = "usuarios_id";
     public static final String TSALIDAS_AREA = "areas_id";
+    public static final String TSALIDAS_PRECIO_UNITARIO = "precio_unitario";
+    public static final String TSALIDAS_PRECIO_TOTAL = "precio_total";
 
     public static final String TENTRADAS = "entradas";
     public static final String TENTRADAS_ID = "id";
@@ -54,6 +56,8 @@ public class DataBase {
     public static final String TENTRADAS_PRODUCTO = "productos_id";
     public static final String TENTRADAS_USUARIO = "Usuarios_id";
     public static final String TENTRADAS_PROVEEDOR = "proveedores_id";
+    public static final String TENTRADAS_PRECIO_UNITARIO = "precio_unitario";
+    public static final String TENTRADAS_PRECIO_TOTAL = "precio_total";
 
     public static final String TORDEN_COMPRA = "orden_compra";
     public static final String TORDEN_COMPRA_ID = "id";

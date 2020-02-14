@@ -2,6 +2,7 @@ package controllers;
 
 import DB.InventoryDAO;
 import Model.Inventory;
+import Model.Report;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -14,6 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class InventoryController implements InventoryDAO {
@@ -75,5 +77,10 @@ public class InventoryController implements InventoryDAO {
         sortedData.comparatorProperty().bind(inventoryTable.comparatorProperty());
 
         inventoryTable.setItems(sortedData);
+    }
+
+    public void generateReport(ActionEvent actionEvent) throws IOException {
+        ObservableList<Inventory> observableList = inventoryTable.getItems();
+        Report.callReportWindow("inventory", observableList);
     }
 }

@@ -22,6 +22,9 @@ public class ReportWindowController implements ReportExcel, ReportPdf {
             case "products":
                 productsReportPdf("Listado de Productos", date, dataList);
                 break;
+            case "inventory":
+                reportInventoryPDF();
+                break;
         }
         closeWindow();
     }
@@ -30,6 +33,9 @@ public class ReportWindowController implements ReportExcel, ReportPdf {
         switch (typeOfReport){
             case "products":
                 productsReportExcel("Listado de Productos", date, dataList);
+                break;
+            case "inventory":
+                reportInventoryExcel();
                 break;
         }
         closeWindow();

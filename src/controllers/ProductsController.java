@@ -82,6 +82,5 @@ public class ProductsController implements ProductsDAO, ReportPdf {
     public void generateReport(ActionEvent actionEvent) throws IOException {
         ObservableList<Products> selectedProducts = tableProducts.getItems();
         Report.callReportWindow("products", selectedProducts);
-        System.out.println(selectedProducts.size());
     }
 }

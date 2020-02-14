@@ -55,4 +55,6 @@ public interface ReportExcel {
             }
         }
     }
+
+    default void reportInventoryExcel(){}
 }
