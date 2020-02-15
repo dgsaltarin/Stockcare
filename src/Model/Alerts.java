@@ -13,4 +13,12 @@ public class Alerts {
         alert.showAndWait();
     }
 
+    public static void successfullAlert(String message){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Información");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+
+        alert.showAndWait();
+    }
  }

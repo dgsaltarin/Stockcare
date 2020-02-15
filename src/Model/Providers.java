@@ -8,27 +8,14 @@ public class Providers {
     private String phone;
     private String city;
     private String address;
+    private int id;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    private Integer id;
-
-    public Providers(String name, Integer id) {
-        this.name = name;
-        this.id = id;
-    }
-
-    public Providers(String name){
+    public Providers(String name) {
         this.name = name;
     }
 
-    public Providers(String name, String nit, String email, String phone, String city, String address) {
+    public Providers(Integer id, String name, String nit, String email, String phone, String city, String address) {
+        this.id = id;
         this.name = name;
         this.nit = nit;
         this.email = email;
@@ -67,5 +54,29 @@ public class Providers {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

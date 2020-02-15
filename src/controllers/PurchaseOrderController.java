@@ -41,18 +41,12 @@ public class PurchaseOrderController extends Operations implements Initializable
     private String productName;
     private String provider;
     private ObservableList<PurchaseOrder> purchaseOrders = FXCollections.observableArrayList();
-    ObservableList<Providers> providers;
-    ObservableList<String> providerNames;
+    ObservableList<String> providerNames = FXCollections.observableArrayList(providerName());
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        providers = FXCollections.observableArrayList(providers());
         typeOfProductCB.setItems(typeOfProducts);
-        for(int i=0;i<providers.size();i++){
-            providerNames.add(providers.get(i).getName());
-        }
-        //providers().forEach((o) -> providerNames.add(o.getName()));
         providersCB.setItems(providerNames);
         orderNumber.setText(orderNumber());
         codeColumn.setCellValueFactory(new PropertyValueFactory<>("productCode"));
@@ -103,7 +97,9 @@ public class PurchaseOrderController extends Operations implements Initializable
                 productCode = productsTableView.getSelectionModel().getSelectedItem().getCode();
                 productName = productsTableView.getSelectionModel().getSelectedItem().getName();
                 provider = providersCB.getValue().toString();
-                purchaseOrder = new PurchaseOrder(Integer.parseInt(orderNumber()), productCode, productName, provider);
+                System.out.println(getProvidersCodeByName(provider));
+
+                purchaseOrder = new PurchaseOrder(Integer.parseInt(orderNumber()), productCode, productName, getProvidersCodeByName(provider));
 
                 //create an instance of the quantityController
                 FXMLLoader loader = new FXMLLoader();
@@ -143,5 +139,6 @@ public class PurchaseOrderController extends Operations implements Initializable
         ObservableList<PurchaseOrder> observableList = ordersTableView.getItems();
         Report.callReportWindow("purchaseOrder", observableList);
         setPurchaseOrderInDB(observableList);
+        Alerts.successfullAlert("Orden generada de manera Exitosa");
     }
 }

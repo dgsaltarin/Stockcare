@@ -7,21 +7,21 @@ public class PurchaseOrder {
     private int productCode;
     private String productName;
     private String providerName;
-    private String providerCode;
+    private int providerCode;
 
-    public PurchaseOrder(int orderNumber, int productCode, String productName, String providerName) {
+    public PurchaseOrder(int orderNumber, int productCode, String productName, int providerCode) {
         this.orderNumber = orderNumber;
         this.productCode = productCode;
         this.productName = productName;
-        this.providerName = providerName;
+        this.providerCode = providerCode;
     }
 
-    public PurchaseOrder(int orderNumber, int quantity, int productCode, String productName, String providerName) {
+    public PurchaseOrder(int orderNumber, int quantity, int productCode, String productName, int providerCode) {
         this.orderNumber = orderNumber;
         this.quantity = quantity;
         this.productCode = productCode;
         this.productName = productName;
-        this.providerName = providerName;
+        this.providerCode = providerCode;
     }
 
     public PurchaseOrder(int orderNumber) {
@@ -66,5 +66,13 @@ public class PurchaseOrder {
 
     public void setProductCode(int productCode) {
         this.productCode = productCode;
+    }
+
+    public int getProviderCode() {
+        return providerCode;
+    }
+
+    public void setProviderCode(int providerCode) {
+        this.providerCode = providerCode;
     }
 }

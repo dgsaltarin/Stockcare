@@ -48,17 +48,18 @@ public interface PurchaseOrderDAO extends IDBConection {
 
         try{Connection connection = conectToDB();
 
-            String sql = "INSERT INTO " +TORDEN_COMPRA +" VALUES OF (?,?,?,?,?)";
+            String sql = "INSERT INTO " +TORDEN_COMPRA +" VALUES (?,?,?,?,?)";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             for (int i=0; i<observableList.size(); i++){
+                System.out.println(observableList.get(i).getProviderCode());
                 preparedStatement.setNull(1, Types.NULL);
                 preparedStatement.setInt(2, observableList.get(i).getOrderNumber());
                 preparedStatement.setInt(3, observableList.get(i).getQuantity());
                 preparedStatement.setInt(4, observableList.get(i).getProductCode());
-                preparedStatement.setString(5, observableList.get(i).getProviderName());
-                preparedStatement.executeQuery();
+                preparedStatement.setInt(5, observableList.get(i).getProviderCode());
+                preparedStatement.executeUpdate();
             }
         } catch (SQLDataException e){
             e.printStackTrace();

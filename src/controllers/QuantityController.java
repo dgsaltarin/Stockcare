@@ -22,7 +22,7 @@ public class QuantityController implements Initializable {
     //take the recibed purchase order and with the quantity create a full purchase order
     public void recibeQuantity(ActionEvent actionEvent) throws IOException {
         //complete the purchase order
-        PurchaseOrder purchaseOrderC = new PurchaseOrder(purchaseOrder.getOrderNumber(),getQuantityNumber(),purchaseOrder.getProductCode(),purchaseOrder.getProductName(),purchaseOrder.getProviderName());
+        PurchaseOrder purchaseOrderC = new PurchaseOrder(purchaseOrder.getOrderNumber(),getQuantityNumber(),purchaseOrder.getProductCode(),purchaseOrder.getProductName(),purchaseOrder.getProviderCode());
         purchaseOrdersList.add(purchaseOrderC);
 
         //close the stage
