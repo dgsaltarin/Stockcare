@@ -12,6 +12,7 @@ public class DataBase {
     public static final String TINVENTARIO_CANTIDAD = "cantidad_inventario";
     public static final String TINVENTARIO_VENCIMIENTO = "fecha_vencimiento";
     public static final String TINVENTARIO_PRODUCTOID = "productos_id";
+    public static final String TINVENTARIO_PRECIO_UNITARIO = "precio_unitario";
 
     public static final String TPRODUCTOS = "productos";
     public static final String TPRODUCTOS_NOMBRE = "nombre_producto";

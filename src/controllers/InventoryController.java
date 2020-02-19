@@ -26,6 +26,7 @@ public class InventoryController implements InventoryDAO {
     @FXML TableView inventoryTable;
     @FXML TableColumn<Inventory, String> nameColumn;
     @FXML TableColumn<Inventory, Integer> quantityColumn;
+    @FXML TableColumn<Inventory, Double> unitPriceColumn;
     @FXML TableColumn<Inventory, Date> expirationColumn;
     @FXML TextField filterField;
 
@@ -41,14 +42,12 @@ public class InventoryController implements InventoryDAO {
         if (insumos.isSelected()){
             typeofProduct = "insumo";
         }
-        else {
-            System.out.println("debe seleccionar alguna de las categorias de products");
-        }
 
-        ObservableList<Inventory> inventoryList = FXCollections.observableArrayList(getInventoryWithName(typeofProduct));
+        ObservableList<Inventory> inventoryList = FXCollections.observableArrayList(getInventory(typeofProduct));
 
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        unitPriceColumn.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
         expirationColumn.setCellValueFactory(new PropertyValueFactory<>("expirationDate"));
 
         inventoryTable.setItems(inventoryList);

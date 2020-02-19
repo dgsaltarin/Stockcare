@@ -14,6 +14,9 @@ public class Records {
     private String providerName;
     private Double unitPrice;
     private Double totalPrice;
+    private int productId;
+    private int areaId;
+    private int userId;
 
     public String getProductName() {
         return productName;
@@ -27,6 +30,18 @@ public class Records {
         this.areaName = areaName;
         this.dateOfRecord = date;
         this.userName = userName;
+        this.unitPrice = unitPrice;
+        this.totalPrice = totalPrice;
+    }
+
+    public Records(Date dateOfRecord,Integer quantity, Products product, Integer areaId, Integer userId, Double unitPrice, Double totalPrice){
+        this.dateOfRecord = dateOfRecord;
+        this.quantity = quantity;
+        this.product = product;
+        this.productId = product.getCode();
+        this.productName = product.getName();
+        this.areaId = areaId;
+        this.userId = userId;
         this.unitPrice = unitPrice;
         this.totalPrice = totalPrice;
     }
@@ -105,5 +120,29 @@ public class Records {
 
     public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public int getAreaId() {
+        return areaId;
+    }
+
+    public void setAreaId(int areaId) {
+        this.areaId = areaId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

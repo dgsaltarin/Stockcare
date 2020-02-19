@@ -22,11 +22,14 @@ public interface PurchaseOrderDAO extends IDBConection {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
 
-            if(!rs.wasNull()){
+            if(rs.next()){
+                PurchaseOrder purchaseOrder = new PurchaseOrder(rs.getInt(TORDEN_COMPRA_NUMERO));
+                orderNumber = purchaseOrder.getOrderNumber()+1;
+
+            }
+            else {
                 orderNumber = 1;
             }
-            else {PurchaseOrder purchaseOrder = new PurchaseOrder(rs.getInt(TORDEN_COMPRA_NUMERO));
-                orderNumber = purchaseOrder.getOrderNumber()+1;}
             orderNumerString = String.valueOf(orderNumber);
 
         } catch (SQLDataException e){
@@ -48,17 +51,17 @@ public interface PurchaseOrderDAO extends IDBConection {
 
         try{Connection connection = conectToDB();
 
-            String sql = "INSERT INTO " +TORDEN_COMPRA +" VALUES (?,?,?,?,?)";
+            String sql = "INSERT INTO " +TORDEN_COMPRA +" VALUES (?,?,?,?,?,?)";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             for (int i=0; i<observableList.size(); i++){
-                System.out.println(observableList.get(i).getProviderCode());
                 preparedStatement.setNull(1, Types.NULL);
                 preparedStatement.setInt(2, observableList.get(i).getOrderNumber());
                 preparedStatement.setInt(3, observableList.get(i).getQuantity());
                 preparedStatement.setInt(4, observableList.get(i).getProductCode());
                 preparedStatement.setInt(5, observableList.get(i).getProviderCode());
+                preparedStatement.setBoolean(6,observableList.get(i).isOrderState());
                 preparedStatement.executeUpdate();
             }
         } catch (SQLDataException e){

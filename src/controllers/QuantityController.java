@@ -1,6 +1,7 @@
 package controllers;
 
 import Model.PurchaseOrder;
+import Model.Records;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,13 +18,27 @@ public class QuantityController implements Initializable {
 
     @FXML private TextField quantityTextField;
     private PurchaseOrder purchaseOrder;
-    private ObservableList<PurchaseOrder> purchaseOrdersList;
+    private Records record;
+    private ObservableList observableList;
 
     //take the recibed purchase order and with the quantity create a full purchase order
     public void recibeQuantity(ActionEvent actionEvent) throws IOException {
         //complete the purchase order
-        PurchaseOrder purchaseOrderC = new PurchaseOrder(purchaseOrder.getOrderNumber(),getQuantityNumber(),purchaseOrder.getProductCode(),purchaseOrder.getProductName(),purchaseOrder.getProviderCode());
-        purchaseOrdersList.add(purchaseOrderC);
+        if(purchaseOrder!=null) {
+            PurchaseOrder purchaseOrderC = new PurchaseOrder(purchaseOrder.getOrderNumber(), getQuantityNumber(),
+                    purchaseOrder.getProductCode(), purchaseOrder.getProductName(),
+                    purchaseOrder.getProviderCode(), false);
+            observableList.add(purchaseOrderC);
+        }
+        if (record!=null){
+            Double totalPrice = record.getUnitPrice() * getQuantityNumber();
+            Records recordsC = new Records(record.getDateOfRecord(), getQuantityNumber(),
+                    record.getProduct(),record.getAreaId(),
+                    record.getUserId(),
+                    record.getUnitPrice(),
+                    totalPrice);
+            observableList.add(recordsC);
+        }
 
         //close the stage
         Stage stage1 = (Stage) quantityTextField.getScene().getWindow();
@@ -42,7 +57,12 @@ public class QuantityController implements Initializable {
      * */
     public void initData(PurchaseOrder purchaseOrder, ObservableList<PurchaseOrder> purchaseOrdersList){
         this.purchaseOrder = purchaseOrder;
-        this.purchaseOrdersList = purchaseOrdersList;
+        this.observableList = purchaseOrdersList;
+    }
+
+    public void initData(Records record, ObservableList<Records> observableList){
+        this.record = record;
+        this.observableList = observableList;
     }
 
     @Override

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="501.0" prefWidth="776.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RecordsController">
+<AnchorPane prefHeight="501.0" prefWidth="776.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RecordsController">
    <children>
       <TableView fx:id="recordsTableView" layoutX="26.0" layoutY="181.0" prefHeight="276.0" prefWidth="744.0">
         <columns>

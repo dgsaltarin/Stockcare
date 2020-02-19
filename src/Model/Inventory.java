@@ -2,7 +2,6 @@ package Model;
 
 import DB.InventoryDAO;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Inventory implements InventoryDAO {
@@ -11,8 +10,8 @@ public class Inventory implements InventoryDAO {
     private int quantity;
     private Date expirationDate;
     private int productoID;
-    private Products producto;
     private String productName;
+    private Double unitPrice;
 
     public Inventory() {
     }
@@ -27,6 +26,14 @@ public class Inventory implements InventoryDAO {
     public Inventory(String productName, int quantity, Date expirationDate){
         this.productName = productName;
         this.quantity = quantity;
+        this.expirationDate = expirationDate;
+    }
+
+    public Inventory(Products product, int quantity,Double unitPrice, Date expirationDate){
+        this.productName = product.getName();
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
+        this.productoID = product.getCode();
         this.expirationDate = expirationDate;
     }
 
@@ -68,5 +75,13 @@ public class Inventory implements InventoryDAO {
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public Double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 }

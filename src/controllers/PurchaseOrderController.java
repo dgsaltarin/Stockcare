@@ -37,9 +37,12 @@ public class PurchaseOrderController extends Operations implements Initializable
     @FXML private TableColumn<PurchaseOrder, Integer> codeColumn;
     @FXML private TableColumn<PurchaseOrder, String> nameColumn;
     @FXML private TableColumn<PurchaseOrder, Integer> quantityColumn;
+
+    public PurchaseOrder purchaseOrder;
     private int productCode;
     private String productName;
     private String provider;
+
     private ObservableList<PurchaseOrder> purchaseOrders = FXCollections.observableArrayList();
     ObservableList<String> providerNames = FXCollections.observableArrayList(providerName());
 
@@ -55,8 +58,9 @@ public class PurchaseOrderController extends Operations implements Initializable
         ordersTableView.setItems(purchaseOrders);
     }
 
-    public PurchaseOrder purchaseOrder;
-
+    /***
+     * @description get the list of products once the user select a categrory
+     */
      public void fillProducts(ActionEvent actionEvent) {
         ObservableList<Products> productsList = FXCollections.observableArrayList(productsNames(typeOfProductCB.getValue().toString()));
 
@@ -89,6 +93,10 @@ public class PurchaseOrderController extends Operations implements Initializable
         productsTableView.setItems(sortedData);
     }
 
+
+    /**
+     * @description call the quantity window when the user doble clic on a product
+     * */
     @FXML
     public void clickItem(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         if(mouseEvent.getClickCount()==2){
@@ -131,10 +139,12 @@ public class PurchaseOrderController extends Operations implements Initializable
      * @description clear the table in case of a mistake
      * */
     public void clearTable(ActionEvent actionEvent) {
-        ordersTableView.getSelectionModel().clearSelection();
         ordersTableView.getItems().clear();
     }
 
+    /**
+     * @description generate the report order and set the data into the data base
+     * */
     public void generateOrder(ActionEvent actionEvent) throws IOException {
         ObservableList<PurchaseOrder> observableList = ordersTableView.getItems();
         Report.callReportWindow("purchaseOrder", observableList);

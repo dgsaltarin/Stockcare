@@ -8,6 +8,7 @@ public class PurchaseOrder {
     private String productName;
     private String providerName;
     private int providerCode;
+    private boolean orderState;
 
     public PurchaseOrder(int orderNumber, int productCode, String productName, int providerCode) {
         this.orderNumber = orderNumber;
@@ -16,12 +17,13 @@ public class PurchaseOrder {
         this.providerCode = providerCode;
     }
 
-    public PurchaseOrder(int orderNumber, int quantity, int productCode, String productName, int providerCode) {
+    public PurchaseOrder(int orderNumber, int quantity, int productCode, String productName, int providerCode, boolean orderState) {
         this.orderNumber = orderNumber;
         this.quantity = quantity;
         this.productCode = productCode;
         this.productName = productName;
         this.providerCode = providerCode;
+        this.orderState = orderState;
     }
 
     public PurchaseOrder(int orderNumber) {
@@ -74,5 +76,13 @@ public class PurchaseOrder {
 
     public void setProviderCode(int providerCode) {
         this.providerCode = providerCode;
+    }
+
+    public boolean isOrderState() {
+        return orderState;
+    }
+
+    public void setOrderState(boolean orderState) {
+        this.orderState = orderState;
     }
 }

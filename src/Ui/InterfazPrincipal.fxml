@@ -20,7 +20,7 @@
               <items>
                   <MenuItem mnemonicParsing="false" onAction="#purchaseOrderWindow" text="Orden De Compra" />
                 <MenuItem mnemonicParsing="false" text="Entrada de Productos" />
-                  <MenuItem mnemonicParsing="false" text="Salida de Productos" />
+                  <MenuItem mnemonicParsing="false"  onAction="#outComeWindow" text="Salida de Inventario" />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Análisis">

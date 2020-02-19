@@ -35,6 +35,10 @@ public class InterfazPrincipalController implements Initializable {
         stageChanger("Ui/PurchaseOrderWindow.fxml", "Orden de Compra");
     }
 
+    public void outComeWindow(ActionEvent actionEvent) throws IOException {
+        stageChanger("Ui/OutComesWindow.fxml","Salida de Inventario");
+    }
+
     private void stageChanger(String stageUrl, String tittle) throws IOException{
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(stageUrl));
