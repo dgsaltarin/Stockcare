@@ -9,18 +9,12 @@ public class Inventory implements InventoryDAO {
     private int id;
     private int quantity;
     private Date expirationDate;
-    private int productoID;
+    private int proproductId;
     private String productName;
     private Double unitPrice;
+    private Products product;
 
     public Inventory() {
-    }
-
-    public Inventory(int id, int quantity, Date expirationDate, int productoID) {
-        this.id = id;
-        this.quantity = quantity;
-        this.expirationDate = expirationDate;
-        this.productoID = productoID;
     }
 
     public Inventory(String productName, int quantity, Date expirationDate){
@@ -29,11 +23,12 @@ public class Inventory implements InventoryDAO {
         this.expirationDate = expirationDate;
     }
 
-    public Inventory(Products product, int quantity,Double unitPrice, Date expirationDate){
+    public Inventory(Products product, int quantity, Double unitPrice, Date expirationDate){
+        this.product = product;
         this.productName = product.getName();
         this.quantity = quantity;
         this.unitPrice = unitPrice;
-        this.productoID = product.getCode();
+        this.proproductId = product.getCode();
         this.expirationDate = expirationDate;
     }
 
@@ -61,12 +56,12 @@ public class Inventory implements InventoryDAO {
         this.expirationDate = expirationDate;
     }
 
-    public int getProductoID() {
-        return productoID;
+    public int getProproductId() {
+        return proproductId;
     }
 
-    public void setProductoID(int productoID) {
-        this.productoID = productoID;
+    public void setProproductId(int proproductId) {
+        this.proproductId = proproductId;
     }
 
     public String getProductName() {
@@ -83,5 +78,13 @@ public class Inventory implements InventoryDAO {
 
     public void setUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    public Products getProduct() {
+        return product;
+    }
+
+    public void setProduct(Products product) {
+        this.product = product;
     }
 }

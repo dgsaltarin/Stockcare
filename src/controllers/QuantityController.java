@@ -1,5 +1,7 @@
 package controllers;
 
+import Model.Alerts;
+import Model.Inventory;
 import Model.PurchaseOrder;
 import Model.Records;
 import javafx.collections.ObservableList;
@@ -20,6 +22,7 @@ public class QuantityController implements Initializable {
     private PurchaseOrder purchaseOrder;
     private Records record;
     private ObservableList observableList;
+    private int productRemaining;
 
     //take the recibed purchase order and with the quantity create a full purchase order
     public void recibeQuantity(ActionEvent actionEvent) throws IOException {
@@ -31,13 +34,19 @@ public class QuantityController implements Initializable {
             observableList.add(purchaseOrderC);
         }
         if (record!=null){
-            Double totalPrice = record.getUnitPrice() * getQuantityNumber();
-            Records recordsC = new Records(record.getDateOfRecord(), getQuantityNumber(),
-                    record.getProduct(),record.getAreaId(),
-                    record.getUserId(),
-                    record.getUnitPrice(),
-                    totalPrice);
-            observableList.add(recordsC);
+            if (getQuantityNumber()<= productRemaining) {
+                Double totalPrice = record.getUnitPrice() * getQuantityNumber();
+                Records recordsC = new Records(record.getDateOfRecord(), getQuantityNumber(),
+                        record.getProduct(), record.getAreaId(),
+                        record.getUserId(),
+                        record.getUnitPrice(),
+                        totalPrice);
+                observableList.add(recordsC);
+            }
+            else {
+                Alerts.notSelectionAlert("La cantidad excede la cantidad en inventario!");
+                return;
+            }
         }
 
         //close the stage
@@ -60,7 +69,8 @@ public class QuantityController implements Initializable {
         this.observableList = purchaseOrdersList;
     }
 
-    public void initData(Records record, ObservableList<Records> observableList){
+    public void initData(Records record, ObservableList<Records> observableList, int productRemaining){
+        this.productRemaining = productRemaining;
         this.record = record;
         this.observableList = observableList;
     }

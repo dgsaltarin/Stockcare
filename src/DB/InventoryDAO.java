@@ -1,5 +1,7 @@
 package DB;
+import Model.Alerts;
 import Model.Inventory;
+import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -57,5 +59,60 @@ public interface InventoryDAO extends IDBConection, ProductsDAO {
             e.printStackTrace();
         }
         return inventory;
+    }
+
+    default void updateInventory(ObservableList<Inventory> observableList){
+
+        try{Connection connection = conectToDB();
+
+            String sql = "";
+
+            for (int i=0; i<observableList.size(); i++){
+
+                if (observableList.get(i).getQuantity()==0){
+                    sql = "DELETE FROM " +TINVENTARIO + " WHERE " + TINVENTARIO_PRODUCTOID +" = " + observableList.get(i).getProproductId()
+                    + " AND " +TINVENTARIO_PRECIO_UNITARIO + " = " + observableList.get(i).getUnitPrice();
+
+                }else{ sql = "UPDATE "+ TINVENTARIO+" SET "+ TINVENTARIO_CANTIDAD + " = ?" + " WHERE "
+                        + TINVENTARIO_PRODUCTOID +" = " + observableList.get(i).getProproductId()
+                        + " AND " +TINVENTARIO_PRECIO_UNITARIO + " = " + observableList.get(i).getUnitPrice();}
+
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+                preparedStatement.setInt(1, observableList.get(i).getQuantity());
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLDataException e){
+            e.printStackTrace();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Alerts.successfullAlert("Inventario actualizado de manera exitosa!");
+    }
+
+    default Inventory getInventoryItem(int idProduct, Double unitPrice, int outComeQuantity){
+        Inventory inventoryItem = null;
+        try(Connection connection = conectToDB()) {
+            String sql = "SELECT * FROM " + TINVENTARIO + " WHERE " + TINVENTARIO_PRODUCTOID +
+                    " = " + idProduct + " AND " + TINVENTARIO_PRECIO_UNITARIO + " = " + unitPrice;
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()){
+                inventoryItem = new Inventory(
+                        getProductById(rs.getInt(TINVENTARIO_PRODUCTOID)),
+                        rs.getInt(TINVENTARIO_CANTIDAD) - outComeQuantity,
+                        rs.getDouble(TINVENTARIO_PRECIO_UNITARIO),
+                        rs.getDate(TINVENTARIO_VENCIMIENTO));
+            }
+
+        }catch (SQLDataException e){
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return inventoryItem;
     }
 }

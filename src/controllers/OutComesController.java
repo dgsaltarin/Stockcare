@@ -22,7 +22,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
@@ -52,7 +51,8 @@ public class OutComesController extends Operations implements Initializable, Are
     private Records records;
 
     private ObservableList<Records> OutcomesList = FXCollections.observableArrayList();
-    ObservableList<String> areasNames = FXCollections.observableArrayList(getAreasName());
+    private ObservableList<String> areasNames = FXCollections.observableArrayList(getAreasName());
+    private ObservableList<Inventory> inventoryUpdate = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -108,7 +108,7 @@ public class OutComesController extends Operations implements Initializable, Are
             if(!areasCB.getSelectionModel().isEmpty()&&!typeOfProductCB.getSelectionModel().isEmpty()) {
                 //set the initial information for the outcome record
                 Date date = new Date();
-                productId = inventoryTableView.getSelectionModel().getSelectedItem().getProductoID();
+                productId = inventoryTableView.getSelectionModel().getSelectedItem().getProproductId();
                 unitPrice = inventoryTableView.getSelectionModel().getSelectedItem().getUnitPrice();
                 areaId = getAreaIdByName(areasCB.getValue().toString());
                 userId = 1143155845;
@@ -125,7 +125,7 @@ public class OutComesController extends Operations implements Initializable, Are
                 QuantityController controller = loader.getController();
 
                 //set the init data
-                controller.initData(records, OutcomesList);
+                controller.initData(records, OutcomesList, inventoryTableView.getSelectionModel().getSelectedItem().getQuantity());
 
                 Stage window = new Stage();
                 window.initModality(Modality.APPLICATION_MODAL);
@@ -142,7 +142,13 @@ public class OutComesController extends Operations implements Initializable, Are
 
     public void generateOutCome(ActionEvent actionEvent) {
         ObservableList<Records> outComeRecords = outComeTableView.getItems();
+        for(int i=0; i< outComeRecords.size();i++){
+            inventoryUpdate.add(getInventoryItem(outComeRecords.get(i).getProductId(), outComeRecords.get(i).getUnitPrice(), outComeRecords.get(i).getQuantity()));
+        }
         setOutComeRecords(outComeRecords);
+        updateInventory(inventoryUpdate);
+        fillProducts(actionEvent);
+        clearTable(actionEvent);
     }
 
     public void clearTable(ActionEvent actionEvent) {

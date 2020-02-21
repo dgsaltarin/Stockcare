@@ -150,5 +150,6 @@ public class PurchaseOrderController extends Operations implements Initializable
         Report.callReportWindow("purchaseOrder", observableList);
         setPurchaseOrderInDB(observableList);
         Alerts.successfullAlert("Orden generada de manera Exitosa");
+        clearTable(actionEvent);
     }
 }
