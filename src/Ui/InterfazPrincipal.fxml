@@ -32,9 +32,9 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Agregar">
             <items>
-              <MenuItem mnemonicParsing="false" text="Producto" />
-                  <MenuItem mnemonicParsing="false" text="Área" />
-                  <MenuItem mnemonicParsing="false" text="Proveedor" />
+              <MenuItem mnemonicParsing="false" text="Producto" onAction="#addProductWindow" />
+                  <MenuItem mnemonicParsing="false" text="Área" onAction="#addAreaWindow"/>
+                  <MenuItem mnemonicParsing="false" text="Proveedor" onAction="#addProviderWindow" />
             </items>
           </Menu>
         </menus>

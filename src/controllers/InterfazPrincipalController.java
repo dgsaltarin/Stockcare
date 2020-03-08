@@ -62,4 +62,16 @@ public class InterfazPrincipalController implements Initializable {
     public void InComesWindow(ActionEvent actionEvent) throws IOException {
         stageChanger("Ui/InComesWindow.fxml","Entradas a Inventario");
     }
+
+    public void addProductWindow(ActionEvent actionEvent) throws IOException {
+        stageChanger("Ui/AddProductWindow.fxml","Agregar Producto");
+    }
+
+    public void addAreaWindow(ActionEvent actionEvent) throws IOException {
+        stageChanger("Ui/AddAreaWindow.fxml", "Agregar Área");
+    }
+
+    public void addProviderWindow(ActionEvent actionEvent) throws IOException {
+        stageChanger("Ui/AddProviderWindow.fxml", "Agregar Proveedor");
+    }
 }

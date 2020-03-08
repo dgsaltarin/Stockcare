@@ -1,5 +1,6 @@
 package DB;
 
+import Model.Alerts;
 import Model.Providers;
 import java.sql.*;
 import java.util.ArrayList;
@@ -130,5 +131,30 @@ public interface ProvidersDAO extends IDBConection  {
         }
 
         return  provider;
+    }
+
+    default void addNewProvider(Providers provider){
+
+        try{Connection connection = conectToDB();
+
+            String sql = "INSER INTO " + TPROVEEDORES + " VALUS (?,?,?,?,?,?,?)";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setNull(1,Types.NULL);
+            preparedStatement.setString(2, provider.getNit());
+            preparedStatement.setString(3, provider.getName());
+            preparedStatement.setString(4, provider.getAddress());
+            preparedStatement.setString(5, provider.getPhone());
+            preparedStatement.setString(6, provider.getEmail());
+            preparedStatement.setString(7, provider.getCity());
+
+            preparedStatement.executeUpdate();
+
+            Alerts.successfullAlert("Proveedor agregado de manera exitosa!");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

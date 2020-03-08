@@ -1,8 +1,10 @@
 package DB;
 
+import Model.Alerts;
 import Model.Areas;
 import Model.Providers;
 
+import java.awt.geom.Area;
 import java.sql.*;
 import java.util.ArrayList;
 import static DB.DataBase.*;
@@ -61,5 +63,25 @@ public interface AreasDAO extends IDBConection {
         }
 
         return areaId;
+    }
+
+    default void addNewArea(Areas area){
+
+        try{Connection connection = conectToDB();
+
+            String sql = "INSERT INTO " + TAREAS + " VALUES(?,?)";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setNull(1,Types.NULL);
+            preparedStatement.setString(2, area.getName());
+
+            preparedStatement.executeUpdate();
+
+            Alerts.successfullAlert("Área agregada de manera exitosa!");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

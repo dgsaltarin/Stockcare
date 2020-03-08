@@ -7,7 +7,16 @@ public class Products implements ProductsDAO {
     private int code;
     private String name;
     private double price;
-    private String clasification;
+    private String classification;
+    private String manufacturerName;
+
+    public Products(int code, String name, double price, String classification, String manufacturerName) {
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.classification = classification;
+        this.manufacturerName = manufacturerName;
+    }
 
     public Products(){}
 
@@ -20,7 +29,7 @@ public class Products implements ProductsDAO {
         this.code = code;
         this.name = name;
         this.price = price;
-        this.clasification = clasification;
+        this.classification = clasification;
     }
 
     public int getCode() {
@@ -40,6 +49,15 @@ public class Products implements ProductsDAO {
     }
 
     public String getClasification() {
-        return clasification;
+        return classification;
+    }
+
+    public String getManufacturerName() {
+        return manufacturerName;
+    }
+
+    public void setManufacturerName(String manufacturerName) {
+        this.manufacturerName = manufacturerName;
     }
 }
+

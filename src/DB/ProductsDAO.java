@@ -1,5 +1,6 @@
 package DB;
 
+import Model.Alerts;
 import Model.Products;
 
 import java.sql.*;
@@ -85,5 +86,32 @@ public interface ProductsDAO extends IDBConection {
             e.printStackTrace();
         }
         return product;
+    }
+
+    default void addNewProduct(Products product){
+
+        try{ Connection connection = conectToDB();
+
+            String sql = " INSER INTO " + TPRODUCTOS + " VALUES (?,?,?,?,?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setInt(1, product.getCode());
+            preparedStatement.setString(2, product.getName());
+            preparedStatement.setDouble(3, product.getPrice());
+            preparedStatement.setString(4, product.getManufacturerName());
+            if (product.getClasification().equals("")){
+                preparedStatement.setNull(5, Types.NULL);
+            }else{
+                preparedStatement.setString(5, product.getClasification());}
+
+            preparedStatement.executeUpdate();
+
+            Alerts.successfullAlert("Área agregada de manera exitosa!");
+
+        } catch (SQLDataException e){
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
