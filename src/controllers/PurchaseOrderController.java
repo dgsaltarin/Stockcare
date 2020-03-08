@@ -24,9 +24,6 @@ import java.util.ResourceBundle;
 
 public class PurchaseOrderController extends Operations implements Initializable, ProvidersDAO, ProductsDAO, PurchaseOrderDAO {
 
-    /*private ObservableList<String> typeOfProducts = FXCollections.observableArrayList("medicamento", "dispositivo medico",
-            "insumo");*/
-    //@FXML private ComboBox typeOfProductCB;
     @FXML private ComboBox providersCB;
     @FXML private TableView<Products> productsTableView;
     @FXML private TableColumn<Products, String> productsColumnP;

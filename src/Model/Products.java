@@ -2,8 +2,6 @@ package Model;
 
 import DB.ProductsDAO;
 
-import java.util.ArrayList;
-
 public class Products implements ProductsDAO {
 
     private int code;
@@ -29,10 +27,6 @@ public class Products implements ProductsDAO {
         return code;
     }
 
-    public void setCode(int code) {
-        this.code = code;
-    }
-
     public String getName() {
         return name;
     }
@@ -45,16 +39,7 @@ public class Products implements ProductsDAO {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-
     public String getClasification() {
         return clasification;
-    }
-
-    public void setClasification(String clasification) {
-        this.clasification = clasification;
     }
 }

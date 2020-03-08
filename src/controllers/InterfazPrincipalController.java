@@ -54,4 +54,12 @@ public class InterfazPrincipalController implements Initializable {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         menuBar.setMinWidth(screenSize.width);
     }
+
+    public void behaviorWindow(ActionEvent actionEvent) throws IOException {
+        stageChanger("Ui/BehaviorAnalyzeWindow.fxml","Análisis de Comportamiento");
+    }
+
+    public void InComesWindow(ActionEvent actionEvent) throws IOException {
+        stageChanger("Ui/InComesWindow.fxml","Entradas a Inventario");
+    }
 }

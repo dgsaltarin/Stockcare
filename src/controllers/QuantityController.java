@@ -1,5 +1,7 @@
 package controllers;
 
+import DB.ProductsDAO;
+import DB.ProvidersDAO;
 import Model.Alerts;
 import Model.Inventory;
 import Model.PurchaseOrder;
@@ -16,7 +18,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class QuantityController implements Initializable {
+public class QuantityController implements Initializable, ProductsDAO, ProvidersDAO {
 
     @FXML private TextField quantityTextField;
     private PurchaseOrder purchaseOrder;
@@ -29,8 +31,8 @@ public class QuantityController implements Initializable {
         //complete the purchase order
         if(purchaseOrder!=null) {
             PurchaseOrder purchaseOrderC = new PurchaseOrder(purchaseOrder.getOrderNumber(), getQuantityNumber(),
-                    purchaseOrder.getProductCode(), purchaseOrder.getProductName(),
-                    purchaseOrder.getProviderCode(), false);
+                    getProductById(purchaseOrder.getProductCode()),
+                    getProviderById(purchaseOrder.getProviderCode()), false);
             observableList.add(purchaseOrderC);
         }
         if (record!=null){

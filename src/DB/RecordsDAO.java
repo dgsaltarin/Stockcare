@@ -1,7 +1,6 @@
 package DB;
 
 import Model.Records;
-import Model.RecordsOutcomes;
 
 import java.sql.*;
 import java.util.ArrayList;

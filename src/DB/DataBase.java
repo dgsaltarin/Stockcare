@@ -66,6 +66,7 @@ public class DataBase {
     public static final String TORDEN_COMPRA_CANTIDAD = "cantidad";
     public static final String TORDEN_COMPRA_PROVEEDOR = "proveedor_id";
     public static final String TORDEN_COMPRA_PRODUCTO = "producto_id";
+    public static final String TORDEN_COMPRA_ESTADO = "estado";
 
     public static final String THOSPITAL = "hospital";
     public static final String THOSPITAL_NOMBRE = "nombre";

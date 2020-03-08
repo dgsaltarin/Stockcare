@@ -1,5 +1,9 @@
 package Model;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ObservableBooleanValue;
+
 public class PurchaseOrder {
 
     private int orderNumber;
@@ -9,6 +13,7 @@ public class PurchaseOrder {
     private String providerName;
     private int providerCode;
     private boolean orderState;
+    private BooleanProperty perfectIncome;
 
     public PurchaseOrder(int orderNumber, int productCode, String productName, int providerCode) {
         this.orderNumber = orderNumber;
@@ -17,12 +22,13 @@ public class PurchaseOrder {
         this.providerCode = providerCode;
     }
 
-    public PurchaseOrder(int orderNumber, int quantity, int productCode, String productName, int providerCode, boolean orderState) {
+    public PurchaseOrder(int orderNumber, int quantity, Products product, Providers provider, boolean orderState) {
         this.orderNumber = orderNumber;
         this.quantity = quantity;
-        this.productCode = productCode;
-        this.productName = productName;
-        this.providerCode = providerCode;
+        this.productCode = product.getCode();
+        this.productName = product.getName();
+        this.providerCode = provider.getId();
+        this.providerName = provider.getName();
         this.orderState = orderState;
     }
 
@@ -84,5 +90,12 @@ public class PurchaseOrder {
 
     public void setOrderState(boolean orderState) {
         this.orderState = orderState;
+    }
+    public ObservableBooleanValue perfectIncome() {
+        return perfectIncome;
+    }
+
+    public void setPerfectIncome(Boolean checked) {
+        this.perfectIncome.set(checked);
     }
 }

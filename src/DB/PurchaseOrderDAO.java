@@ -8,8 +8,12 @@ import java.util.ArrayList;
 
 import static DB.DataBase.*;
 
-public interface PurchaseOrderDAO extends IDBConection {
+public interface PurchaseOrderDAO extends IDBConection, ProductsDAO, ProvidersDAO {
 
+
+    /***
+     * @description: get the last purchase order number in order to calculate the new purhase order number
+     */
     default String orderNumber(){
         String orderNumerString ="";
         int orderNumber;
@@ -42,11 +46,10 @@ public interface PurchaseOrderDAO extends IDBConection {
         return orderNumerString;
     }
 
-    default ArrayList<PurchaseOrder> getPurchaseOrder(){
-        ArrayList<PurchaseOrder> purchaseOrderArrayList = new ArrayList<>();
-        return  purchaseOrderArrayList;
-    }
 
+    /***
+     * @description: recibe a purchase order and set it into the data base
+     */
     default void setPurchaseOrderInDB(ObservableList<PurchaseOrder> observableList){
 
         try{Connection connection = conectToDB();
@@ -70,6 +73,71 @@ public interface PurchaseOrderDAO extends IDBConection {
         catch (SQLException e) {
             e.printStackTrace();
         }
+    }
 
+
+    /**
+     * @description: change the status of a purchase order once it has been recibed
+     * */
+    default void updatePurchaseOrderState(){}
+
+    default ArrayList<PurchaseOrder> getPurchaseOrderPending(){
+        ArrayList<PurchaseOrder> purchaseOrders = new ArrayList<>();
+
+        try{
+            Connection connection = conectToDB();
+            String sql = "SELECT * FROM " + TORDEN_COMPRA + " WHERE "+ TORDEN_COMPRA_ESTADO +" = 0";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while(rs.next()){
+                PurchaseOrder purchaseOrder = new PurchaseOrder(rs.getInt(TORDEN_COMPRA_NUMERO),
+                        rs.getInt(TORDEN_COMPRA_CANTIDAD),
+                        getProductById(rs.getInt(TORDEN_COMPRA_PRODUCTO)),
+                        getProviderById(rs.getInt(TORDEN_COMPRA_PROVEEDOR)),
+                        rs.getBoolean(TORDEN_COMPRA_ESTADO));
+                purchaseOrders.add(purchaseOrder);
+            }
+        } catch (SQLDataException e){
+            e.printStackTrace();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return purchaseOrders;
+    }
+
+    /***
+     * @description: recibe a purchase order number and bring back all the records with the same purchase order numer
+     * @param purchaseOrderNumber recibe a purchase order number and bring back the full purchase order
+     */
+    default ArrayList<PurchaseOrder> getPurchaseOrderByNumber(int purchaseOrderNumber){
+        ArrayList<PurchaseOrder> fullPurchaseOrder = new ArrayList<>();
+
+        try{
+            Connection connection = conectToDB();
+            String sql = "SELECT * FROM " + TORDEN_COMPRA + " WHERE "+ TORDEN_COMPRA_NUMERO +" = " + purchaseOrderNumber;
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while(rs.next()){
+                PurchaseOrder purchaseOrder = new PurchaseOrder(rs.getInt(TORDEN_COMPRA_NUMERO),
+                        rs.getInt(TORDEN_COMPRA_CANTIDAD),
+                        getProductById(rs.getInt(TORDEN_COMPRA_PRODUCTO)),
+                        getProviderById(rs.getInt(TORDEN_COMPRA_PROVEEDOR)),
+                        rs.getBoolean(TORDEN_COMPRA_ESTADO));
+                fullPurchaseOrder.add(purchaseOrder);
+            }
+        } catch (SQLDataException e){
+            e.printStackTrace();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return fullPurchaseOrder;
     }
 }

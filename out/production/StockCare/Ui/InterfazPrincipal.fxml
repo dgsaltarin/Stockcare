@@ -19,13 +19,13 @@
             <Menu mnemonicParsing="false" text="Operaciones">
               <items>
                   <MenuItem mnemonicParsing="false" onAction="#purchaseOrderWindow" text="Orden De Compra" />
-                <MenuItem mnemonicParsing="false" text="Entrada de Productos" />
+                <MenuItem mnemonicParsing="false" onAction="#InComesWindow" text="Entrada de Productos" />
                   <MenuItem mnemonicParsing="false"  onAction="#outComeWindow" text="Salida de Inventario" />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Análisis">
             <items>
-              <MenuItem mnemonicParsing="false" text="Análisis de Comportamiento" />
+              <MenuItem mnemonicParsing="false" text="Análisis de Comportamiento" onAction="#behaviorWindow" />
                   <MenuItem mnemonicParsing="false" text="Análisis ABC" />
                   <MenuItem mnemonicParsing="false" text="Politicas de Inventario" />
             </items>

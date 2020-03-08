@@ -11,7 +11,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="700.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PurchaseOrderController">
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="700.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PurchaseOrderController">
    <children>
       <Label layoutX="24.0" layoutY="23.0" text="Tipo de Producto:" />
       <ComboBox fx:id="typeOfProductCB" layoutX="126.0" layoutY="20.0" onAction="#fillProducts" prefWidth="150.0" />
@@ -40,7 +41,15 @@
             <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="126.0" text="Cantidad " />
         </columns>
       </TableView>
-      <Button fx:id="generateOrderButton" layoutX="566.0" layoutY="429.0" mnemonicParsing="false" onAction="#generateOrder" text="Generar Orden" />
-      <Button fx:id="clearTableButton" layoutX="466.0" layoutY="429.0" mnemonicParsing="false" onAction="#clearTable" text="Limpiar Tabla" />
+      <Button fx:id="generateOrderButton" layoutX="566.0" layoutY="429.0" mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" onAction="#generateOrder" text="Generar Orden" >
+          <font>
+              <Font name="System Bold" size="13.0" />
+          </font>
+      </Button>
+      <Button fx:id="clearTableButton" layoutX="466.0" layoutY="429.0" mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" onAction="#clearTable" text="Limpiar Tabla" >
+          <font>
+              <Font name="System Bold" size="13.0" />
+          </font>
+      </Button>
    </children>
 </AnchorPane>

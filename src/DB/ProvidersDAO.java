@@ -99,4 +99,36 @@ public interface ProvidersDAO extends IDBConection  {
 
         return providersCode;
     }
+
+    default Providers getProviderById(int id){
+        Providers provider = null;
+
+        try{
+            Connection connection = conectToDB();
+            String sql = "SELECT * FROM " + TPROVEEDORES + " WHERE " + TPROVEEDORES_ID + " = '" +id
+                    + "' LIMIT 1";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()){
+                provider = new Providers(
+                        rs.getInt(TPROVEEDORES_ID),
+                        rs.getString(TPROVEEDORES_NOMBRE),
+                        rs.getString(TPROVEEDORES_NIT),
+                        rs.getString(TPROVEEDORES_EMAIL),
+                        rs.getString(TPROVEEDORES_TELEFONO),
+                        rs.getString(TPROVEEDORES_CIUDAD),
+                        rs.getString(TPROVEEDORES_DIRECCIÓN));
+            }
+
+        } catch (SQLDataException e){
+            e.printStackTrace();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return  provider;
+    }
 }
