@@ -74,4 +74,8 @@ public class InterfazPrincipalController implements Initializable {
     public void addProviderWindow(ActionEvent actionEvent) throws IOException {
         stageChanger("Ui/AddProviderWindow.fxml", "Agregar Proveedor");
     }
+
+    public void ABCAnalyzeWindow(ActionEvent actionEvent) throws IOException {
+        stageChanger("Ui/AnalyzeABCWindow.fxml", "Análisis ABC");
+    }
 }
