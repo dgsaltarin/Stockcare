@@ -1,5 +1,6 @@
 package Model;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import static Model.Analyze.*;
 import java.util.ArrayList;
@@ -13,8 +14,10 @@ public class AnalyzeABC extends Analyze {
     private Double acumulatedPercetage;
     private String classification;
 
+    public AnalyzeABC(){}
+
     public ObservableList<AnalyzeABC> ABCAnalyze(ObservableList<Records> observableList, String typeOfProduct){
-        ObservableList<AnalyzeABC> AbcAnalyze = null;
+        ObservableList<AnalyzeABC> AbcAnalyze = FXCollections.observableArrayList();
         //preparing data
         Double acumulatedParticipat = 0.0;
         ArrayList<Records> lastYearData = lastYearOfData(observableList);
@@ -29,13 +32,24 @@ public class AnalyzeABC extends Analyze {
         for (int i = 0; i<averageDemand.length;i++){
             totalDemand += averageDemand[i][1];
         }
-
-        for (int i=0; i<=averageDemand.length;i++){
+        System.out.println(totalDemand);
+        System.out.println(averageDemand.length);
+        for (int i=0; i<averageDemand.length;i++){
             if (averageDemand[i][1]>0){
                 String productName = productList.get(averageDemand[i][0]);
-                Double participation = (double) (averageDemand[i][1]/totalDemand);
-                acumulatedParticipat += acumulatedParticipat + participation;
-                AnalyzeABC analyze = new AnalyzeABC(productName, averageDemand[i][1], participation, acumulatedParticipat, "NA");
+                Double participation = (double) averageDemand[i][1]/totalDemand;
+                acumulatedParticipat += participation;
+                String classification = "";
+                if(acumulatedParticipat<0.8){
+                    classification ="A";
+                }
+                else if(0.8<=acumulatedParticipat&&acumulatedParticipat<0.95){
+                    classification ="B";
+                }
+                else if(0.95<=acumulatedParticipat){
+                    classification ="C";
+                }
+                AnalyzeABC analyze = new AnalyzeABC(productName, averageDemand[i][1], participation, acumulatedParticipat, classification);
                 AbcAnalyze.add(analyze);
             }
         }

@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="821890af-6477-4b23-8bb2-9584082a9b2d" name="Default Changelist" comment="agrega los productos a lista de orden de compra de manera exitosa, sigue almacenar la orden en la base de datos y generar pdf">
+      <change afterPath="$PROJECT_DIR$/src/tests/Model/AnalyzeABCTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/DB/RecordsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/DB/RecordsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Analyze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Analyze.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/AnalyzeABC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/AnalyzeABC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Records.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Records.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/StockCare/Model/AnalyzeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/StockCare/Model/AnalyzeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB/RecordsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/RecordsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Analyze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Analyze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/AnalyzeABC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/AnalyzeABC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Records.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Records.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/Model/AnalyzeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/Model/AnalyzeTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,36 +74,45 @@
         <entry file="file://$PROJECT_DIR$/src/Model/Products.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/Model/AnalyzeTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="114" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tests/Model/AnalyzeTest.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/AnalyzeABC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+            <state relative-caret-position="291">
+              <caret line="51" column="137" selection-start-line="51" selection-start-column="137" selection-end-line="51" selection-end-column="137" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2740#2741#0" expanded="true" />
+                <element signature="e#2813#2814#0" expanded="true" />
+                <element signature="e#2909#2910#0" expanded="true" />
+                <element signature="e#2997#2998#0" expanded="true" />
+                <element signature="e#3075#3076#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/AnalyzeABC.java">
+        <entry file="file://$PROJECT_DIR$/src/tests/Model/AnalyzeABCTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2182#2183#0" expanded="true" />
-                <element signature="e#2255#2256#0" expanded="true" />
-                <element signature="e#2351#2352#0" expanded="true" />
-                <element signature="e#2439#2440#0" expanded="true" />
-                <element signature="e#2517#2518#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -118,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Google Drive/Control de inventario 4/src/control/de/inventario/pkg4/analisisABC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3077">
-              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="187">
+              <caret line="222" column="39" lean-forward="true" selection-start-line="222" selection-start-column="39" selection-end-line="222" selection-end-column="39" />
               <folding>
                 <element signature="e#0#11777#0" expanded="true" />
               </folding>
@@ -131,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/src/DB/ProductsDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="19" column="57" lean-forward="true" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+              <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -142,9 +144,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit4 Test Class" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -154,8 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Model/Providers.java" />
-        <option value="$PROJECT_DIR$/src/Model/Alerts.java" />
         <option value="$PROJECT_DIR$/src/Model/ReportPdf.java" />
         <option value="$PROJECT_DIR$/src/controllers/Operations.java" />
         <option value="$PROJECT_DIR$/src/Model/Areas.java" />
@@ -203,8 +203,10 @@
         <option value="$PROJECT_DIR$/src/DB/RecordsDAO.java" />
         <option value="$PROJECT_DIR$/src/Model/Products.java" />
         <option value="$PROJECT_DIR$/src/Model/Analyze.java" />
-        <option value="$PROJECT_DIR$/src/Model/AnalyzeABC.java" />
         <option value="$PROJECT_DIR$/src/tests/Model/AnalyzeTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/Model/AnalyzeABCTest.java" />
+        <option value="$USER_HOME$/Google Drive/Control de inventario 4/src/control/de/inventario/pkg4/analisisABC.java" />
+        <option value="$PROJECT_DIR$/src/Model/AnalyzeABC.java" />
       </list>
     </option>
   </component>
@@ -305,7 +307,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584111347576" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584116802054" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../commons-math3-3.6.1.jar!/" />
@@ -337,10 +339,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AnalyzeTest.createHashMapProductList">
+  <component name="RunManager" selected="JUnit.AnalyzeABCTest.ABCAnalyze">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="StockCare" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnalyzeABCTest.ABCAnalyze" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StockCare" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.AnalyzeABCTest" />
+      <option name="METHOD_NAME" value="ABCAnalyze" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -356,22 +374,6 @@
       <option name="PACKAGE_NAME" value="Model" />
       <option name="MAIN_CLASS_NAME" value="Model.AnalyzeTest" />
       <option name="METHOD_NAME" value="createHashMapProductList" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnalyzeTest.lastSixMonths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StockCare" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Model" />
-      <option name="MAIN_CLASS_NAME" value="Model.AnalyzeTest" />
-      <option name="METHOD_NAME" value="lastSixMonths" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -410,11 +412,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AnalyzeABCTest.ABCAnalyze" />
         <item itemvalue="JUnit.AnalyzeTest.createHashMapProductList" />
         <item itemvalue="JUnit.AnalyzeTest.lastSixMonthsData" />
         <item itemvalue="JUnit.AnalyzeTest.lastSixMonthsData (1)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.AnalyzeTest.lastSixMonths" />
       </list>
     </recent_temporary>
   </component>
@@ -432,35 +434,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AnalyzeTest_lastSixMonthsData - 2020.03.12 at 09h 49m 05s.xml">
-      <configuration name="AnalyzeTest.lastSixMonthsData" configurationId="JUnit" />
+    <history-entry file="AnalyzeABCTest_ABCAnalyze - 2020.03.13 at 10h 05m 14s.xml">
+      <configuration name="AnalyzeABCTest.ABCAnalyze" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnalyzeTest_lastSixMonthsData - 2020.03.12 at 09h 53m 36s.xml">
-      <configuration name="AnalyzeTest.lastSixMonthsData" configurationId="JUnit" />
+    <history-entry file="AnalyzeABCTest_ABCAnalyze - 2020.03.13 at 10h 18m 16s.xml">
+      <configuration name="AnalyzeABCTest.ABCAnalyze" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnalyzeTest_lastSixMonthsData - 2020.03.12 at 14h 07m 33s.xml">
-      <configuration name="AnalyzeTest.lastSixMonthsData" configurationId="JUnit" />
+    <history-entry file="AnalyzeABCTest_ABCAnalyze - 2020.03.13 at 10h 19m 04s.xml">
+      <configuration name="AnalyzeABCTest.ABCAnalyze" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnalyzeTest_lastSixMonthsData - 2020.03.13 at 07h 19m 40s.xml">
-      <configuration name="AnalyzeTest.lastSixMonthsData" configurationId="JUnit" />
+    <history-entry file="AnalyzeABCTest_ABCAnalyze - 2020.03.13 at 10h 20m 17s.xml">
+      <configuration name="AnalyzeABCTest.ABCAnalyze" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnalyzeTest_lastSixMonthsData - 2020.03.13 at 07h 20m 51s.xml">
-      <configuration name="AnalyzeTest.lastSixMonthsData" configurationId="JUnit" />
+    <history-entry file="AnalyzeABCTest_ABCAnalyze - 2020.03.13 at 10h 28m 06s.xml">
+      <configuration name="AnalyzeABCTest.ABCAnalyze" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnalyzeTest_lastSixMonthsData - 2020.03.13 at 07h 54m 00s.xml">
-      <configuration name="AnalyzeTest.lastSixMonthsData" configurationId="JUnit" />
+    <history-entry file="AnalyzeABCTest_ABCAnalyze - 2020.03.13 at 11h 10m 06s.xml">
+      <configuration name="AnalyzeABCTest.ABCAnalyze" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnalyzeTest_lastSixMonthsData - 2020.03.13 at 08h 00m 27s.xml">
-      <configuration name="AnalyzeTest.lastSixMonthsData" configurationId="JUnit" />
+    <history-entry file="AnalyzeABCTest_ABCAnalyze - 2020.03.13 at 11h 12m 00s.xml">
+      <configuration name="AnalyzeABCTest.ABCAnalyze" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnalyzeTest_lastSixMonthsData - 2020.03.13 at 08h 03m 10s.xml">
-      <configuration name="AnalyzeTest.lastSixMonthsData" configurationId="JUnit" />
+    <history-entry file="AnalyzeABCTest_ABCAnalyze - 2020.03.13 at 11h 13m 36s.xml">
+      <configuration name="AnalyzeABCTest.ABCAnalyze" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnalyzeTest_lastSixMonthsData - 2020.03.13 at 08h 05m 44s.xml">
-      <configuration name="AnalyzeTest.lastSixMonthsData" configurationId="JUnit" />
+    <history-entry file="AnalyzeABCTest_ABCAnalyze - 2020.03.13 at 11h 20m 20s.xml">
+      <configuration name="AnalyzeABCTest.ABCAnalyze" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AnalyzeTest_lastSixMonthsData - 2020.03.13 at 08h 06m 38s.xml">
-      <configuration name="AnalyzeTest.lastSixMonthsData" configurationId="JUnit" />
+    <history-entry file="AnalyzeABCTest_ABCAnalyze - 2020.03.13 at 11h 22m 26s.xml">
+      <configuration name="AnalyzeABCTest.ABCAnalyze" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -485,7 +487,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32569557" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32569557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -537,13 +539,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="agrega los productos a lista de orden de compra de manera exitosa, sigue almacenar la orden en la base de datos y generar pdf" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DB/DataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="68" column="63" selection-start-line="68" selection-start-column="63" selection-end-line="68" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/QuantityController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -958,39 +953,7 @@
     <entry file="file://$PROJECT_DIR$/src/DB/ProductsDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="19" column="57" lean-forward="true" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Google Drive/Control de inventario 4/src/control/de/inventario/pkg4/analisisABC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3077">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#11777#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Products.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/AnalyzeABC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2182#2183#0" expanded="true" />
-            <element signature="e#2255#2256#0" expanded="true" />
-            <element signature="e#2351#2352#0" expanded="true" />
-            <element signature="e#2439#2440#0" expanded="true" />
-            <element signature="e#2517#2518#0" expanded="true" />
-          </folding>
+          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -1004,12 +967,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Products.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/Model/AnalyzeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+        <state relative-caret-position="274">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="114" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/Model/AnalyzeABCTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Google Drive/Control de inventario 4/src/control/de/inventario/pkg4/analisisABC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="222" column="39" lean-forward="true" selection-start-line="222" selection-start-column="39" selection-end-line="222" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#11777#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/AnalyzeABC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="51" column="137" selection-start-line="51" selection-start-column="137" selection-end-line="51" selection-end-column="137" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2740#2741#0" expanded="true" />
+            <element signature="e#2813#2814#0" expanded="true" />
+            <element signature="e#2909#2910#0" expanded="true" />
+            <element signature="e#2997#2998#0" expanded="true" />
+            <element signature="e#3075#3076#0" expanded="true" />
           </folding>
         </state>
       </provider>
