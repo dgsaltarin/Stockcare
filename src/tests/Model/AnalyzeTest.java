@@ -9,8 +9,10 @@ import org.junit.Test;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
-import static org.junit.Assert.*;
+import static Model.Analyze.*;
+
 
 public class AnalyzeTest implements RecordsDAO {
 
@@ -29,11 +31,11 @@ public class AnalyzeTest implements RecordsDAO {
 
     @Test
     public void lastSixMonthsData() throws ParseException {
-        ObservableList<Records> observableList = FXCollections.observableArrayList(outComesList("medicamento"));
+        ObservableList<Records> observableList = FXCollections.observableArrayList(getRowOutComes("medicamento"));
         Analyze analyze = new Analyze();
         System.out.println(analyze.getDateTimeAgo(13));
         System.out.println(observableList.size());
-        ArrayList<Records> records = analyze.lastSixMonthsData(observableList);
+        ArrayList<Records> records = analyze.lastYearOfData(observableList);
 
         System.out.println(records.size());
         for(int i=0;i<records.size();i++){
@@ -43,11 +45,25 @@ public class AnalyzeTest implements RecordsDAO {
 
         }
 
-        Integer[][] matrix = analyze.separateDataByMonth(records);
+        int[][] matrix = analyze.separateDataByMonth(records);
 
-        for (int i=0; i<matrix.length; i++){
-            System.out.println(matrix[i][0]);
-            System.out.println(matrix[i][1]);
+        int[][] monthlyDemand = analyze.averageMonthlyDemand(matrix, "medicamento");
+
+        sortMatrix(monthlyDemand, 1);
+
+        for(int i=0;i<monthlyDemand.length;i++){
+            System.out.println(monthlyDemand[i][0] + ", " + monthlyDemand[i][1]);
         }
+    }
+
+    @Test
+    public void lastSixMonthsData1() {
+    }
+
+    @Test
+    public void createHashMapProductList() {
+        Analyze analyze = new Analyze();
+        HashMap<Integer, String> hashMap = analyze.createHashMapProductList("medicamento");
+        System.out.println(hashMap.get(1));
     }
 }

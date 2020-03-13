@@ -76,4 +76,11 @@ public class Records {
         return userId;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getAreaName() {
+        return areaName;
+    }
 }

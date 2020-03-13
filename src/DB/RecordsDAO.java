@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import static DB.DataBase.*;
 
-public interface RecordsDAO extends IDBConection {
+public interface RecordsDAO extends IDBConection, ProductsDAO {
 
     default ArrayList<Records> outComesList(String typeOfProduct){
         ArrayList<Records> outComes = new ArrayList<>();
@@ -28,6 +28,36 @@ public interface RecordsDAO extends IDBConection {
                         rs.getString(TAREAS_NOMBRE),
                         rs.getDate(TSALIDAS_FECHA),
                         rs.getString(TUSUARIOS_NOMBRE),
+                        rs.getDouble(TSALIDAS_PRECIO_UNITARIO),
+                        rs.getDouble(TSALIDAS_PRECIO_TOTAL));
+                outComes.add(recordsL);
+            }
+
+        }catch (SQLDataException e){
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return outComes;
+    }
+
+    default ArrayList<Records> getRowOutComes(String typeOfProduct){
+        ArrayList<Records> outComes = new ArrayList<>();
+
+        try(Connection connection = conectToDB()) {
+            String sql = "SELECT * FROM " + TSALIDAS + " INNER JOIN " + TPRODUCTOS +" ON salidas.productos_id=productos.id where"+
+                    " productos.tipo_de_producto = '" + typeOfProduct +"' ORDER BY " +TSALIDAS_FECHA + " DESC";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()){
+                Records recordsL = new Records(rs.getDate(TSALIDAS_FECHA),
+                        rs.getInt(TSALIDAS_CANTIDAD),
+                        getProductById(rs.getInt(TSALIDAS_PRODUCTO)),
+                        rs.getInt(TSALIDAS_AREA),
+                        rs.getInt(TSALIDAS_USUARIO),
                         rs.getDouble(TSALIDAS_PRECIO_UNITARIO),
                         rs.getDouble(TSALIDAS_PRECIO_TOTAL));
                 outComes.add(recordsL);
