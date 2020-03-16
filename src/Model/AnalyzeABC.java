@@ -2,6 +2,12 @@ package Model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
+
+import javax.security.auth.callback.CallbackHandler;
+
 import static Model.Analyze.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,11 +35,11 @@ public class AnalyzeABC extends Analyze {
 
         //calculating the total demand for all product
         int totalDemand = 0;
+
         for (int i = 0; i<averageDemand.length;i++){
             totalDemand += averageDemand[i][1];
         }
-        System.out.println(totalDemand);
-        System.out.println(averageDemand.length);
+
         for (int i=0; i<averageDemand.length;i++){
             if (averageDemand[i][1]>0){
                 String productName = productList.get(averageDemand[i][0]);
@@ -55,6 +61,30 @@ public class AnalyzeABC extends Analyze {
         }
 
         return AbcAnalyze;
+    }
+
+    public ObservableList<PieChart.Data> generatePieChart(ObservableList<AnalyzeABC> observableList, PieChart chart){
+        int aClassification =0;
+        int bClassification =0;
+        int cClassification =0;
+        //get the account of item on every classification
+        for (int i=0;i<observableList.size();i++){
+            if(observableList.get(i).getClassification().equals("A")){
+                aClassification += 1;
+            }
+             else if(observableList.get(i).getClassification().equals("B")){
+                bClassification += 1;
+            }
+             else if(observableList.get(i).getClassification().equals("C")){
+                cClassification += 1;
+            }
+        }
+
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                new PieChart.Data("A", aClassification),
+                new PieChart.Data("B", bClassification),
+                new PieChart.Data("C", cClassification));
+       return pieChartData;
     }
 
     public AnalyzeABC(String productName, int averageDemand, Double participationPercentage, Double acumulatedPercetage, String classification) {
