@@ -78,4 +78,8 @@ public class InterfazPrincipalController implements Initializable {
     public void ABCAnalyzeWindow(ActionEvent actionEvent) throws IOException {
         stageChanger("Ui/AnalyzeABCWindow.fxml", "Análisis ABC");
     }
+
+    public void AbcVenWindow(ActionEvent actionEvent) throws IOException {
+        stageChanger("Ui/AbcVenAnalyzeWindow.fxml", "Análisis ABC-VEN");
+    }
 }

@@ -47,7 +47,7 @@ public class AnalyzeABCController extends Operations implements Initializable, R
         acumPercentageColumn.setCellValueFactory(new PropertyValueFactory<>("acumulatedPercetage"));
         classificationColumn.setCellValueFactory(new PropertyValueFactory<>("classification"));
 
-        abcPieChart.setData(analyzeABC.generatePieChart(result, abcPieChart));
+        abcPieChart.setData(analyzeABC.generatePieChart(result));
         abcTableView.setItems(result);
 
         abcPieChart.setTitle("Clasificación ABC");

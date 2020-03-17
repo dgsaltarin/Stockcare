@@ -27,6 +27,7 @@
             <items>
               <MenuItem mnemonicParsing="false" text="Análisis de Comportamiento" onAction="#behaviorWindow" />
                   <MenuItem mnemonicParsing="false" text="Análisis ABC" onAction="#ABCAnalyzeWindow" />
+                  <MenuItem mnemonicParsing="false" text="Análisis ABC-VEN" onAction="#AbcVenWindow" />
                   <MenuItem mnemonicParsing="false" text="Politicas de Inventario" />
             </items>
           </Menu>

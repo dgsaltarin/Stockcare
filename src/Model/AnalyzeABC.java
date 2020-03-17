@@ -14,11 +14,11 @@ import java.util.HashMap;
 
 public class AnalyzeABC extends Analyze {
 
-    private String productName;
-    private int averageDemand;
-    private Double participationPercentage;
-    private Double acumulatedPercetage;
-    private String classification;
+    protected String productName;
+    protected int averageDemand;
+    protected Double participationPercentage;
+    protected Double acumulatedPercetage;
+    protected String classification;
 
     public AnalyzeABC(){}
 
@@ -63,7 +63,7 @@ public class AnalyzeABC extends Analyze {
         return AbcAnalyze;
     }
 
-    public ObservableList<PieChart.Data> generatePieChart(ObservableList<AnalyzeABC> observableList, PieChart chart){
+    public ObservableList<PieChart.Data> generatePieChart(ObservableList<AnalyzeABC> observableList){
         int aClassification =0;
         int bClassification =0;
         int cClassification =0;
