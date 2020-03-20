@@ -111,6 +111,75 @@ public class Analyze implements ProductsDAO {
 
     }
 
+
+    /**
+     * @description: given a matrix with the demand of a product for over a year, this calculate the monthly demand
+     * of that product
+     * */
+    protected int[][] totalMonthlyDemand(int[][] annualProductDemand){
+        int[][] totalMonthlyDemand = new int[12][2];
+        int[] month = {1,2,3,4,5,6,7,8,9,10,11,12};
+
+        for (int i=0;i<month.length;i++){
+            int demand =0;
+            for (int j=0;j<annualProductDemand.length;j++){
+                if (annualProductDemand[j][2]==month[i]){
+                    demand += annualProductDemand[j][0];
+                }
+            }
+            totalMonthlyDemand[i][0] = demand;
+            totalMonthlyDemand[i][1] = month[i];
+        }
+
+        return totalMonthlyDemand;
+    }
+
+    /**
+     * @description given a matrix with the annual demand of a product, calculate the standard deviation for the data
+     * @param monthlyProductDemand monthly demand for a product
+     * */
+    protected double standardDeviation(int[][] monthlyProductDemand){
+        double standardDeviation;
+        double averageDemand = averageDemandForProduct(monthlyProductDemand);
+        double summatory = 0;
+        float n = (float) 1/12;
+
+        for (int i=0;i<monthlyProductDemand.length;i++){
+            summatory += Math.pow(monthlyProductDemand[i][0]-averageDemand,2);
+        }
+
+        standardDeviation = Math.sqrt(n*summatory);
+        return standardDeviation;
+    }
+
+    protected double slopeOfData(){
+        double slope=0;
+
+        return slope;
+    }
+
+    protected ArrayList<Double> noiseForStimations(){
+        ArrayList<Double> noise = null;
+
+        return noise;
+    }
+
+    /**
+     * @description given the monthly demand of a product, it returns the average demand
+     * */
+    protected double averageDemandForProduct(int[][] monthlyDemand){
+        double averageDemand;
+        int totalDemand = 0;
+
+        for (int i=0;i<monthlyDemand.length;i++){
+            totalDemand += monthlyDemand[i][0];
+        }
+
+        averageDemand = totalDemand/monthlyDemand.length;
+
+        return averageDemand;
+    }
+
     /**
      * @description calculate a past date according to the number of months given
      * @param  monthsAgo number of months to step back

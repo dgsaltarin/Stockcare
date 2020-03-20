@@ -44,7 +44,7 @@ public class AnalyzeABCController extends Operations implements Initializable, R
         productColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         averageDemandColumn.setCellValueFactory(new PropertyValueFactory<>("averageDemand"));
         percentageColumn.setCellValueFactory(new PropertyValueFactory<>("participationPercentage"));
-        acumPercentageColumn.setCellValueFactory(new PropertyValueFactory<>("acumulatedPercetage"));
+        acumPercentageColumn.setCellValueFactory(new PropertyValueFactory<>("accumulatedPercentage"));
         classificationColumn.setCellValueFactory(new PropertyValueFactory<>("classification"));
 
         abcPieChart.setData(analyzeABC.generatePieChart(result));

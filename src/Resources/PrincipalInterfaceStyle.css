@@ -1,0 +1,19 @@
+.menu {
+    -fx-font-color: 212121;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.menu-item {
+    -fx-font-color: #212121;
+    -fx-font-size: 13px;
+    -fx-background-color: #BBDEFB;
+}
+
+#behavior > .menu{
+    -fx-graphic: url("images/analyze.png");
+    -fx-graphic-text-gap: 16px;
+}
+#mniOpen .accelerator-text{
+    -fx-graphic: none;
+}

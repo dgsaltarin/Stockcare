@@ -2,6 +2,7 @@ package controllers;
 
 import DB.ProductsDAO;
 import DB.RecordsDAO;
+import Model.BehaviorAnalyze;
 import Model.Products;
 import Model.Records;
 import javafx.collections.FXCollections;
@@ -28,7 +29,6 @@ public class BehaviorAnalyzeController extends Operations implements Initializab
     @FXML private TableColumn<Products, String> productsTableColumn;
     @FXML private Button generateAnalyzeButton;
 
-    private XYChart.Series<String, Number> values;
     @FXML private ScatterChart<String, Number> behaviorAnalyzeChart;
 
     @Override
@@ -69,22 +69,16 @@ public class BehaviorAnalyzeController extends Operations implements Initializab
     }
 
     public void generateAnalyze(ActionEvent actionEvent) {
-        behaviorAnalyzeChart.setAnimated(false);
+        BehaviorAnalyze behaviorAnalyze = new BehaviorAnalyze();
+
         Scene scene = generateAnalyzeButton.getScene();
         scene.getStylesheets().add("Resources/scatterChart.css");
+
         ObservableList<Records> observableList = FXCollections.observableArrayList(outComesList(typeOfProductCB.getValue().toString()));
-        values = new XYChart.Series<>();
         String productToAnalyze = productsTableView.getSelectionModel().getSelectedItem().getName();
 
-        for (int i=observableList.size()-1;i>0;i--){
-            if(observableList.get(i).getProductName().equals(productToAnalyze)) {
-                String date = observableList.get(i).getDateOfRecord().toString();
-                Number quantity = observableList.get(i).getQuantity();
-                values.getData().add(new XYChart.Data<>(date, quantity));
-            }else {}
-        }
-        values.setName(productToAnalyze);
-        behaviorAnalyzeChart.getData().add(values);
+        behaviorAnalyzeChart.setAnimated(false);
+        behaviorAnalyzeChart.getData().add(behaviorAnalyze.generateScatterChart(observableList, productToAnalyze));
         behaviorAnalyzeChart.getXAxis().setLabel("Tiempo");
         behaviorAnalyzeChart.getYAxis().setLabel("Cantidad");
     }

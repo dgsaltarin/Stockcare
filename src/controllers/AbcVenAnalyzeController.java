@@ -33,11 +33,8 @@ public class AbcVenAnalyzeController implements Initializable {
         abcVenTableView.setItems(abcVenAnalyzes);
 
         abcVenPieChart.setData(analyze.createPieChart(abcVenAnalyzes));
-
         abcVenPieChart.setTitle("Clasificación ABC-VEN");
-
         abcVenPieChart.setAnimated(false);
-
         abcVenPieChart.setClockwise(true);
     }
 }

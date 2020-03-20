@@ -12,6 +12,9 @@ public class AbcVenAnalyze extends AnalyzeABC implements RecordsDAO {
 
     private String abcVenClassification;
 
+    /**
+     * @description taking the last year of information, this function make a Abc-Ven analyze, just for medicines
+     * */
     public ObservableList<AbcVenAnalyze> generateAnalyze(){
         ObservableList<AbcVenAnalyze> result = FXCollections.observableArrayList();
 
@@ -29,6 +32,9 @@ public class AbcVenAnalyze extends AnalyzeABC implements RecordsDAO {
         return result;
     }
 
+    /**
+     * @description create a hashMap with the names of the medicines and their respective VEN classification
+     * */
     private HashMap<String, String> createHashMapProductClassification(){
         HashMap<String, String> productListHashMap = new HashMap<>();
         ArrayList<Products> productList = productsList("medicamento");
@@ -39,6 +45,10 @@ public class AbcVenAnalyze extends AnalyzeABC implements RecordsDAO {
         return productListHashMap;
     }
 
+
+    /**
+     * @description taking the information from a ABC-VEN analyze, create a pie chart to illustrate the data
+     * */
     public ObservableList<PieChart.Data> createPieChart(ObservableList<AbcVenAnalyze> observableList){
         int avClassification =0;
         int bvClassification =0;
@@ -53,11 +63,9 @@ public class AbcVenAnalyze extends AnalyzeABC implements RecordsDAO {
         for (int i=0;i<observableList.size();i++){
             if(observableList.get(i).getAbcVenClassification().equals("AV")){
                 avClassification += 1;
-            }
-            else if(observableList.get(i).getAbcVenClassification().equals("BV")){
+            }else if(observableList.get(i).getAbcVenClassification().equals("BV")){
                 bvClassification += 1;
-            }
-            else if(observableList.get(i).getAbcVenClassification().equals("CV")){
+            }else if(observableList.get(i).getAbcVenClassification().equals("CV")){
                 cvClassification += 1;
             }else if(observableList.get(i).getAbcVenClassification().equals("AE")){
                 aeClassification += 1;

@@ -5,8 +5,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class AnalyzeABCTest implements RecordsDAO {
 
     @Test
@@ -20,7 +18,7 @@ public class AnalyzeABCTest implements RecordsDAO {
             System.out.println(result.get(i).getProductName());
             System.out.println(result.get(i).getAverageDemand());
             System.out.println(result.get(i).getParticipationPercentage());
-            System.out.println(result.get(i).getAcumulatedPercetage());
+            System.out.println(result.get(i).getAccumulatedPercentage());
             System.out.println(result.get(i).getClassification());
         }
     }

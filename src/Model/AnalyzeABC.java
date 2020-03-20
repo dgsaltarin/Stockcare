@@ -2,13 +2,8 @@ package Model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
-import javafx.scene.chart.XYChart;
 
-import javax.security.auth.callback.CallbackHandler;
-
-import static Model.Analyze.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -17,7 +12,7 @@ public class AnalyzeABC extends Analyze {
     protected String productName;
     protected int averageDemand;
     protected Double participationPercentage;
-    protected Double acumulatedPercetage;
+    protected Double accumulatedPercentage;
     protected String classification;
 
     public AnalyzeABC(){}
@@ -25,7 +20,7 @@ public class AnalyzeABC extends Analyze {
     public ObservableList<AnalyzeABC> ABCAnalyze(ObservableList<Records> observableList, String typeOfProduct){
         ObservableList<AnalyzeABC> AbcAnalyze = FXCollections.observableArrayList();
         //preparing data
-        Double acumulatedParticipat = 0.0;
+        Double accumulatedParticipat = 0.0;
         ArrayList<Records> lastYearData = lastYearOfData(observableList);
         int[][] monthlyDemand = separateDataByMonth(lastYearData);
         int[][] averageDemand = averageMonthlyDemand(monthlyDemand, typeOfProduct);
@@ -44,18 +39,18 @@ public class AnalyzeABC extends Analyze {
             if (averageDemand[i][1]>0){
                 String productName = productList.get(averageDemand[i][0]);
                 Double participation = (double) averageDemand[i][1]/totalDemand;
-                acumulatedParticipat += participation;
+                accumulatedParticipat += participation;
                 String classification = "";
-                if(acumulatedParticipat<0.8){
+                if(accumulatedParticipat<0.8){
                     classification ="A";
                 }
-                else if(0.8<=acumulatedParticipat&&acumulatedParticipat<0.95){
+                else if(0.8<=accumulatedParticipat&&accumulatedParticipat<0.95){
                     classification ="B";
                 }
-                else if(0.95<=acumulatedParticipat){
+                else if(0.95<=accumulatedParticipat){
                     classification ="C";
                 }
-                AnalyzeABC analyze = new AnalyzeABC(productName, averageDemand[i][1], participation, acumulatedParticipat, classification);
+                AnalyzeABC analyze = new AnalyzeABC(productName, averageDemand[i][1], participation, accumulatedParticipat, classification);
                 AbcAnalyze.add(analyze);
             }
         }
@@ -87,11 +82,11 @@ public class AnalyzeABC extends Analyze {
        return pieChartData;
     }
 
-    public AnalyzeABC(String productName, int averageDemand, Double participationPercentage, Double acumulatedPercetage, String classification) {
+    public AnalyzeABC(String productName, int averageDemand, Double participationPercentage, Double accumulatedPercentage, String classification) {
         this.productName = productName;
         this.averageDemand = averageDemand;
         this.participationPercentage = participationPercentage;
-        this.acumulatedPercetage = acumulatedPercetage;
+        this.accumulatedPercentage = accumulatedPercentage;
         this.classification = classification;
     }
 
@@ -107,8 +102,8 @@ public class AnalyzeABC extends Analyze {
         return participationPercentage;
     }
 
-    public Double getAcumulatedPercetage() {
-        return acumulatedPercetage;
+    public Double getAccumulatedPercentage() {
+        return accumulatedPercentage;
     }
 
     public String getClassification() {
