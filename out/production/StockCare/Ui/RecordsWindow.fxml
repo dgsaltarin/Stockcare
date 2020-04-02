@@ -16,13 +16,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="501.0" prefWidth="776.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RecordsController">
+<AnchorPane prefHeight="501.0" prefWidth="776.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RecordsController">
    <children>
       <TableView fx:id="recordsTableView" layoutX="26.0" layoutY="181.0" prefHeight="276.0" prefWidth="744.0">
         <columns>
           <TableColumn fx:id="productColumn" editable="false" prefWidth="219.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Producto" />
           <TableColumn fx:id="quantityColumn" editable="false" prefWidth="65.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Cantidad" />
-            <TableColumn fx:id="unitPriceColumn" editable="false" prefWidth="65.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Precio u." />
+            <TableColumn fx:id="unitPriceColumn" editable="false" prefWidth="65.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Precio U." />
             <TableColumn fx:id="totalPriceColumn" editable="false" prefWidth="81.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Total" />
             <TableColumn fx:id="areaColumn" editable="false" prefWidth="112.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Area" />
             <TableColumn fx:id="dateColumn" editable="false" prefWidth="85.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Fecha" />
@@ -86,7 +86,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="592.0" layoutY="138.0" mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" text="Filtrar" textFill="#212121">
+      <Button layoutX="592.0" layoutY="138.0" onAction="#filtrateByDate" mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" text="Filtrar" textFill="#212121">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

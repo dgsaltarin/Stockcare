@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -20,14 +21,9 @@ public class Report {
     private static Date date;
     public static final String url = System.getenv("USERPROFILE") + "\\Informes\\";
 
-    //styles for the pdfs
-    private static final Font chapterFont = FontFactory.getFont(FontFactory.HELVETICA, 26, Font.BOLDITALIC);
-    private static final Font paragraphFont = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL);
-
-    private static final Font categoryFont = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
-    private static final Font subcategoryFont = new Font(Font.FontFamily.TIMES_ROMAN, 16, Font.BOLD);
-    private static final Font blueFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL, BaseColor.RED);
-    private static final Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
+    protected static final String recordsUrl = url + "Registros\\";
+    protected static final String productsUrl = url + "Listado de productos\\";
+    protected static final String inventoryUrl = url + "Inventario\\";
 
     public static final void callReportWindow(String typeOfReport, ObservableList observableList) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -41,6 +37,7 @@ public class Report {
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.initModality(Modality.APPLICATION_MODAL);
+        stage.getIcons().add(new Image("images/application_icon.png"));
         stage.setScene(scene);
         stage.showAndWait();
     }

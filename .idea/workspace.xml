@@ -2,26 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="560f59f7-38e0-4e85-958b-2c4599094a4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Resources/PrincipalInterfaceStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ui/inventoryPoliciesWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/InventoryPoliciesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/Model/BehaviorAnalyzeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/AbcVenAnalyze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/AbcVenAnalyze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Analyze$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Analyze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Analyze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/BehaviorAnalyze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/BehaviorAnalyze.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Report.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/ReportExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/ReportExcel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/ReportPdf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/ReportPdf.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Resources/PrincipalInterfaceStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Resources/PrincipalInterfaceStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Resources/WindowStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Resources/WindowStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/ProductsWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Ui/ProductsWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/RecordsWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Ui/RecordsWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/principalInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Ui/principalInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/AbcVenAnalyzeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/AbcVenAnalyzeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/BehaviorAnalyzeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/BehaviorAnalyzeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/AbcVenAnalyze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/AbcVenAnalyze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/InterfazPrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/InterfazPrincipalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/InventoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/InventoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/ProductsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/RecordsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/RecordsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/ReportWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/ReportWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Analyze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Analyze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/AnalyzeABC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/AnalyzeABC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/BehaviorAnalyze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BehaviorAnalyze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ReportExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ReportExcel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ReportPdf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ReportPdf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/PrincipalInterfaceStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/PrincipalInterfaceStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources/WindowStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/WindowStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ui/ProductsWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/ProductsWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ui/RecordsWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/RecordsWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ui/principalInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/principalInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/AbcVenAnalyzeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AbcVenAnalyzeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/AnalyzeABCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AnalyzeABCController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/BehaviorAnalyzeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BehaviorAnalyzeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/Model/AnalyzeABCTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/Model/AnalyzeABCTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/RecordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/RecordsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ReportWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ReportWindowController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,31 +45,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Google Drive/Control de inventario 4/src/control/de/inventario/pkg4/politicas.java">
+        <entry file="file://$PROJECT_DIR$/src/controllers/InventoryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4437">
-              <caret line="270" column="5" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#15125#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="969">
+              <caret line="74" column="55" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Google Drive/Control de inventario 4/src/control/de/inventario/pkg4/analisistendencia.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/Report.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="266" column="18" lean-forward="true" selection-start-line="266" selection-start-column="18" selection-end-line="266" selection-end-column="18" />
+            <state relative-caret-position="204">
+              <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/BehaviorAnalyze.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/ReportExcel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="238">
+              <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/ReportPdf.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="119" column="32" lean-forward="true" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,37 +84,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/Model/BehaviorAnalyzeTest.java">
+        <entry file="file://$PROJECT_DIR$/src/controllers/ReportWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="40" column="76" selection-start-line="40" selection-start-column="76" selection-end-line="40" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/BehaviorAnalyzeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="57" column="81" lean-forward="true" selection-start-line="57" selection-start-column="81" selection-end-line="57" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Model/Analyze.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="156" lean-forward="true" selection-start-line="156" selection-end-line="156" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DB/RecordsDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -121,20 +112,32 @@
         <option value="$PROJECT_DIR$/src/DB/RecordsDAO.java" />
         <option value="$PROJECT_DIR$/src/controllers/AbcvenAnalyzeWindow.java" />
         <option value="$PROJECT_DIR$/src/Ui/AbcVenAnalyzeWindow.fxml" />
-        <option value="$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java" />
         <option value="$PROJECT_DIR$/src/controllers/AnalyzeABCController.java" />
         <option value="$PROJECT_DIR$/src/Ui/inventoryPoliciesWindow.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/InventoryPoliciesController.java" />
         <option value="$PROJECT_DIR$/src/Model/AbcVenAnalyze.java" />
         <option value="$PROJECT_DIR$/src/controllers/AbcVenAnalyzeController.java" />
         <option value="$PROJECT_DIR$/src/Ui/principalInterface.fxml" />
-        <option value="$PROJECT_DIR$/src/Resources/PrincipalInterfaceStyle.css" />
         <option value="$USER_HOME$/Google Drive/Control de inventario 4/src/control/de/inventario/pkg4/analisistendencia.java" />
         <option value="$PROJECT_DIR$/src/controllers/BehaviorAnalyzeController.java" />
         <option value="$PROJECT_DIR$/src/Model/BehaviorAnalyze.java" />
         <option value="$PROJECT_DIR$/src/tests/Model/BehaviorAnalyzeTest.java" />
         <option value="$PROJECT_DIR$/src/Model/AnalyzeABC.java" />
         <option value="$PROJECT_DIR$/src/Model/Analyze.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Resources/PrincipalInterfaceStyle.css" />
+        <option value="$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java" />
+        <option value="$PROJECT_DIR$/src/Ui/ProductsWindow.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/QuantityController.java" />
+        <option value="$PROJECT_DIR$/src/Resources/WindowStyle.css" />
+        <option value="$PROJECT_DIR$/src/Model/Report.java" />
+        <option value="$PROJECT_DIR$/src/Ui/RecordsWindow.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/RecordsController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/ProductsController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/InventoryController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/ReportWindowController.java" />
+        <option value="$PROJECT_DIR$/src/Model/ReportExcel.java" />
+        <option value="$PROJECT_DIR$/src/Model/ReportPdf.java" />
       </list>
     </option>
   </component>
@@ -148,8 +151,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,7 +208,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584668396154" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585788055117" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
   </component>
@@ -229,7 +232,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BehaviorAnalyzeTest.productRecordsdata">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="StockCare" />
@@ -255,8 +258,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BehaviorAnalyzeTest.productRecordsdata" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.BehaviorAnalyzeTest.productRecordsdata" />
       </list>
     </recent_temporary>
   </component>
@@ -309,7 +312,35 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2677761" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2753404" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2753404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -324,9 +355,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -335,49 +366,13 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/controllers/QuantityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/ProductsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/AnalyzeABCController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ui/AbcVenAnalyzeWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -430,13 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Resources/WindowStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/images/analyze.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -450,10 +438,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Resources/PrincipalInterfaceStyle.css">
+    <entry file="file://$PROJECT_DIR$/src/Model/AnalyzeABC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="357">
+          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/Model/BehaviorAnalyzeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="40" column="76" selection-start-line="40" selection-start-column="76" selection-end-line="40" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -467,55 +462,200 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB/RecordsDAO.java">
+    <entry file="file://$USER_HOME$/Google Drive/Control de inventario 4/src/control/de/inventario/pkg4/analisistendencia.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/AnalyzeABC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Model/BehaviorAnalyzeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="40" column="76" selection-start-line="40" selection-start-column="76" selection-end-line="40" selection-end-column="76" />
+        <state relative-caret-position="3400">
+          <caret line="214" column="38" selection-start-line="214" selection-start-column="38" selection-end-line="214" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/BehaviorAnalyze.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="357">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/BehaviorAnalyzeController.java">
+    <entry file="file://$PROJECT_DIR$/src/Ui/AddAreaWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="57" column="81" lean-forward="true" selection-start-line="57" selection-start-column="81" selection-end-line="57" selection-end-column="81" />
+        <state relative-caret-position="85">
+          <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Google Drive/Control de inventario 4/src/control/de/inventario/pkg4/analisistendencia.java">
+    <entry file="file://$PROJECT_DIR$/src/Ui/AbcVenAnalyzeWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="266" column="18" lean-forward="true" selection-start-line="266" selection-start-column="18" selection-end-line="266" selection-end-column="18" />
+        <state relative-caret-position="136">
+          <caret line="8" column="67" lean-forward="true" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/QuantityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-627">
+          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ui/OutComesWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resources/PrincipalInterfaceStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Analyze.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="156" lean-forward="true" selection-start-line="156" selection-end-line="156" />
+        <state relative-caret-position="1904">
+          <caret line="117" column="41" lean-forward="true" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/InterfazPrincipalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ui/ProductsWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resources/WindowStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/BehaviorAnalyzeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="57" column="81" selection-start-line="57" selection-start-column="81" selection-end-line="57" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ui/RecordsWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="83" column="70" lean-forward="true" selection-start-line="83" selection-start-column="70" selection-end-line="83" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB/RecordsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/ProductsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/RecordsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="55" column="39" lean-forward="true" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/InventoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="74" column="55" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Report.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/collections/transformation/SortedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+          <folding>
+            <element signature="e#5111#5112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/stage/Stage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2103">
+          <caret line="482" column="6" lean-forward="true" selection-start-line="482" selection-start-column="6" selection-end-line="482" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="1773" selection-start-line="1773" selection-end-line="1773" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Google Drive/Control de inventario 4/src/control/de/inventario/pkg4/informe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#24919#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/ReportWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ReportExcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ReportPdf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="119" column="32" lean-forward="true" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

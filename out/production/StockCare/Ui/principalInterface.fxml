@@ -25,7 +25,7 @@
             </Menu>
           <Menu mnemonicParsing="false" text="Análisis">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#behaviorWindow" text="Análisis de Comportamiento" fx:id="behavior" />
+              <MenuItem fx:id="behavior" mnemonicParsing="false" onAction="#behaviorWindow" text="Análisis de Comportamiento" />
                   <MenuItem mnemonicParsing="false" onAction="#ABCAnalyzeWindow" text="Análisis ABC" />
                   <MenuItem mnemonicParsing="false" onAction="#AbcVenWindow" text="Análisis ABC-VEN" />
                   <MenuItem mnemonicParsing="false" text="Politicas de Inventario" />
@@ -38,6 +38,12 @@
                   <MenuItem mnemonicParsing="false" onAction="#addProviderWindow" text="Proveedor" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Datos">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Importar" />
+                  <MenuItem mnemonicParsing="false" text="Exportar" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </children>

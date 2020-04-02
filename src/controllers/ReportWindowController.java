@@ -23,10 +23,10 @@ public class ReportWindowController implements ReportExcel, ReportPdf {
                 productsReportPdf("Listado de Productos", date, dataList);
                 break;
             case "inventory":
-                reportInventoryPDF();
+                reportInventoryPDF("Inventario", date, dataList);
                 break;
             case "records":
-                reportRecordsPDF();
+                reportRecordsPDF("Listado de Registros", date, dataList);
                 break;
         }
         closeWindow();
@@ -38,10 +38,10 @@ public class ReportWindowController implements ReportExcel, ReportPdf {
                 productsReportExcel("Listado de Productos", date, dataList);
                 break;
             case "inventory":
-                reportInventoryExcel();
+                reportInventoryExcel("Inventario", date, dataList);
                 break;
             case "records":
-                reportRecordsExcel();
+                reportRecordsExcel("Listado de Registros", date, dataList);
                 break;
         }
         closeWindow();

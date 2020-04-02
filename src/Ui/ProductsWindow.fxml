@@ -14,14 +14,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="469.0" prefWidth="597.0" style="-fx-background-color: #03A9F4;" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProductsController">
+<AnchorPane prefHeight="469.0" prefWidth="597.0" style="-fx-background-color: #03A9F4;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProductsController">
    <children>
       <TableView fx:id="tableProducts" layoutX="17.0" layoutY="136.0" prefHeight="292.0" prefWidth="570.0" style="-fx-background-color: #FFFFFF;">
         <columns>
           <TableColumn id="productsTable" fx:id="codeColumn" editable="false" prefWidth="112.0" resizable="false" style="-fx-background-color: #B3E5FC;" text="Código" />
-          <TableColumn fx:id="nameColumn" editable="false" prefWidth="238.0" resizable="false" style="-fx-background-color: #B3E5FC;" text="Nombre" />
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="230.0" resizable="false" style="-fx-background-color: #B3E5FC;" text="Nombre" />
             <TableColumn fx:id="priceColumn" editable="false" minWidth="0.0" prefWidth="108.0" resizable="false" style="-fx-background-color: #B3E5FC;" text="Precio" />
-            <TableColumn fx:id="clasificationColumn" editable="false" prefWidth="111.0" resizable="false" style="-fx-background-color: #B3E5FC;" text="Clasificación VEN" />
+            <TableColumn fx:id="clasificationColumn" editable="false" prefWidth="119.0" resizable="false" style="-fx-background-color: #B3E5FC;" text="Clasificación VEN" />
         </columns>
       </TableView>
       <Label layoutX="15.0" layoutY="14.0" text="Seleccione el tipo de producto que desea ver:" textFill="#212121">

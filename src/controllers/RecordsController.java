@@ -14,6 +14,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.IOException;
 import java.net.URL;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class RecordsController implements Initializable, RecordsDAO {
@@ -46,12 +50,13 @@ public class RecordsController implements Initializable, RecordsDAO {
         if (medicamentos.isSelected()){
             typeofProduct = "medicamento";
         }
-        if (dispositivosM.isSelected()){
+        else if (dispositivosM.isSelected()){
             typeofProduct = "dispositivo medico";
         }
-        if (insumos.isSelected()){
+        else if (insumos.isSelected()){
             typeofProduct = "insumo";
-        }
+        } else
+            Alerts.notSelectionAlert("Seleccione algún tipo de producto!");
 
         ObservableList<Records> recordsList = null;
 
@@ -62,9 +67,11 @@ public class RecordsController implements Initializable, RecordsDAO {
         else {
             if(comboBox.getValue().toString().equals("Salidas")){
                 recordsList = FXCollections.observableArrayList(outComesList(typeofProduct));
+                areaColumn.setText("Área");
             }
             if(comboBox.getValue().toString().equals("Entradas")){
                 recordsList = FXCollections.observableArrayList(inComesList(typeofProduct));
+                areaColumn.setText("Proveedor");
             }
         }
 
@@ -106,10 +113,40 @@ public class RecordsController implements Initializable, RecordsDAO {
 
     public void generateReport(javafx.event.ActionEvent actionEvent) throws IOException {
         ObservableList<Records> observableList = recordsTableView.getItems();
+
+        if (observableList.isEmpty()){
+            Alerts.notSelectionAlert("La lista esta vacia!");
+            return;
+        }
+
         Report.callReportWindow("records", observableList);
     }
 
     public void filtrateByDate(javafx.event.ActionEvent actionEvent){
-        fillTable(actionEvent);
+        ObservableList<Records> observableList = recordsTableView.getItems();
+
+        if (observableList.isEmpty()){
+            Alerts.notSelectionAlert("No se encuentran registros para filtrar!");
+            return;
+        }
+
+        LocalDate initialLocalDate = initDate.getValue();
+        LocalDate finalLocalDate = finalDate.getValue();
+
+        Instant instant = Instant.from(initialLocalDate.atStartOfDay(ZoneId.systemDefault()));
+        Instant instant2 = Instant.from(finalLocalDate.atStartOfDay(ZoneId.systemDefault()));
+
+        Date initialDate = Date.from(instant);
+        Date lastDate = Date.from(instant2);
+
+        ObservableList<Records> filteredRecords = FXCollections.observableArrayList();
+
+        for (Records record:observableList){
+            if (record.getDateOfRecord().after(initialDate)&&record.getDateOfRecord().before(lastDate)){
+                filteredRecords.add(record);
+            }
+        }
+
+        recordsTableView.setItems(filteredRecords);
     }
 }

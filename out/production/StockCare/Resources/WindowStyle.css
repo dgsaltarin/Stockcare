@@ -1,11 +1,20 @@
 .button {
     -fx-background-color: #BBDEFB;
     -fx-font-size: 13px;
+    -fx-font-family: 'sans-serif';
     -fx-font-weight: bold;
 }
 
 .label {
     -fx-font-color: 212121;
     -fx-font-size: 13px;
+    -fx-font-family: 'sans-serif';
+    -fx-font-weight: bold;
+}
+
+.radio-button {
+    -fx-font-color: 212121;
+    -fx-font-size: 13px;
+    -fx-font-family: 'sans-serif';
     -fx-font-weight: bold;
 }

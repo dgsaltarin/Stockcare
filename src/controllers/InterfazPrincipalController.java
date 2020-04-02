@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -43,6 +44,7 @@ public class InterfazPrincipalController implements Initializable {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(stageUrl));
         stage.setTitle(tittle);
+        stage.getIcons().add(new Image("images/application_icon.png"));
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);

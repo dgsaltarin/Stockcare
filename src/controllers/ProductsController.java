@@ -1,6 +1,7 @@
 package controllers;
 
 import DB.ProductsDAO;
+import Model.Alerts;
 import Model.Products;
 import Model.Report;
 import Model.ReportPdf;
@@ -36,13 +37,12 @@ public class ProductsController implements ProductsDAO, ReportPdf {
         String typeofProduct = "";
         if (medicamentos.isSelected()){
             typeofProduct = "medicamento";
-        }
-        if (dispositivo_medico.isSelected()){
+        }else if (dispositivo_medico.isSelected()){
             typeofProduct = "dispositivo medico";
-        }
-        if (insumos.isSelected()){
+        }else if (insumos.isSelected()){
             typeofProduct = "insumo";
-        }
+        } else
+            Alerts.notSelectionAlert("Seleccione algún tipo de Producto!");
 
         ObservableList<Products> productsList = FXCollections.observableArrayList(productsList(typeofProduct));
 
@@ -81,6 +81,12 @@ public class ProductsController implements ProductsDAO, ReportPdf {
 
     public void generateReport(ActionEvent actionEvent) throws IOException {
         ObservableList<Products> selectedProducts = tableProducts.getItems();
+
+        if (selectedProducts.isEmpty()) {
+            Alerts.notSelectionAlert("La tabla esta vacia!");
+            return;
+        }
+
         Report.callReportWindow("products", selectedProducts);
     }
 }

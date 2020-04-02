@@ -1,6 +1,7 @@
 package controllers;
 
 import DB.InventoryDAO;
+import Model.Alerts;
 import Model.Inventory;
 import Model.Report;
 import javafx.collections.FXCollections;
@@ -36,12 +37,13 @@ public class InventoryController implements InventoryDAO {
         if (medicamento.isSelected()){
             typeofProduct = "medicamento";
         }
-        if (dispositivoM.isSelected()){
+        else if (dispositivoM.isSelected()){
             typeofProduct = "dispositivo medico";
         }
-        if (insumos.isSelected()){
+        else if (insumos.isSelected()){
             typeofProduct = "insumo";
-        }
+        } else
+            Alerts.notSelectionAlert("Seleccione algúnn tipo de producto!");
 
         ObservableList<Inventory> inventoryList = FXCollections.observableArrayList(getInventory(typeofProduct));
 
@@ -80,6 +82,12 @@ public class InventoryController implements InventoryDAO {
 
     public void generateReport(ActionEvent actionEvent) throws IOException {
         ObservableList<Inventory> observableList = inventoryTable.getItems();
+
+        if (observableList.isEmpty()){
+            Alerts.notSelectionAlert("La tabla se encuentra vacia!");
+            return;
+        }
+
         Report.callReportWindow("inventory", observableList);
     }
 }
