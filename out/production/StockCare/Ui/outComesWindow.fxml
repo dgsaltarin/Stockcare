@@ -10,23 +10,23 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="465.0" prefWidth="767.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OutComesController">
+
+<AnchorPane prefHeight="465.0" prefWidth="767.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OutComesController">
     <children>
-        <Label layoutX="18.0" layoutY="21.0" text="Tipo de Producto:" />
-        <ComboBox fx:id="typeOfProductCB" layoutX="120.0" layoutY="18.0" onAction="#fillProducts" prefWidth="150.0" />
-        <TableView fx:id="inventoryTableView" layoutX="399.0" layoutY="61.0" onMouseClicked="#clickItem" prefHeight="115.0" prefWidth="362.0">
+        <Label layoutX="10.0" layoutY="21.0" text="Tipo de Producto:" />
+        <ComboBox fx:id="typeOfProductCB" layoutX="123.0" layoutY="18.0" onAction="#fillProducts" prefWidth="150.0" />
+        <TableView fx:id="inventoryTableView" layoutX="401.0" layoutY="58.0" onMouseClicked="#clickItem" prefHeight="115.0" prefWidth="362.0">
             <columns>
                 <TableColumn fx:id="quantityColumnI" prefWidth="75.0" style="-fx-background-color: #BBDEFB;" text="Cantidad D." />
                 <TableColumn fx:id="productsColumnI" prefWidth="178.0" style="-fx-background-color: #BBDEFB;" text="Productos" />
-            <TableColumn fx:id="unitPriceColumnI" prefWidth="108.0" style="-fx-background-color: #BBDEFB;" text="Precio Uni." />
+                <TableColumn fx:id="unitPriceColumnI" prefWidth="108.0" style="-fx-background-color: #BBDEFB;" text="Precio Uni." />
             </columns>
         </TableView>
-        <Label layoutX="294.0" layoutY="62.0" text="Escoja el producto:" />
-         <TextField fx:id="filterTextField" layoutX="399.0" layoutY="17.0" />
-        <ComboBox fx:id="areasCB" layoutX="120.0" layoutY="58.0" prefWidth="150.0" />
-        <Label layoutX="55.0" layoutY="62.0" text="Areas" />
+        <Label layoutX="280.0" layoutY="63.0" text="Escoja el producto:" />
+        <TextField fx:id="filterTextField" layoutX="442.0" layoutY="16.0" />
+        <ComboBox fx:id="areasCB" layoutX="123.0" layoutY="58.0" prefWidth="150.0" />
+        <Label layoutX="81.0" layoutY="62.0" text="Areas:" />
         <Separator layoutX="22.0" layoutY="190.0" prefHeight="4.0" prefWidth="739.0" />
         <TableView fx:id="outComeTableView" layoutX="24.0" layoutY="200.0" prefHeight="220.0" prefWidth="739.0">
             <columns>
@@ -37,21 +37,21 @@
                 <TableColumn fx:id="totalPriceColumn" prefWidth="120.0" style="-fx-background-color: #BBDEFB;" text="Precio Total" />
             </columns>
         </TableView>
-        <Button fx:id="generateOrderButton" layoutX="650.0" style="-fx-background-color: #BBDEFB;" layoutY="429.0" mnemonicParsing="false" onAction="#generateOutCome" text="Generar Orden" textFill="#212121" >
+        <Button fx:id="generateOrderButton" layoutX="650.0" layoutY="429.0" mnemonicParsing="false" onAction="#generateOutCome" style="-fx-background-color: #BBDEFB;" text="Generar Orden" textFill="#212121">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="clearTableButton" layoutX="530.0" style="-fx-background-color: #BBDEFB;" layoutY="429.0" mnemonicParsing="false" onAction="#clearTable" text="Limpiar Tabla" textFill="#212121" >
+        <Button fx:id="clearTableButton" layoutX="530.0" layoutY="429.0" mnemonicParsing="false" onAction="#clearTable" style="-fx-background-color: #BBDEFB;" text="Limpiar Tabla" textFill="#212121">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-      <ImageView fitHeight="33.0" fitWidth="36.0" layoutX="358.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" >
-         <image>
-            <Image url="@../images/search_26px.png" />
-         </image>
-      </ImageView>
+        <ImageView fitHeight="33.0" fitWidth="36.0" layoutX="401.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/search_26px.png" />
+            </image>
+        </ImageView>
     </children>
 
 </AnchorPane>

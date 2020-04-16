@@ -16,7 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Ui/principalInterface.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Ui/PrincipalInterface.fxml"));
         primaryStage.setTitle("StockCare");
         primaryStage.getIcons().add(new Image("images/application_icon.png"));
         primaryStage.setMaximized(true);

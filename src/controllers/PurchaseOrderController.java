@@ -15,7 +15,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -58,7 +61,7 @@ public class PurchaseOrderController extends Operations implements Initializable
     /***
      * @description get the list of products once the user select a categrory
      */
-     public void fillProducts(ActionEvent actionEvent) {
+     public void fillProducts() {
         ObservableList<Products> productsList = FXCollections.observableArrayList(productsNames(typeOfProductCB.getValue().toString()));
 
         codeColumnP.setCellValueFactory(new PropertyValueFactory<>("code"));
@@ -102,7 +105,6 @@ public class PurchaseOrderController extends Operations implements Initializable
                 productCode = productsTableView.getSelectionModel().getSelectedItem().getCode();
                 productName = productsTableView.getSelectionModel().getSelectedItem().getName();
                 provider = providersCB.getValue().toString();
-                System.out.println(getProvidersCodeByName(provider));
 
                 purchaseOrder = new PurchaseOrder(Integer.parseInt(orderNumber()), productCode, productName, getProvidersCodeByName(provider));
 
@@ -119,6 +121,7 @@ public class PurchaseOrderController extends Operations implements Initializable
                 controller.initData(purchaseOrder, purchaseOrders);
 
                 Stage window = new Stage();
+                window.getIcons().add(new Image("images/application_icon.png"));
                 window.initModality(Modality.APPLICATION_MODAL);
                 window.setScene(scene);
                 window.showAndWait();
@@ -135,7 +138,7 @@ public class PurchaseOrderController extends Operations implements Initializable
     /**
      * @description clear the table in case of a mistake
      * */
-    public void clearTable(ActionEvent actionEvent) {
+    public void clearTable() {
         ordersTableView.getItems().clear();
     }
 
@@ -144,9 +147,12 @@ public class PurchaseOrderController extends Operations implements Initializable
      * */
     public void generateOrder(ActionEvent actionEvent) throws IOException {
         ObservableList<PurchaseOrder> observableList = ordersTableView.getItems();
-        Report.callReportWindow("purchaseOrder", observableList);
+        ReportWindowController reportWindowController = new ReportWindowController();
+        reportWindowController.setData(observableList);
+        reportWindowController.setTypeOfReport("purchaseOrder");
+        reportWindowController.generatePDFReport(actionEvent);
         setPurchaseOrderInDB(observableList);
         Alerts.successfullAlert("Orden generada de manera Exitosa");
-        clearTable(actionEvent);
+        clearTable();
     }
 }

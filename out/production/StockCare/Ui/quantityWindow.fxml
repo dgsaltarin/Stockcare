@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="135.0" prefWidth="290.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.QuantityController">
+<AnchorPane prefHeight="135.0" prefWidth="290.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.QuantityController">
    <children>
       <Label layoutX="35.0" layoutY="20.0" text="Ingrese la cantidad que desea pedir:" textFill="#212121">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="quantityTextField" layoutX="71.0" layoutY="51.0" />
-      <Button fx:id="aceptButton" layoutX="113.0" layoutY="91.0" style="-fx-background-color: #BBDEFB;" mnemonicParsing="false" onAction="#recibeQuantity" text="Aceptar" textFill="#212121">
+      <TextField fx:id="quantityTextField" layoutX="71.0" layoutY="51.0" onKeyPressed="#evaluateValue" />
+      <Button fx:id="aceptButton" defaultButton="true" layoutX="113.0" layoutY="91.0" mnemonicParsing="false" onAction="#receiveQuantity" style="-fx-background-color: #BBDEFB;" text="Aceptar" textFill="#212121">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

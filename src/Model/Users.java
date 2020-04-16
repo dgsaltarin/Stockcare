@@ -4,7 +4,17 @@ public class Users {
 
     private String name;
     private int id;
-    private String post;
+    private String typeOfUser;
+    private String password;
+
+    public Users(){}
+
+    public Users(int id, String name, String password, String typeOfUser){
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.typeOfUser = typeOfUser;
+    }
 
     public String getName() {
         return name;
@@ -22,11 +32,19 @@ public class Users {
         this.id = id;
     }
 
-    public String getPost() {
-        return post;
+    public String getTypeOfUser() {
+        return typeOfUser;
     }
 
-    public void setPost(String post) {
-        this.post = post;
+    public void setTypeOfUser(String typeOfUser) {
+        this.typeOfUser = typeOfUser;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

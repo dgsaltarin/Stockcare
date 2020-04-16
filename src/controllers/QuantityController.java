@@ -3,17 +3,13 @@ package controllers;
 import DB.ProductsDAO;
 import DB.ProvidersDAO;
 import Model.Alerts;
-import Model.Inventory;
 import Model.PurchaseOrder;
 import Model.Records;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -26,8 +22,8 @@ public class QuantityController implements Initializable, ProductsDAO, Providers
     private ObservableList observableList;
     private int productRemaining;
 
-    //take the recibed purchase order and with the quantity create a full purchase order
-    public void recibeQuantity(ActionEvent actionEvent) throws IOException {
+    //take the received purchase order and with the quantity create a full purchase order
+    public void receiveQuantity() {
         //complete the purchase order
         if(purchaseOrder!=null) {
             PurchaseOrder purchaseOrderC = new PurchaseOrder(purchaseOrder.getOrderNumber(), getQuantityNumber(),
@@ -44,6 +40,7 @@ public class QuantityController implements Initializable, ProductsDAO, Providers
                         record.getUnitPrice(),
                         totalPrice);
                 observableList.add(recordsC);
+                OutComesController outComesController = new OutComesController();
             }
             else {
                 Alerts.notSelectionAlert("La cantidad excede la cantidad en inventario!");
@@ -81,4 +78,13 @@ public class QuantityController implements Initializable, ProductsDAO, Providers
     public void initialize(URL location, ResourceBundle resources) {
     }
 
+    /**
+     * evaluate the values and just admit the numerical values
+     * */
+    public void evaluateValue() {
+        quantityTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.matches("\\d*")) return;
+            quantityTextField.setText(newValue.replaceAll("[^\\d]", ""));
+        });
+    }
 }

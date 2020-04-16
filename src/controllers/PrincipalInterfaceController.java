@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class InterfazPrincipalController implements Initializable {
+public class PrincipalInterfaceController implements Initializable {
 
     @FXML private MenuBar menuBar;
 

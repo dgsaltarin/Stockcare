@@ -1,8 +1,5 @@
 package Model;
 
-import com.itextpdf.text.BaseColor;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.FontFactory;
 import controllers.ReportWindowController;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -19,11 +16,11 @@ public class Report {
 
     private String tittle;
     private static Date date;
-    public static final String url = System.getenv("USERPROFILE") + "\\Informes\\";
 
-    protected static final String recordsUrl = url + "Registros\\";
-    protected static final String productsUrl = url + "Listado de productos\\";
-    protected static final String inventoryUrl = url + "Inventario\\";
+    public static final String url = System.getenv("USERPROFILE") + "\\Informes\\";
+    static final String recordsUrl = url + "Registros\\";
+    static final String productsUrl = url + "Listado de productos\\";
+    static final String inventoryUrl = url + "Inventario\\";
 
     public static final void callReportWindow(String typeOfReport, ObservableList observableList) throws IOException {
         FXMLLoader loader = new FXMLLoader();

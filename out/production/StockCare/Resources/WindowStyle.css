@@ -18,3 +18,14 @@
     -fx-font-family: 'sans-serif';
     -fx-font-weight: bold;
 }
+
+.table-column{
+    -fx-background-color: #BBDEFB;
+}
+
+.check-box {
+    -fx-font-color: 212121;
+    -fx-font-size: 13px;
+    -fx-font-family: 'sans-serif';
+    -fx-font-weight: bold;
+}

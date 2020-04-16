@@ -5,36 +5,46 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="447.0" prefWidth="600.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InComeController">
-   <children>
-      <TableView fx:id="verificationTableView" layoutX="23.0" layoutY="212.0" prefHeight="188.0" prefWidth="533.0">
-        <columns>
-          <TableColumn fx:id="productColumn" prefWidth="152.0" style="-fx-background-color: #BBDEFB;" text="Producto" />
-          <TableColumn fx:id="quantityColumn" prefWidth="180.0" style="-fx-background-color: #BBDEFB;" text="Cantidad" />
-            <TableColumn fx:id="verificationColumn" prefWidth="200.0" style="-fx-background-color: #BBDEFB;" text="¿Pedido perfecto?" />
-        </columns>
-      </TableView>
-      <TableView fx:id="purchaseOrdersTableView" layoutX="23.0" layoutY="75.0" prefHeight="125.0" prefWidth="309.0">
-        <columns>
-          <TableColumn fx:id="orderNumberColumn" style="-fx-background-color: #BBDEFB;" prefWidth="126.0" text="Número de Orden" />
-          <TableColumn fx:id="providerColumn" style="-fx-background-color: #BBDEFB;" prefWidth="182.0" text="Proveedor" />
-        </columns>
-      </TableView>
-      <Button fx:id="openPurchaseOrderButton" layoutX="344.0" layoutY="171.0" mnemonicParsing="false" onAction="#OpenPurchaseOrder" style="-fx-background-color: #BBDEFB;" text="Abrir Orden" textFill="#212121">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></Button>
-      <Button fx:id="generateInComeButton" layoutX="435.0" layoutY="404.0" mnemonicParsing="false" onAction="#generateInCome" style="-fx-background-color: #BBDEFB;" text="Ingresar Entrada">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></Button>
-      <TextField fx:id="filterTextField" layoutX="23.0" layoutY="40.0" />
-      <Label layoutX="23.0" layoutY="14.0" text="Ordenes de Compra Pendientes:" textFill="#212121">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></Label>
-   </children>
+<AnchorPane prefHeight="472.0" prefWidth="579.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InComeController">
+    <children>
+        <TableView fx:id="verificationTableView" layoutX="25.0" layoutY="242.0" prefHeight="188.0" prefWidth="533.0">
+            <columns>
+                <TableColumn fx:id="productColumn" editable="false" prefWidth="328.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Producto" />
+                <TableColumn fx:id="quantityColumn" editable="false" prefWidth="81.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Cantidad" />
+                <TableColumn fx:id="verificationColumn" editable="false" prefWidth="123.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="¿Pedido perfecto?" />
+            </columns>
+        </TableView>
+        <TableView fx:id="purchaseOrdersTableView" layoutX="246.0" layoutY="59.0" prefHeight="125.0" prefWidth="309.0">
+            <columns>
+                <TableColumn fx:id="orderNumberColumn" editable="false" prefWidth="126.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Número de Orden" />
+                <TableColumn fx:id="providerColumn" editable="false" prefWidth="182.0" resizable="false" style="-fx-background-color: #BBDEFB;" text="Proveedor" />
+            </columns>
+        </TableView>
+        <Button fx:id="openPurchaseOrderButton" layoutX="464.0" layoutY="192.0" mnemonicParsing="false" onAction="#OpenPurchaseOrder" style="-fx-background-color: #BBDEFB;" text="Abrir Orden" textFill="#212121">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="generateInComeButton" layoutX="433.0" layoutY="438.0" mnemonicParsing="false" onAction="#generateInCome" style="-fx-background-color: #BBDEFB;" text="Ingresar Entrada">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <TextField fx:id="filterTextField" layoutX="291.0" layoutY="22.0" />
+        <Label layoutX="23.0" layoutY="25.0" text="Ordenes de Compra Pendientes:" textFill="#212121">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="246.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/search_26px.png" />
+            </image>
+        </ImageView>
+    </children>
 </AnchorPane>

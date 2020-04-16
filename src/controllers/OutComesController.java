@@ -47,6 +47,7 @@ public class OutComesController extends Operations implements Initializable, Are
     private Integer areaId;
     private Double unitPrice;
     private Double totalPrice;
+    public int remainingProduct;
 
     private Records records;
 
@@ -64,6 +65,11 @@ public class OutComesController extends Operations implements Initializable, Are
         unitPriceColumn.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
         totalPriceColumn.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
         outComeTableView.setItems(OutcomesList);
+    }
+
+    public void updateInventoryTable() {
+            inventoryTableView.getSelectionModel().getSelectedItem().setQuantity(remainingProduct);
+            inventoryTableView.refresh();
     }
 
     public void fillProducts(ActionEvent actionEvent) {
@@ -111,6 +117,7 @@ public class OutComesController extends Operations implements Initializable, Are
                 productId = inventoryTableView.getSelectionModel().getSelectedItem().getProproductId();
                 unitPrice = inventoryTableView.getSelectionModel().getSelectedItem().getUnitPrice();
                 areaId = getAreaIdByName(areasCB.getValue().toString());
+                remainingProduct = inventoryTableView.getSelectionModel().getSelectedItem().getQuantity();
                 userId = 1143155845;
 
                 records = new Records(date, 0, getProductById(productId), areaId, userId, unitPrice ,0.0);
@@ -125,12 +132,15 @@ public class OutComesController extends Operations implements Initializable, Are
                 QuantityController controller = loader.getController();
 
                 //set the init data
-                controller.initData(records, OutcomesList, inventoryTableView.getSelectionModel().getSelectedItem().getQuantity());
+                controller.initData(records, OutcomesList, remainingProduct);
 
                 Stage window = new Stage();
                 window.initModality(Modality.APPLICATION_MODAL);
                 window.setScene(scene);
+
                 window.showAndWait();
+                remainingProduct = remainingProduct - OutcomesList.get(OutcomesList.size() - 1).getQuantity();
+
             }else if(areasCB.getSelectionModel().isEmpty()){
                 Alerts.notSelectionAlert("Seleccione un area!");
             }

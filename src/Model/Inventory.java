@@ -50,4 +50,8 @@ public class Inventory implements InventoryDAO {
     public Double getUnitPrice() {
         return unitPrice;
     }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }

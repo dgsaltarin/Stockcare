@@ -10,46 +10,53 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 <?import javafx.scene.text.Font?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="700.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PurchaseOrderController">
-   <children>
-      <Label layoutX="24.0" layoutY="23.0" text="Tipo de Producto:" />
-      <ComboBox fx:id="typeOfProductCB" layoutX="126.0" layoutY="20.0" onAction="#fillProducts" prefWidth="150.0" />
-      <TableView fx:id="productsTableView" layoutX="405.0" layoutY="63.0" onMouseClicked="#clickItem" prefHeight="115.0" prefWidth="254.0">
-        <columns>
-            <TableColumn fx:id="codeColumnP" prefWidth="75.0" text="Código" />
-          <TableColumn fx:id="productsColumnP" prefWidth="253.0" text="Productos" />
-        </columns>
-      </TableView>
-      <Label layoutX="300.0" layoutY="64.0" text="Escoja el producto:" />
-      <Label layoutX="587.0" layoutY="23.0" text="Orden N°:" />
-      <Label fx:id="orderNumber" layoutX="645.0" layoutY="24.0" text="0" />
-      <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="369.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/search_26px.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="filterTextField" layoutX="405.0" layoutY="19.0" />
-      <ComboBox fx:id="providersCB" layoutX="126.0" layoutY="60.0" prefWidth="150.0" />
-      <Label layoutX="61.0" layoutY="64.0" text="Proveedor:" />
-      <Separator layoutX="22.0" layoutY="191.0" prefHeight="0.0" prefWidth="626.0" />
-      <TableView fx:id="ordersTableView" layoutX="24.0" layoutY="200.0" prefHeight="220.0" prefWidth="637.0">
-        <columns>
-          <TableColumn fx:id="codeColumn" prefWidth="70.0" text="Código" />
-          <TableColumn fx:id="nameColumn" prefWidth="440.0" text="Nombre del Producto" />
-            <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="126.0" text="Cantidad " />
-        </columns>
-      </TableView>
-      <Button fx:id="generateOrderButton" layoutX="566.0" layoutY="429.0" mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" onAction="#generateOrder" text="Generar Orden" >
-          <font>
-              <Font name="System Bold" size="13.0" />
-          </font>
-      </Button>
-      <Button fx:id="clearTableButton" layoutX="466.0" layoutY="429.0" mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" onAction="#clearTable" text="Limpiar Tabla" >
-          <font>
-              <Font name="System Bold" size="13.0" />
-          </font>
-      </Button>
-   </children>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0"
+            prefWidth="721.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css"
+            xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.PurchaseOrderController">
+    <children>
+        <Label layoutX="24.0" layoutY="23.0" text="Tipo de Producto:"/>
+        <ComboBox fx:id="typeOfProductCB" layoutX="136.0" layoutY="20.0" onAction="#fillProducts" prefWidth="150.0"/>
+        <TableView fx:id="productsTableView" layoutX="422.0" layoutY="64.0" onMouseClicked="#clickItem"
+                   prefHeight="115.0" prefWidth="254.0">
+            <columns>
+                <TableColumn fx:id="codeColumnP" prefWidth="75.0" text="Código"/>
+                <TableColumn fx:id="productsColumnP" prefWidth="253.0" text="Productos"/>
+            </columns>
+        </TableView>
+        <Label layoutX="300.0" layoutY="64.0" text="Escoja el producto:"/>
+        <Label layoutX="591.0" layoutY="37.0" text="Orden N°:"/>
+        <Label fx:id="orderNumber" layoutX="657.0" layoutY="37.0" text="0"/>
+        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="381.0" layoutY="33.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../images/search_26px.png"/>
+            </image>
+        </ImageView>
+        <TextField fx:id="filterTextField" layoutX="422.0" layoutY="33.0"/>
+        <ComboBox fx:id="providersCB" layoutX="136.0" layoutY="60.0" prefWidth="150.0"/>
+        <Label layoutX="61.0" layoutY="64.0" text="Proveedor:"/>
+        <Separator layoutX="22.0" layoutY="191.0" prefHeight="0.0" prefWidth="626.0"/>
+        <TableView fx:id="ordersTableView" layoutX="24.0" layoutY="200.0" prefHeight="220.0" prefWidth="656.0">
+            <columns>
+                <TableColumn fx:id="codeColumn" resizable="false" editable="false" prefWidth="70.0" text="Código"/>
+                <TableColumn fx:id="nameColumn" resizable="false" editable="false" prefWidth="440.0" text="Nombre del Producto"/>
+                <TableColumn fx:id="quantityColumn" resizable="false" editable="false" minWidth="0.0" prefWidth="145.0" text="Cantidad "/>
+            </columns>
+        </TableView>
+        <Button fx:id="generateOrderButton" layoutX="571.0" layoutY="429.0" mnemonicParsing="false"
+                onAction="#generateOrder" style="-fx-background-color: #BBDEFB;" text="Generar Orden">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Button>
+        <Button fx:id="clearTableButton" layoutX="462.0" layoutY="429.0" mnemonicParsing="false" onAction="#clearTable"
+                style="-fx-background-color: #BBDEFB;" text="Limpiar Tabla">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

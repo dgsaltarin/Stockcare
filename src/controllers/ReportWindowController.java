@@ -28,6 +28,9 @@ public class ReportWindowController implements ReportExcel, ReportPdf {
             case "records":
                 reportRecordsPDF("Listado de Registros", date, dataList);
                 break;
+             case "purchaseOrder":
+                purchaseOrderReportPDF("Orden de Compra", date, dataList);
+
         }
         closeWindow();
     }
@@ -48,8 +51,12 @@ public class ReportWindowController implements ReportExcel, ReportPdf {
     }
 
     private void closeWindow(){
-        Stage thisStage = (Stage) label.getScene().getWindow();
-        thisStage.close();
+        if (label==null){
+            return;
+        }else {
+            Stage thisStage = (Stage) label.getScene().getWindow();
+            thisStage.close();
+        }
     }
 
     public void setTypeOfReport(String typeOfReport){
