@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="loggingButton" prefHeight="427.0" prefWidth="305.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/LoggingWindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoggingWindowController">
+<AnchorPane prefHeight="427.0" prefWidth="305.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/LoggingWindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoggingWindowController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="76.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -22,7 +22,7 @@
       <Label layoutX="52.0" layoutY="300.0" text="Contraseña" />
       <TextField fx:id="userTextField" layoutX="51.0" layoutY="265.0" />
       <PasswordField fx:id="passwordTextField" layoutX="50.0" layoutY="316.0" />
-      <Button layoutX="53.0" layoutY="360.0" mnemonicParsing="false" text="Ingresar" />
-      <Button fx:id="cancelButton" layoutX="178.0" layoutY="360.0" mnemonicParsing="false" text="Cancelar" />
+      <Button layoutX="53.0" layoutY="360.0" fx:id="loggingButton" mnemonicParsing="false" onAction="#loadPrincipalInterface" text="Ingresar" />
+      <Button fx:id="cancelButton" onAction="#cancelLogging" layoutX="178.0" layoutY="360.0" mnemonicParsing="false" text="Cancelar" />
    </children>
 </AnchorPane>

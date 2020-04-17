@@ -5,46 +5,58 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Resources/PrincipalInterfaceStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InterfazPrincipalController">
-   <children>
-      <MenuBar id="menuBar" fx:id="menuBar" layoutY="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #2196F3;">
-        <menus>
-          <Menu id="menuSee" mnemonicParsing="false" text="Ver">
-            <items>
-              <MenuItem id="menuProducts" mnemonicParsing="false" onAction="#ProductsWindow" text="Productos" />
-                  <MenuItem id="menuRecords" mnemonicParsing="false" onAction="#recordsWindow" text="Registros" />
-                  <MenuItem mnemonicParsing="false" onAction="#inventoryWindow" text="Inventario" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Operaciones">
-              <items>
-                  <MenuItem mnemonicParsing="false" onAction="#purchaseOrderWindow" text="Orden De Compra" />
-                <MenuItem mnemonicParsing="false" onAction="#InComesWindow" text="Entrada de Productos" />
-                  <MenuItem mnemonicParsing="false" onAction="#outComeWindow" text="Salida de Inventario" />
-              </items>
-            </Menu>
-          <Menu mnemonicParsing="false" text="Análisis">
-            <items>
-              <MenuItem fx:id="behavior" mnemonicParsing="false" onAction="#behaviorWindow" text="Análisis de Comportamiento" />
-                  <MenuItem mnemonicParsing="false" onAction="#ABCAnalyzeWindow" text="Análisis ABC" />
-                  <MenuItem mnemonicParsing="false" onAction="#AbcVenWindow" text="Análisis ABC-VEN" />
-                  <MenuItem mnemonicParsing="false" text="Politicas de Inventario" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Agregar">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#addProductWindow" text="Producto" />
-                  <MenuItem mnemonicParsing="false" onAction="#addAreaWindow" text="Área" />
-                  <MenuItem mnemonicParsing="false" onAction="#addProviderWindow" text="Proveedor" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Datos">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Importar" />
-                  <MenuItem mnemonicParsing="false" text="Exportar" />
-              </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-   </children>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Resources/PrincipalInterfaceStyle.css"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.PrincipalInterfaceController">
+    <children>
+        <MenuBar id="menuBar" fx:id="menuBar" layoutY="2.0" maxHeight="1.7976931348623157E308"
+                 maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                 prefWidth="600.0" style="-fx-background-color: #2196F3;">
+            <menus>
+                <Menu id="menuSee" mnemonicParsing="false" text="Ver">
+                    <items>
+                        <MenuItem id="menuProducts" mnemonicParsing="false" onAction="#ProductsWindow"
+                                  text="Productos"/>
+                        <MenuItem id="menuRecords" mnemonicParsing="false" onAction="#recordsWindow" text="Registros"/>
+                        <MenuItem mnemonicParsing="false" onAction="#inventoryWindow" text="Inventario"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Operaciones">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#purchaseOrderWindow" text="Orden De Compra"/>
+                        <MenuItem mnemonicParsing="false" onAction="#InComesWindow" text="Entrada de Productos"/>
+                        <MenuItem mnemonicParsing="false" onAction="#outComeWindow" text="Salida de Inventario"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Análisis">
+                    <items>
+                        <MenuItem fx:id="behavior" mnemonicParsing="false" onAction="#behaviorWindow"
+                                  text="Análisis de Comportamiento"/>
+                        <MenuItem mnemonicParsing="false" onAction="#ABCAnalyzeWindow" text="Análisis ABC"/>
+                        <MenuItem mnemonicParsing="false" onAction="#AbcVenWindow" text="Análisis ABC-VEN"/>
+                        <MenuItem mnemonicParsing="false" text="Politicas de Inventario"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Agregar">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#addProductWindow" text="Producto"/>
+                        <MenuItem mnemonicParsing="false" onAction="#addAreaWindow" text="Área"/>
+                        <MenuItem mnemonicParsing="false" onAction="#addProviderWindow" text="Proveedor"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Datos">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Importar"/>
+                        <MenuItem mnemonicParsing="false" text="Exportar"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Usuarios">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Agregar Usuario"/>
+                        <MenuItem mnemonicParsing="false" text="Eliminar Usuario"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
 </AnchorPane>
