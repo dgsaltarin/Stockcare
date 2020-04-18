@@ -28,6 +28,9 @@ public class InComeCorrectionController extends Operations implements Initializa
     private int indexToFix;
     private ObservableList<PurchaseOrder> items;
     private ObservableList<PurchaseOrder> correctedPurchaseOrders;
+    private int quantityCorrection;
+    @FXML
+    public Button correctionButton;
 
     public void enableProductCorrection() {
         if (productCheckbox.isSelected()){
@@ -104,19 +107,28 @@ public class InComeCorrectionController extends Operations implements Initializa
             items.get(indexToFix).setProductName(product.getName());
         } if (quantityCheckbox.isSelected()){
             int quantity = Integer.parseInt(quantityTextField.getText());
+            quantityCorrection = quantity;
             items.get(indexToFix).setQuantity(quantity);
         }
 
         for (PurchaseOrder item:items){
             correctedPurchaseOrders.add(item);
         }
+        int quantity = Integer.parseInt(quantityTextField.getText());
+        quantityCorrection = quantity;
         Stage stage1 = (Stage) quantityTextField.getScene().getWindow();
         stage1.close();
     }
 
-    public void initData(int indexToFix, ObservableList<PurchaseOrder> correctedPurchaseOrder, ObservableList<PurchaseOrder> items){
+    public void initData(int indexToFix, ObservableList<PurchaseOrder> correctedPurchaseOrder, ObservableList<PurchaseOrder> items, int quantityCorrection){
         this.indexToFix = indexToFix;
         this.items = items;
         this.correctedPurchaseOrders = correctedPurchaseOrder;
+        this.quantityCorrection = quantityCorrection;
+    }
+
+    public int getQuantity(){
+        int quantity = Integer.valueOf(quantityTextField.getText());
+        return quantity;
     }
 }

@@ -1,5 +1,6 @@
 package DB;
 
+import Model.Alerts;
 import Model.Users;
 
 import java.sql.*;
@@ -9,7 +10,7 @@ import static DB.DataBase.*;
 public interface UserDAO extends IDBConection {
 
     default ArrayList<Users> getUsersList(){
-        ArrayList<Users> usersList = null;
+        ArrayList<Users> usersList = new ArrayList<>();
 
         try { Connection connection = conectToDB();
 
@@ -22,7 +23,8 @@ public interface UserDAO extends IDBConection {
                 Users user = new Users(rs.getInt(TUSUARIOS_ID),
                         rs.getString(TUSUARIOS_NOMBRE),
                         rs.getString(TUSUARIOS_TIPO),
-                        rs.getString(TUSUARIOS_CONTRASEÑA));
+                        rs.getString(TUSUARIOS_CONTRASEÑA),
+                        rs.getString(TUSUARIOS_USUARIO));
                 usersList.add(user);
             }
         } catch (SQLDataException e){
@@ -34,23 +36,24 @@ public interface UserDAO extends IDBConection {
         return usersList;
     }
 
-    default Users getUserByName(String name){
-        Users user = new Users();
+    default Users getUserByUser(String user){
+        Users users = new Users();
 
         try {
             Connection connection = conectToDB();
 
-            String sql = "SELECT * FROM " + TUSUARIOS + " WHERE " + TUSUARIOS_NOMBRE + " = '" + name +"'";
+            String sql = "SELECT * FROM " + TUSUARIOS + " WHERE " + TUSUARIOS_USUARIO + " = '" + user +"'";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()){
-                user = new Users(rs.getInt(TUSUARIOS_ID),
+                users = new Users(rs.getInt(TUSUARIOS_ID),
                         rs.getString(TUSUARIOS_NOMBRE),
                         rs.getString(TUSUARIOS_TIPO),
-                        rs.getString(TUSUARIOS_CONTRASEÑA));
+                        rs.getString(TUSUARIOS_CONTRASEÑA),
+                        rs.getString(TUSUARIOS_USUARIO));
 
             }
         } catch (SQLDataException e){
@@ -59,6 +62,8 @@ public interface UserDAO extends IDBConection {
             e.printStackTrace();
         }
 
-        return user;
+        return users;
     }
+
+    default void addNewUser(){}
 }

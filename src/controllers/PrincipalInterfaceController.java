@@ -84,4 +84,12 @@ public class PrincipalInterfaceController implements Initializable {
     public void AbcVenWindow(ActionEvent actionEvent) throws IOException {
         stageChanger("Ui/AbcVenAnalyzeWindow.fxml", "Análisis ABC-VEN");
     }
+
+    public void addUserWindow(ActionEvent actionEvent) throws IOException {
+        stageChanger("ui/AddUserWindow.fxml", "Agregar Usuario");
+    }
+
+    public void removeUserWindow(ActionEvent actionEvent) throws IOException {
+        stageChanger("Ui/RemoveUserWindow.fxml", "Eliminar Usuario");
+    }
 }

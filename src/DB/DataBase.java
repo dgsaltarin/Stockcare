@@ -27,6 +27,7 @@ public class DataBase {
     public static final String TUSUARIOS_NOMBRE= "nombre_usuarios";
     public static final String TUSUARIOS_TIPO = "tipo_usuario";
     public static final String TUSUARIOS_CONTRASEÑA = "password";
+    public static final String TUSUARIOS_USUARIO = "usuario";
 
     public static final String TAREAS = "areas";
     public static final String TAREAS_NOMBRE = "nombre_area";

@@ -19,6 +19,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -45,6 +46,7 @@ public class InComeController implements Initializable, InComesDAO, PurchaseOrde
     private TextField filterTextField;
 
     private ObservableList<PurchaseOrder> correctedPurchaseOrders = FXCollections.observableArrayList();
+    private int quantityCorrection;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -92,6 +94,7 @@ public class InComeController implements Initializable, InComesDAO, PurchaseOrde
         verificationColumn.setCellValueFactory(new PropertyValueFactory<>("perfectIncome"));
 
         verificationTableView.getItems().addAll(correctedPurchaseOrders);
+        verificationTableView.refresh();
     }
 
 
@@ -114,6 +117,7 @@ public class InComeController implements Initializable, InComesDAO, PurchaseOrde
                 if (newValue == false) {
                     try {
                         openCorrectionWindow(finalI);
+                        //purchaseOrdersTableView.edit(finalI, quantityColumn);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -143,12 +147,20 @@ public class InComeController implements Initializable, InComesDAO, PurchaseOrde
         InComeCorrectionController controller = loader.getController();
 
         //set the init data
-        controller.initData(index, correctedPurchaseOrders, sendingItem);
+        controller.initData(index, correctedPurchaseOrders, sendingItem, quantityCorrection);
+
+
 
         Stage window = new Stage();
+        Stage thisWindow = (Stage) verificationTableView.getScene().getWindow();
+        window.initOwner(thisWindow);
         window.getIcons().add(new Image("images/application_icon.png"));
         window.initModality(Modality.APPLICATION_MODAL);
         window.setScene(scene);
         window.showAndWait();
+        window.setOnCloseRequest((WindowEvent event) -> {
+            System.out.println(controller.getQuantity());
+        });
+
     }
 }
