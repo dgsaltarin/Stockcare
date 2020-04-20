@@ -1,6 +1,7 @@
 package controllers;
 
 import DB.ProductsDAO;
+import Model.Alerts;
 import Model.Products;
 import Model.PurchaseOrder;
 import javafx.collections.FXCollections;
@@ -18,22 +19,30 @@ import java.util.ResourceBundle;
 
 public class InComeCorrectionController extends Operations implements Initializable, ProductsDAO {
 
-    @FXML private TableView<Products> productsTableView;
-    @FXML private TableColumn productsTableColumn;
-    @FXML private CheckBox productCheckbox;
-    @FXML private CheckBox quantityCheckbox;
-    @FXML private TextField quantityTextField;
-    @FXML private ComboBox typeOfProductCB;
-    @FXML private TextField filterTextField;
-    private int indexToFix;
-    private ObservableList<PurchaseOrder> items;
-    private ObservableList<PurchaseOrder> correctedPurchaseOrders;
-    private int quantityCorrection;
+    @FXML
+    private TableView<Products> productsTableView;
+    @FXML
+    private TableColumn productsTableColumn;
+    @FXML
+    private CheckBox productCheckbox;
+    @FXML
+    private CheckBox quantityCheckbox;
+    @FXML
+    private TextField quantityTextField;
+    @FXML
+    private ComboBox typeOfProductCB;
+    @FXML
+    private TextField filterTextField;
     @FXML
     public Button correctionButton;
 
+    private PurchaseOrder purchaseOrderCorrected;
+
+    /**
+     * Enable and disable the correction options
+     * */
     public void enableProductCorrection() {
-        if (productCheckbox.isSelected()){
+        if (productCheckbox.isSelected()) {
             productsTableView.setDisable(false);
             typeOfProductCB.setDisable(false);
             filterTextField.setDisable(false);
@@ -45,7 +54,7 @@ public class InComeCorrectionController extends Operations implements Initializa
     }
 
     public void enableQuantityCorrection() {
-        if (quantityCheckbox.isSelected()){
+        if (quantityCheckbox.isSelected()) {
             quantityTextField.setDisable(false);
         } else
             quantityTextField.setDisable(true);
@@ -87,7 +96,7 @@ public class InComeCorrectionController extends Operations implements Initializa
 
     /**
      * evaluate the values and just admit the numerical values
-     * */
+     */
     public void evaluateValue() {
         quantityTextField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.matches("\\d*")) return;
@@ -100,35 +109,47 @@ public class InComeCorrectionController extends Operations implements Initializa
         typeOfProductCB.setItems(typeOfProducts);
     }
 
+    /**
+     * verify the entered information and made the corrections on the purchase order received
+     * */
     public void madeCorrection() {
-        if (productCheckbox.isSelected()){
+        if (productCheckbox.isSelected()) {
             Products product = productsTableView.getSelectionModel().getSelectedItem();
-            items.get(indexToFix).setProductCode(product.getCode());
-            items.get(indexToFix).setProductName(product.getName());
-        } if (quantityCheckbox.isSelected()){
+            if (product!=null) {
+                purchaseOrderCorrected.setProductCode(product.getCode());
+                purchaseOrderCorrected.setProductName(product.getName());
+            } else {
+                Alerts.notSelectionAlert("Debe sellecionar algun producto primero!");
+                return;
+            }
+        }
+        if (quantityCheckbox.isSelected()) {
             int quantity = Integer.parseInt(quantityTextField.getText());
-            quantityCorrection = quantity;
-            items.get(indexToFix).setQuantity(quantity);
+            if (!quantityTextField.getText().isEmpty()) {
+                purchaseOrderCorrected.setQuantity(quantity);
+            } else {
+                Alerts.notSelectionAlert("Debe ingresar la nueva cantidad!");
+                return;
+            }
         }
 
-        for (PurchaseOrder item:items){
-            correctedPurchaseOrders.add(item);
-        }
-        int quantity = Integer.parseInt(quantityTextField.getText());
-        quantityCorrection = quantity;
         Stage stage1 = (Stage) quantityTextField.getScene().getWindow();
         stage1.close();
     }
 
-    public void initData(int indexToFix, ObservableList<PurchaseOrder> correctedPurchaseOrder, ObservableList<PurchaseOrder> items, int quantityCorrection){
-        this.indexToFix = indexToFix;
-        this.items = items;
-        this.correctedPurchaseOrders = correctedPurchaseOrder;
-        this.quantityCorrection = quantityCorrection;
+    /**
+     * Receive the purchase order that is wanted to be correct
+     * */
+    public void initData(PurchaseOrder purchaseOrderToCorrect) {
+        this.purchaseOrderCorrected = purchaseOrderToCorrect;
     }
 
-    public int getQuantity(){
+    public int getQuantity() {
         int quantity = Integer.valueOf(quantityTextField.getText());
         return quantity;
+    }
+
+    public PurchaseOrder getPurchaseOrderCorrected() {
+        return purchaseOrderCorrected;
     }
 }

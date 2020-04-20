@@ -9,7 +9,7 @@ public class Inventory implements InventoryDAO {
     private int id;
     private int quantity;
     private Date expirationDate;
-    private int proproductId;
+    private int productId;
     private String productName;
     private Double unitPrice;
     private Products product;
@@ -19,7 +19,7 @@ public class Inventory implements InventoryDAO {
         this.productName = product.getName();
         this.quantity = quantity;
         this.unitPrice = unitPrice;
-        this.proproductId = product.getCode();
+        this.productId = product.getCode();
         this.expirationDate = expirationDate;
     }
 
@@ -39,8 +39,8 @@ public class Inventory implements InventoryDAO {
         return expirationDate;
     }
 
-    public int getProproductId() {
-        return proproductId;
+    public int getProductId() {
+        return productId;
     }
 
     public String getProductName() {

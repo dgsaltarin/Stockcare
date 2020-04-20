@@ -45,7 +45,7 @@ public class RecordsController implements Initializable, RecordsDAO {
         comboBox.setItems(typeOfProducts);
     }
 
-    public void fillTable(javafx.event.ActionEvent actionEvent) {
+    public void fillTable() {
         String typeofProduct = "";
         if (medicamentos.isSelected()){
             typeofProduct = "medicamento";
@@ -111,7 +111,7 @@ public class RecordsController implements Initializable, RecordsDAO {
         recordsTableView.setItems(sortedData);
     }
 
-    public void generateReport(javafx.event.ActionEvent actionEvent) throws IOException {
+    public void generateReport() throws IOException {
         ObservableList<Records> observableList = recordsTableView.getItems();
 
         if (observableList.isEmpty()){
@@ -122,7 +122,7 @@ public class RecordsController implements Initializable, RecordsDAO {
         Report.callReportWindow("records", observableList);
     }
 
-    public void filtrateByDate(javafx.event.ActionEvent actionEvent){
+    public void filtrateByDate(){
         ObservableList<Records> observableList = recordsTableView.getItems();
 
         if (observableList.isEmpty()){

@@ -95,7 +95,7 @@ public class PurchaseOrderController extends Operations implements Initializable
 
 
     /**
-     * @description call the quantity window when the user doble clic on a product
+     * Call the quantity window when the user double click on a product
      * */
     @FXML
     public void clickItem(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
@@ -136,16 +136,16 @@ public class PurchaseOrderController extends Operations implements Initializable
 
 
     /**
-     * @description clear the table in case of a mistake
+     *clear the table in case of a mistake
      * */
     public void clearTable() {
         ordersTableView.getItems().clear();
     }
 
     /**
-     * @description generate the report order and set the data into the data base
+     *generate the report order and set the data into the data base
      * */
-    public void generateOrder(ActionEvent actionEvent) throws IOException {
+    public void generateOrder(ActionEvent actionEvent) {
         ObservableList<PurchaseOrder> observableList = ordersTableView.getItems();
         ReportWindowController reportWindowController = new ReportWindowController();
         reportWindowController.setData(observableList);

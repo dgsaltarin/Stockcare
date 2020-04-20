@@ -9,7 +9,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -46,7 +45,6 @@ public class OutComesController extends Operations implements Initializable, Are
     private Integer userId;
     private Integer areaId;
     private Double unitPrice;
-    private Double totalPrice;
     public int remainingProduct;
 
     private Records records;
@@ -67,12 +65,15 @@ public class OutComesController extends Operations implements Initializable, Are
         outComeTableView.setItems(OutcomesList);
     }
 
-    public void updateInventoryTable() {
+    private void updateInventoryTable() {
             inventoryTableView.getSelectionModel().getSelectedItem().setQuantity(remainingProduct);
             inventoryTableView.refresh();
     }
 
-    public void fillProducts(ActionEvent actionEvent) {
+    /**
+     * once a product's category have been choose, show all the available products on inventory for an outcome
+     * */
+    public void fillProducts() {
         ObservableList<Inventory> inventoryList = FXCollections.observableArrayList(getInventory(typeOfProductCB.getValue().toString()));
 
         quantityColumnI.setCellValueFactory(new PropertyValueFactory<>("quantity"));
@@ -106,7 +107,7 @@ public class OutComesController extends Operations implements Initializable, Are
     }
 
     /**
-     * @description call the quantity window when the user doble clic on a product
+     *call the quantity window when the user double click on a product
      * */
     @FXML
     public void clickItem(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
@@ -114,7 +115,7 @@ public class OutComesController extends Operations implements Initializable, Are
             if(!areasCB.getSelectionModel().isEmpty()&&!typeOfProductCB.getSelectionModel().isEmpty()) {
                 //set the initial information for the outcome record
                 Date date = new Date();
-                productId = inventoryTableView.getSelectionModel().getSelectedItem().getProproductId();
+                productId = inventoryTableView.getSelectionModel().getSelectedItem().getProductId();
                 unitPrice = inventoryTableView.getSelectionModel().getSelectedItem().getUnitPrice();
                 areaId = getAreaIdByName(areasCB.getValue().toString());
                 remainingProduct = inventoryTableView.getSelectionModel().getSelectedItem().getQuantity();
@@ -135,12 +136,13 @@ public class OutComesController extends Operations implements Initializable, Are
                 controller.initData(records, OutcomesList, remainingProduct);
 
                 Stage window = new Stage();
+                window.setResizable(false);
                 window.initModality(Modality.APPLICATION_MODAL);
                 window.setScene(scene);
 
                 window.showAndWait();
-                remainingProduct = remainingProduct - OutcomesList.get(OutcomesList.size() - 1).getQuantity();
-
+                remainingProduct = controller.getProductRemaining();
+                updateInventoryTable();
             }else if(areasCB.getSelectionModel().isEmpty()){
                 Alerts.notSelectionAlert("Seleccione un area!");
             }
@@ -150,18 +152,24 @@ public class OutComesController extends Operations implements Initializable, Are
         }
     }
 
-    public void generateOutCome(ActionEvent actionEvent) {
+    /**
+     * takes all the selected products and call the methods for update the inventory and save the outcome record
+     * */
+    public void generateOutCome() {
         ObservableList<Records> outComeRecords = outComeTableView.getItems();
-        for(int i=0; i< outComeRecords.size();i++){
-            inventoryUpdate.add(getInventoryItem(outComeRecords.get(i).getProductId(), outComeRecords.get(i).getUnitPrice(), outComeRecords.get(i).getQuantity()));
+        for (Records outComeRecord : outComeRecords) {
+            inventoryUpdate.add(getInventoryItem(outComeRecord.getProductId(), outComeRecord.getUnitPrice(), outComeRecord.getQuantity()));
         }
         setOutComeRecords(outComeRecords);
         updateInventory(inventoryUpdate);
-        fillProducts(actionEvent);
-        clearTable(actionEvent);
+        fillProducts();
+        clearTable();
     }
 
-    public void clearTable(ActionEvent actionEvent) {
+    /**
+     * clear the table
+     * */
+    public void clearTable() {
         outComeTableView.getItems().clear();
     }
 }

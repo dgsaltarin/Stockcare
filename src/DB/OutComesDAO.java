@@ -9,6 +9,9 @@ import java.sql.*;
 
 public interface OutComesDAO extends  IDBConection {
 
+    /**
+     * save in the data base the record of a new outcome
+     * */
     default void setOutComeRecords(ObservableList<Records> observableList){
         Date date = new Date(observableList.get(0).getDateOfRecord().getTime());
         try{Connection connection = conectToDB();

@@ -1,6 +1,7 @@
 package DB;
 import Model.Alerts;
 import Model.Inventory;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
@@ -9,6 +10,9 @@ import static DB.DataBase.*;
 
 public interface InventoryDAO extends IDBConection, ProductsDAO {
 
+    /**
+     * get all inventory from a product's category
+     * */
     default ArrayList<Inventory> getInventory(String type){
         ArrayList<Inventory> inventory = new ArrayList<>();
         try(Connection connection = conectToDB()) {
@@ -20,12 +24,12 @@ public interface InventoryDAO extends IDBConection, ProductsDAO {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()){
-                Inventory inventario = new Inventory(
+                Inventory inventoryItem = new Inventory(
                         getProductById(rs.getInt(TINVENTARIO_PRODUCTOID)),
                         rs.getInt(TINVENTARIO_CANTIDAD),
                         rs.getDouble(TINVENTARIO_PRECIO_UNITARIO),
                         rs.getDate(TINVENTARIO_VENCIMIENTO));
-                inventory.add(inventario);
+                inventory.add(inventoryItem);
             }
 
         }catch (SQLDataException e){
@@ -36,25 +40,60 @@ public interface InventoryDAO extends IDBConection, ProductsDAO {
         return inventory;
     }
 
+    /**
+     * update the inventory data base once and outcome or income have been made
+     * */
     default void updateInventory(ObservableList<Inventory> observableList){
 
         try{Connection connection = conectToDB();
 
             String sql = "";
 
+            String requestSql = "SELECT * FROM "+ TINVENTARIO;
+            ObservableList<Inventory> allInventory = FXCollections.observableArrayList();
+
+            PreparedStatement inventoryStatement = connection.prepareStatement(requestSql);
+            ResultSet resultSet = inventoryStatement.executeQuery();
+
+            while (resultSet.next()){
+                Inventory item = new Inventory(getProductById(resultSet.getInt(TINVENTARIO_PRODUCTOID)),
+                        resultSet.getInt(TINVENTARIO_CANTIDAD), resultSet.getDouble(TINVENTARIO_CANTIDAD),
+                        resultSet.getDate(TINVENTARIO_VENCIMIENTO));
+                allInventory.add(item);
+            }
+
+            PreparedStatement preparedStatement = null;
+
             for (int i=0; i<observableList.size(); i++){
 
-                if (observableList.get(i).getQuantity()==0){
-                    sql = "DELETE FROM " +TINVENTARIO + " WHERE " + TINVENTARIO_PRODUCTOID +" = " + observableList.get(i).getProproductId()
-                    + " AND " +TINVENTARIO_PRECIO_UNITARIO + " = " + observableList.get(i).getUnitPrice();
+                for (Inventory inventory:allInventory){
 
-                }else{ sql = "UPDATE "+ TINVENTARIO+" SET "+ TINVENTARIO_CANTIDAD + " = ?" + " WHERE "
-                        + TINVENTARIO_PRODUCTOID +" = " + observableList.get(i).getProproductId()
-                        + " AND " +TINVENTARIO_PRECIO_UNITARIO + " = " + observableList.get(i).getUnitPrice();}
+                    if (inventory.getProductId()==observableList.get(i).getProductId()){
 
-                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                        if (observableList.get(i).getQuantity()==0){
+                            sql = "DELETE FROM " +TINVENTARIO + " WHERE " + TINVENTARIO_PRODUCTOID +" = " + observableList.get(i).getProductId()
+                                    + " AND " +TINVENTARIO_PRECIO_UNITARIO + " = " + observableList.get(i).getUnitPrice();
 
-                preparedStatement.setInt(1, observableList.get(i).getQuantity());
+                        }else{ sql = "UPDATE "+ TINVENTARIO+" SET "+ TINVENTARIO_CANTIDAD + " = ?" + " WHERE "
+                                + TINVENTARIO_PRODUCTOID +" = " + observableList.get(i).getProductId()
+                                + " AND " +TINVENTARIO_PRECIO_UNITARIO + " = " + observableList.get(i).getUnitPrice();}
+                         preparedStatement = connection.prepareStatement(sql);
+
+                        preparedStatement.setInt(1, observableList.get(i).getQuantity());
+                    } else{
+                            Date date = new Date(observableList.get(i).getExpirationDate().getTime());
+                            sql = " INSERT INTO " + TINVENTARIO + " VALUES (?, ?, ?, ?, ?)";
+                            preparedStatement = connection.prepareStatement(sql);
+
+                            preparedStatement.setNull(1,Types.NULL);
+                            preparedStatement.setInt(2,observableList.get(i).getQuantity());
+                            preparedStatement.setDate(3,date);
+                            preparedStatement.setInt(4,observableList.get(i).getProductId());
+                            preparedStatement.setDouble(5,observableList.get(i).getUnitPrice());
+                    }
+
+                }
+
                 preparedStatement.executeUpdate();
             }
         } catch (SQLDataException e){
@@ -66,6 +105,9 @@ public interface InventoryDAO extends IDBConection, ProductsDAO {
         Alerts.successfullAlert("Inventario actualizado de manera exitosa!");
     }
 
+    /**
+     * get an specific product from the inventory
+     * */
     default Inventory getInventoryItem(int idProduct, Double unitPrice, int outComeQuantity){
         Inventory inventoryItem = null;
         try(Connection connection = conectToDB()) {

@@ -40,7 +40,7 @@ public class QuantityController implements Initializable, ProductsDAO, Providers
                         record.getUnitPrice(),
                         totalPrice);
                 observableList.add(recordsC);
-                OutComesController outComesController = new OutComesController();
+                productRemaining = calculateRemainingProduct(getQuantityNumber(), productRemaining);
             }
             else {
                 Alerts.notSelectionAlert("La cantidad excede la cantidad en inventario!");
@@ -74,6 +74,11 @@ public class QuantityController implements Initializable, ProductsDAO, Providers
         this.observableList = observableList;
     }
 
+    public int calculateRemainingProduct(int quantity, int productRemaining){
+        int remaining = productRemaining - quantity;
+        return remaining;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
@@ -86,5 +91,9 @@ public class QuantityController implements Initializable, ProductsDAO, Providers
             if (newValue.matches("\\d*")) return;
             quantityTextField.setText(newValue.replaceAll("[^\\d]", ""));
         });
+    }
+
+    public int getProductRemaining() {
+        return productRemaining;
     }
 }

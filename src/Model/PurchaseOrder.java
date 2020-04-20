@@ -6,6 +6,7 @@ import javafx.beans.value.ObservableBooleanValue;
 import javafx.scene.control.CheckBox;
 
 import java.awt.*;
+import java.util.Date;
 
 public class PurchaseOrder {
 
@@ -17,6 +18,8 @@ public class PurchaseOrder {
     private int providerCode;
     private boolean orderState;
     private CheckBox perfectIncome;
+    private Double inComePrice;
+    private Date expirationDate;
 
     public PurchaseOrder(){}
 
@@ -37,7 +40,7 @@ public class PurchaseOrder {
         this.orderState = orderState;
     }
 
-    public PurchaseOrder(int orderNumber, int quantity, Products product, Providers provider, boolean orderState, CheckBox checkBox) {
+    public PurchaseOrder(int orderNumber, int quantity, Products product, Providers provider, boolean orderState, Double inComePrice, Date expirationDate) {
         this.orderNumber = orderNumber;
         this.quantity = quantity;
         this.productCode = product.getCode();
@@ -45,7 +48,8 @@ public class PurchaseOrder {
         this.providerCode = provider.getId();
         this.providerName = provider.getName();
         this.orderState = orderState;
-        this.perfectIncome = checkBox;
+        this.inComePrice = inComePrice;
+        this.expirationDate = expirationDate;
     }
 
     public PurchaseOrder(int orderNumber) {
@@ -116,5 +120,19 @@ public class PurchaseOrder {
         this.perfectIncome = perfectIncome;
     }
 
+    public Double getInComePrice() {
+        return inComePrice;
+    }
 
+    public void setInComePrice(Double inComePrice) {
+        this.inComePrice = inComePrice;
+    }
+
+    public Date getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(Date expirationDate) {
+        this.expirationDate = expirationDate;
+    }
 }

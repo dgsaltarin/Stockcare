@@ -48,7 +48,7 @@ public interface PurchaseOrderDAO extends IDBConection, ProductsDAO, ProvidersDA
 
 
     /***
-     * @description: recibe a purchase order and set it into the data base
+     * @description: receive a purchase order and set it into the data base
      */
     default void setPurchaseOrderInDB(ObservableList<PurchaseOrder> observableList){
 
@@ -77,10 +77,23 @@ public interface PurchaseOrderDAO extends IDBConection, ProductsDAO, ProvidersDA
 
 
     /**
-     * @description: change the status of a purchase order once it has been recibed
+     *change the status of a purchase order in the data base once it has been entered as an income
      * */
-    default void updatePurchaseOrderState(){}
+    default void updatePurchaseOrderState(int orderNumber){
+        try { Connection connection = conectToDB();
 
+            String sql = " UPDATE "+ TORDEN_COMPRA + " SET " + TORDEN_COMPRA_ESTADO + " = '1' WHERE " + TORDEN_COMPRA_NUMERO + " = '" + orderNumber + "'";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * search for all purchase orders that still hasn't been received
+     * */
     default ArrayList<PurchaseOrder> getPurchaseOrderPending(){
         ArrayList<PurchaseOrder> purchaseOrders = new ArrayList<>();
 

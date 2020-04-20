@@ -1,8 +1,7 @@
 package controllers;
 
-import DB.InComesDAO;
-import DB.PurchaseOrderDAO;
-import Model.PurchaseOrder;
+import DB.*;
+import Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -19,13 +18,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
-public class InComeController implements Initializable, InComesDAO, PurchaseOrderDAO {
+public class InComeController implements Initializable, InComesDAO, PurchaseOrderDAO, InventoryDAO, ProductsDAO, ProvidersDAO {
 
     @FXML
     private TableView<PurchaseOrder> purchaseOrdersTableView;
@@ -43,10 +42,16 @@ public class InComeController implements Initializable, InComesDAO, PurchaseOrde
     @FXML
     private TableColumn<PurchaseOrder, CheckBox> verificationColumn;
     @FXML
+    private TableColumn<PurchaseOrder, Double> priceColumn;
+    @FXML
+    private TableColumn<PurchaseOrder, Date> expirationDateColumn;
+    @FXML
     private TextField filterTextField;
 
-    private ObservableList<PurchaseOrder> correctedPurchaseOrders = FXCollections.observableArrayList();
-    private int quantityCorrection;
+    private PurchaseOrder purchaseOrderCorrected;
+    private int indexToFix;
+    private Double unitPrice;
+    private Date expirationDate;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -65,7 +70,7 @@ public class InComeController implements Initializable, InComesDAO, PurchaseOrde
             }
         }
 
-        //display the order numbers
+        //display the order's number
         orderNumberColumn.setCellValueFactory(new PropertyValueFactory<>("orderNumber"));
         providerColumn.setCellValueFactory(new PropertyValueFactory<>("providerName"));
         purchaseOrdersTableView.setItems(observableList);
@@ -87,20 +92,14 @@ public class InComeController implements Initializable, InComesDAO, PurchaseOrde
                 return false; // Does not match.
             });
         });
-
-
-        productColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
-        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        verificationColumn.setCellValueFactory(new PropertyValueFactory<>("perfectIncome"));
-
-        verificationTableView.getItems().addAll(correctedPurchaseOrders);
-        verificationTableView.refresh();
     }
 
-
+    /**
+     * get the selected purchase order's number and open the complete purchase order and display it in the verification
+     * table
+     * */
     public void OpenPurchaseOrder() {
         verificationTableView.getItems().clear();
-
         int orderNumberSelected = purchaseOrdersTableView.getSelectionModel().getSelectedItem().getOrderNumber();
 
         //get all the purchase order that was selected
@@ -114,7 +113,7 @@ public class InComeController implements Initializable, InComesDAO, PurchaseOrde
             //add the listener event and the behavior for the uncheck
             int finalI = i;
             ch.selectedProperty().addListener((observable, oldValue, newValue) -> {
-                if (newValue == false) {
+                if (!newValue) {
                     try {
                         openCorrectionWindow(finalI);
                         //purchaseOrdersTableView.edit(finalI, quantityColumn);
@@ -129,15 +128,61 @@ public class InComeController implements Initializable, InComesDAO, PurchaseOrde
         productColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         verificationColumn.setCellValueFactory(new PropertyValueFactory<>("perfectIncome"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("inComePrice"));
+        expirationDateColumn.setCellValueFactory(new PropertyValueFactory<>("expirationDate"));
         verificationTableView.setItems(observableList);
     }
 
-
+    /**
+     * tales all the data from the verification table and call the methods updateInventory and setInComeRecord and close
+     * the window
+     * */
     public void generateInCome() {
+        ObservableList<PurchaseOrder> purchaseOrdersList = verificationTableView.getItems();
+        ObservableList<Inventory> inventoryUpdateList = FXCollections.observableArrayList();
+        ObservableList<Records> inComeRecords = FXCollections.observableArrayList();
+
+        Date date = new Date();
+        Double totalPrice = 0.0;
+
+        for (PurchaseOrder item:purchaseOrdersList) {
+            if (item.getInComePrice()!=null||item.getExpirationDate()!=null) {
+                totalPrice = item.getInComePrice() * item.getQuantity();
+                Inventory inventory = new Inventory(getProductById(item.getProductCode()),
+                        item.getQuantity(), item.getInComePrice(), item.getExpirationDate());
+                inventoryUpdateList.add(inventory);
+
+                Records record = new Records(date, item.getQuantity(), getProductById(item.getProductCode()),
+                        item.getProviderCode(), Users.getCurrentUser().getId(),
+                        item.getInComePrice(), totalPrice);
+                inComeRecords.add(record);
+            } else {
+                Alerts.notSelectionAlert("Debe ingresar tantoe el precio como la fecha para cada producto!");
+                return;
+            }
+        }
+
+        setInComeRecords(inComeRecords);
+        updateInventory(inventoryUpdateList);
+        updatePurchaseOrderState(purchaseOrdersList.get(0).getOrderNumber());
+        Stage stage = (Stage) verificationTableView.getScene().getWindow();
+        stage.close();
     }
 
+    /**
+     *Once a correction have been made on a purchase order, this method update the verification table with the new
+     * information
+     * */
+    private void updateVerificationTable(){
+        verificationTableView.getItems().set(indexToFix, purchaseOrderCorrected);
+        verificationTableView.refresh();
+    }
+
+    /**
+     * If a item from the purchase order is received in a wrong way, opens a correction window to change the product or the
+     * quantity received
+     * */
     private void openCorrectionWindow(int index) throws IOException {
-        ObservableList<PurchaseOrder> sendingItem = verificationTableView.getItems();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("Ui/InComeCorrection.fxml"));
         Parent view = loader.load();
@@ -147,20 +192,53 @@ public class InComeController implements Initializable, InComesDAO, PurchaseOrde
         InComeCorrectionController controller = loader.getController();
 
         //set the init data
-        controller.initData(index, correctedPurchaseOrders, sendingItem, quantityCorrection);
-
-
+        controller.initData(verificationTableView.getItems().get(index));
 
         Stage window = new Stage();
-        Stage thisWindow = (Stage) verificationTableView.getScene().getWindow();
-        window.initOwner(thisWindow);
         window.getIcons().add(new Image("images/application_icon.png"));
         window.initModality(Modality.APPLICATION_MODAL);
         window.setScene(scene);
         window.showAndWait();
-        window.setOnCloseRequest((WindowEvent event) -> {
-            System.out.println(controller.getQuantity());
-        });
 
+        purchaseOrderCorrected = controller.getPurchaseOrderCorrected();
+        updateVerificationTable();
+        indexToFix = index;
+    }
+
+    /**
+     *Call the price window when the user double click on a purchase order
+     * */
+    @FXML
+    public void clickItem(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        if(mouseEvent.getClickCount()==2) {
+            //create an instance of the quantityController
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getClassLoader().getResource("Ui/PriceAndDateWindow.fxml"));
+            Parent view = loader.load();
+
+            Scene scene = new Scene(view);
+
+            PriceAndDateController controller = loader.getController();
+
+            Stage window = new Stage();
+            window.getIcons().add(new Image("images/application_icon.png"));
+            window.initModality(Modality.APPLICATION_MODAL);
+            window.setResizable(false);
+            window.setScene(scene);
+            window.showAndWait();
+
+            unitPrice = controller.getUnitPrice();
+            expirationDate = controller.getExpirationDate();
+            addUnitPriceAndDate();
+        }
+    }
+
+    /**
+     * takes the unit price value and add it to the purchase order
+     * */
+    private void addUnitPriceAndDate() {
+        verificationTableView.getSelectionModel().getSelectedItem().setInComePrice(unitPrice);
+        verificationTableView.getSelectionModel().getSelectedItem().setExpirationDate(expirationDate);
+        verificationTableView.refresh();
     }
 }
