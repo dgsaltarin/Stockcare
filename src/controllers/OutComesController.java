@@ -51,7 +51,6 @@ public class OutComesController extends Operations implements Initializable, Are
 
     private ObservableList<Records> OutcomesList = FXCollections.observableArrayList();
     private ObservableList<String> areasNames = FXCollections.observableArrayList(getAreasName());
-    private ObservableList<Inventory> inventoryUpdate = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -157,9 +156,7 @@ public class OutComesController extends Operations implements Initializable, Are
      * */
     public void generateOutCome() {
         ObservableList<Records> outComeRecords = outComeTableView.getItems();
-        for (Records outComeRecord : outComeRecords) {
-            inventoryUpdate.add(getInventoryItem(outComeRecord.getProductId(), outComeRecord.getUnitPrice(), outComeRecord.getQuantity()));
-        }
+        ObservableList<Inventory> inventoryUpdate = inventoryTableView.getItems();
         setOutComeRecords(outComeRecords);
         updateInventory(inventoryUpdate);
         fillProducts();

@@ -5,37 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="560f59f7-38e0-4e85-958b-2c4599094a4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Ui/PriceAndDateWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/PriceAndDateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/DB/InComesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/DB/InComesDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/DB/InventoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/DB/InventoryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockCare/DB/OutComesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/DB/OutComesDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/DB/PurchaseOrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/DB/PurchaseOrderDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Inventory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/PurchaseOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/PurchaseOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Model/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Model/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/InComesWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Ui/InComesWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/InComeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/InComeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/InComeCorrectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/InComeCorrectionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/PurchaseOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/PurchaseOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/QuantityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/QuantityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/RecordsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/RecordsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/RemoveUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/RemoveUserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockCare/controllers/outComesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/controllers/outComesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB/InComesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/InComesDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DB/InventoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/InventoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB/OutComesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/OutComesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB/PurchaseOrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/PurchaseOrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/PurchaseOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PurchaseOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/InComesWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/InComesWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/InComeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/InComeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/InComeCorrectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/InComeCorrectionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/OutComesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/OutComesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/PurchaseOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/PurchaseOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/QuantityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/QuantityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/RecordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/RecordsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/RemoveUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/RemoveUserController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +24,41 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DB/InventoryDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="937">
+              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Inventory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controllers/OutComesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -104,7 +117,6 @@
         <option value="$PROJECT_DIR$/src/controllers/RemoveUserController.java" />
         <option value="$PROJECT_DIR$/src/controllers/QuantityController.java" />
         <option value="$PROJECT_DIR$/src/controllers/InComeCorrectionController.java" />
-        <option value="$PROJECT_DIR$/src/Model/Inventory.java" />
         <option value="$PROJECT_DIR$/src/Ui/InComesWindow.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/PriceWindowController.java" />
         <option value="$PROJECT_DIR$/src/Ui/PriceWindow.fxml" />
@@ -118,6 +130,7 @@
         <option value="$PROJECT_DIR$/src/DB/InComesDAO.java" />
         <option value="$PROJECT_DIR$/src/DB/OutComesDAO.java" />
         <option value="$PROJECT_DIR$/src/controllers/OutComesController.java" />
+        <option value="$PROJECT_DIR$/src/Model/Inventory.java" />
         <option value="$PROJECT_DIR$/src/DB/InventoryDAO.java" />
       </list>
     </option>
@@ -132,8 +145,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,6 +185,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -763,29 +776,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/OutComesController.java">
+    <entry file="file://$PROJECT_DIR$/src/DB/InventoryDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="161" column="9" lean-forward="true" selection-start-line="161" selection-start-column="9" selection-end-line="161" selection-end-column="9" />
+        <state relative-caret-position="937">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7015#7016#0" expanded="true" />
-            <element signature="e#7066#7067#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+        <state relative-caret-position="70">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB/InventoryDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/OutComesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1326">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="121">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

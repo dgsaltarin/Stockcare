@@ -23,6 +23,16 @@ public class Inventory implements InventoryDAO {
         this.expirationDate = expirationDate;
     }
 
+    public Inventory(int id, Products product, int quantity, Double unitPrice, Date expirationDate){
+        this.product = product;
+        this.id = id;
+        this.productName = product.getName();
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
+        this.productId = product.getCode();
+        this.expirationDate = expirationDate;
+    }
+
     public int getId() {
         return id;
     }
