@@ -49,6 +49,28 @@ public class BehaviorAnalyzeTest implements RecordsDAO {
 
         Double standardDeviation = behaviorAnalyze.standardDeviation(totalMontlyProductDeman);
 
-        System.out.println(standardDeviation);
+        System.out.println("standar deviation: "+standardDeviation);
+
+        double dataSlope = behaviorAnalyze.slopeOfData(totalMontlyProductDeman);
+        System.out.println("\n");
+        System.out.println("data slope: "+dataSlope);
+
+        double[] seasonalIndex = behaviorAnalyze.seasonalIndex(totalMontlyProductDeman);
+        System.out.println("\n");
+        for (int i=0;i<seasonalIndex.length;i++){
+            System.out.println("seasonal index for " + (i+1) + " : " + seasonalIndex[i]);
+        }
+
+        int behavior = behaviorAnalyze.chooseBehavior(totalMontlyProductDeman);
+
+        if (behavior==0){
+            System.out.println("Comportamiento constante");
+        }
+        if (behavior==1){
+            System.out.println("Comportamiento con pendiente");
+        }
+        if (behavior==2){
+            System.out.println("Comportamiento estacional");
+        }
     }
 }

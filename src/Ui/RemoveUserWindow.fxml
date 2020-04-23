@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="221.0" prefWidth="328.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RemoveUserController">
+<AnchorPane prefHeight="221.0" prefWidth="328.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RemoveUserController">
    <children>
       <PasswordField fx:id="userPasswordTextField" layoutX="90.0" layoutY="132.0" />
       <ComboBox fx:id="usersListCB" layoutX="89.0" layoutY="60.0" prefWidth="150.0" />

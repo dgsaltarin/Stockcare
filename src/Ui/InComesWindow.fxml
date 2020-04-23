@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="472.0" prefWidth="709.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InComeController">
+<AnchorPane prefHeight="472.0" prefWidth="709.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InComeController">
     <children>
         <TableView fx:id="verificationTableView" layoutX="25.0" layoutY="234.0" onMouseClicked="#clickItem" prefHeight="196.0" prefWidth="678.0">
             <columns>

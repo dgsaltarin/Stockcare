@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 public class Analyze implements ProductsDAO {
 
     /**
-     * diven a observable list of outcomes it takes only the data that belongs to the last year
+     * given a observable list of outcomes it takes only the data that belongs to the last year
      * @param observableList observableList of OutComes
      * */
     protected ArrayList<Records> lastYearOfData(ObservableList<Records> observableList){
@@ -30,6 +30,7 @@ public class Analyze implements ProductsDAO {
      * given the last year of data, this function separate the data in 30 days periods
      * for every product
      * @param arrayList arrayList of records
+     * @return a matrix with 3 columns, quantity, product id and month
      * */
     protected int[][] separateDataByMonth(ArrayList<Records> arrayList){
         int[][] dataMatrix = new int[arrayList.size()][3];
@@ -147,22 +148,26 @@ public class Analyze implements ProductsDAO {
         return standardDeviation;
     }
 
+    /**
+     * given a product's demand annual demand, calculate the slope of the data
+     * */
     protected double slopeOfData(int[][] productDemand){
-        int[] month = {1,2,3,4,5,6,7,8,9,10,11,12};
-        double averageOfMonths =6.5;
-        double inferior = 0;
-        double superior = 0;
-        double[] X = new double[12];
-        double[] Y = new double[12];
-        double slope=0;
+        int[] X = {1,2,3,4,5,6,7,8,9,10,11,12};
+        double n = 12.0;
+        double XSum = 0.0;
+        double YSum = 0.0;
+        double XYSum = 0.0;
+        double XSquareSum = 0.0;
+        double slope;
 
-        for (int i:month){
-            inferior += Math.pow(i-averageOfMonths,2);
+        for (int i=0; i<X.length;i++){
+             XSum += X[i];
+             YSum += productDemand[i][0];
+             XYSum += X[i]*productDemand[i][0];
+             XSquareSum += Math.pow(X[i], 2);
         }
 
-        for (int i=0;i<productDemand.length;i++){
-            X[i] = month[i] - averageOfMonths;
-        }
+        slope = (XYSum - ((XSum*YSum)/n))/(XSquareSum- (Math.pow(XSum,2)/n));
 
         return slope;
     }
@@ -197,7 +202,8 @@ public class Analyze implements ProductsDAO {
      * a seasonal index is calculated
      * */
     protected double[] seasonalIndex(int[][] matrix){
-        double[] seasonalIndexes = null;
+        double[] seasonalIndex = new double[12];
+        double[] seasonalIndexes = new double[4];
         double[] averageDemand = new double[4];
         double[] totalDemand = new double[4];
 
@@ -213,17 +219,104 @@ public class Analyze implements ProductsDAO {
         }
 
         IntStream.range(0, totalDemand.length).forEach(i -> averageDemand[i] = totalDemand[i] / 3);
-        Double[] seasonalAverage = {};
+        double[] seasonalAverage = new double[1];
         IntStream.range(0,averageDemand.length).forEach(i -> seasonalAverage[0] += averageDemand[i]);
         IntStream.range(0, averageDemand.length).forEach(i -> seasonalIndexes[i] = averageDemand[i]/(seasonalAverage[0]/4));
-        return seasonalIndexes;
+
+        for (int i=0;i<12;i++){
+            if (i<= 3)
+                seasonalIndex[0] = seasonalIndexes[0];
+                seasonalIndex[1] = seasonalIndexes[0];
+                seasonalIndex[2] = seasonalIndexes[0];
+            if (i > 3 && i <= 6)
+                seasonalIndex[3] = seasonalIndexes[1];
+                seasonalIndex[4] = seasonalIndexes[1];
+                seasonalIndex[5] = seasonalIndexes[1];
+            if (i > 6 && i <= 9)
+                seasonalIndex[6] = seasonalIndexes[2];
+                seasonalIndex[7] = seasonalIndexes[2];
+                seasonalIndex[8] = seasonalIndexes[2];
+            if (i > 9 && i <= 12)
+                seasonalIndex[9] = seasonalIndexes[3];
+                seasonalIndex[10] = seasonalIndexes[3];
+                seasonalIndex[11] = seasonalIndexes[3];
+        }
+        return seasonalIndex;
     }
 
-    protected void simulations(){
+    protected double[][] simulations(int[][] productDemand){
+        double[][] errors = new double[12][3];
+        double[][] simulatedValues = new double[12][3];
+        double dataSlope = slopeOfData(productDemand);
+        double averageDemand = averageDemandForProduct(productDemand);
+        double[] seasonalIndexes = seasonalIndex(productDemand);
+        double[] noise = noiseForStimations(12, productDemand);
 
+        for (int i=0;i<noise.length;i++){
+            simulatedValues[i][0] = averageDemand + noise[1];
+            simulatedValues[i][1] = averageDemand + (productDemand[i][0]*dataSlope) + noise[i];
+            simulatedValues[i][2] = (averageDemand*seasonalIndexes[i]) + noise[i];
+
+            errors[i][0] = productDemand[i][0] - simulatedValues[i][0];
+            errors[i][1] = productDemand[i][0] - simulatedValues[i][0];
+            errors[i][2] = productDemand[i][0] - simulatedValues[i][0];
+        }
+
+        return errors;
     }
 
-    protected void calculateMAE(){}
+    protected double[] calculateMAE(int[][] productDemand){
+        double[][] errors = simulations(productDemand);
+        double[] MAE = new double[3];
+
+        for (int i = 0; i<MAE.length;i++){
+            double totalError = 0.0;
+            for (int j=0;j<productDemand.length;j++){
+                totalError += errors[j][i];
+            }
+            MAE[i] = totalError/12;
+        }
+        return MAE;
+    }
+
+
+    /**
+     * receive a product's demand and calculate the behavior of teh demand, 0 for constant, 1 for behavior with slope,
+     * and 2 for seasonal behavior
+     * */
+    protected int chooseBehavior(int[][] productDemand){
+        double[][] MAESamples = new double[50][3];
+        double[] averageMAE = new double[3];
+
+        for (int i=0;i<50;i++){
+            double[] MAE = calculateMAE(productDemand);
+            for (int j=0;j<MAE.length;j++){
+                MAESamples[i][j] = MAE[j];
+            }
+        }
+
+        for (int i=0;i<averageMAE.length;i++) {
+            double totalMAE = 0.0;
+            for (int j = 0; j < MAESamples.length; j++) {
+                totalMAE += MAESamples[j][i];
+            }
+            averageMAE[i] = totalMAE/50;
+        }
+
+        int behavior = 0;
+
+        if(averageMAE[0]<averageMAE[1]&&averageMAE[0]<averageMAE[2]){
+            behavior = 0;
+        }
+        if(averageMAE[1]<averageMAE[0]&&averageMAE[1]<averageMAE[2]){
+            behavior = 1;
+        }
+        if(averageMAE[2]<averageMAE[0]&&averageMAE[2]<averageMAE[1]){
+            behavior = 2;
+        }
+
+        return behavior;
+    }
 
     /**
      * given the monthly demand of a product, it returns the average demand

@@ -11,7 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="344.0" prefWidth="478.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InComeCorrectionController">
+<AnchorPane prefHeight="344.0" prefWidth="478.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InComeCorrectionController">
     <children>
         <TableView fx:id="productsTableView" disable="true" layoutX="14.0" layoutY="130.0" prefHeight="200.0" prefWidth="246.0">
             <columns>

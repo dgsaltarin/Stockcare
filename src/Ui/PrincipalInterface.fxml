@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Resources/PrincipalInterfaceStyle.css"
-            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controllers.PrincipalInterfaceController">
     <children>
         <MenuBar id="menuBar" fx:id="menuBar" layoutY="2.0" maxHeight="1.7976931348623157E308"

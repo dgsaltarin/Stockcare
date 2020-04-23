@@ -7,7 +7,7 @@ import javafx.scene.chart.XYChart;
 public class BehaviorAnalyze extends Analyze {
 
     /**
-     * @description given the list of records and the name of a product, return all the product's records
+     * given the list of records and the name of a product, return all the product's records
      * @param observableList observable list of records corresponding to a type of product
      * @param productToAnalyze name of the product to analyze
      * */
