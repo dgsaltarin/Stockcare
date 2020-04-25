@@ -9,20 +9,22 @@ import java.util.stream.IntStream;
 
 public class Analyze implements ProductsDAO {
 
+    protected int[][] monthlyDemand;
+    protected int[][] averageDemands;
+
     /**
      * given a observable list of outcomes it takes only the data that belongs to the last year
      * @param observableList observableList of OutComes
      * */
     protected ArrayList<Records> lastYearOfData(ObservableList<Records> observableList){
-        ArrayList<Records> sixMonthsOfData = new ArrayList<>();
+        ArrayList<Records> lastYearData = new ArrayList<>();
 
         for (Records records : observableList) {
             if (records.getDateOfRecord().after(getDateTimeAgo(13))) {
-                sixMonthsOfData.add(records);
+                lastYearData.add(records);
             }
         }
-
-        return sixMonthsOfData;
+        return lastYearData;
     }
 
 
@@ -87,6 +89,32 @@ public class Analyze implements ProductsDAO {
         }
 
         return productListHashMap;
+    }
+
+    /**
+     * call the list of products and then create a hashMap with the code and the price
+     * */
+    protected HashMap<Integer, Double> createHashMapProductPrice(String typeOfProduct){
+        HashMap<Integer, Double> productPriceHashMap = new HashMap<>();
+        ArrayList<Products> productList = productsList(typeOfProduct);
+        for (Products products : productList) {
+            productPriceHashMap.put(products.getCode(), products.getPrice());
+        }
+
+        return productPriceHashMap;
+    }
+
+    /**
+     * call the list of products and then create a hashMap with the name and the price
+     * */
+    public HashMap<String, Double> createHashMapProductPriceName(String typeOfProduct){
+        HashMap<String, Double> productPriceHashMap = new HashMap<>();
+        ArrayList<Products> productList = productsList(typeOfProduct);
+        for (Products products : productList) {
+            productPriceHashMap.put(products.getName(), products.getPrice());
+        }
+
+        return productPriceHashMap;
     }
 
     /**
@@ -325,8 +353,8 @@ public class Analyze implements ProductsDAO {
         double averageDemand;
         int totalDemand = 0;
 
-        for (int i=0;i<monthlyDemand.length;i++){
-            totalDemand += monthlyDemand[i][0];
+        for (int[] ints : monthlyDemand) {
+            totalDemand += ints[0];
         }
 
         averageDemand = totalDemand/monthlyDemand.length;

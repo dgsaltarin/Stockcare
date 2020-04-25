@@ -1,6 +1,5 @@
 package controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,23 +19,23 @@ public class PrincipalInterfaceController implements Initializable {
 
     @FXML private MenuBar menuBar;
 
-    public void ProductsWindow(ActionEvent actionEvent) throws IOException {
+    public void ProductsWindow() throws IOException {
         stageChanger("Ui/ProductsWindow.fxml", "Productos");
     }
 
-    public void recordsWindow(ActionEvent actionEvent) throws IOException{
+    public void recordsWindow() throws IOException{
         stageChanger("Ui/RecordsWindow.fxml", "Registros");
     }
 
-    public void inventoryWindow(ActionEvent actionEvent) throws IOException{
+    public void inventoryWindow() throws IOException{
         stageChanger("Ui/InventoryWindow.fxml", "Inventario");
     }
 
-    public void purchaseOrderWindow(ActionEvent actionEvent) throws  IOException{
+    public void purchaseOrderWindow() throws  IOException{
         stageChanger("Ui/PurchaseOrderWindow.fxml", "Orden de Compra");
     }
 
-    public void outComeWindow(ActionEvent actionEvent) throws IOException {
+    public void outComeWindow() throws IOException {
         stageChanger("Ui/OutComesWindow.fxml","Salida de Inventario");
     }
 
@@ -57,39 +56,43 @@ public class PrincipalInterfaceController implements Initializable {
         menuBar.setMinWidth(screenSize.width);
     }
 
-    public void behaviorWindow(ActionEvent actionEvent) throws IOException {
+    public void behaviorWindow() throws IOException {
         stageChanger("Ui/BehaviorAnalyzeWindow.fxml","Análisis de Comportamiento");
     }
 
-    public void InComesWindow(ActionEvent actionEvent) throws IOException {
+    public void InComesWindow() throws IOException {
         stageChanger("Ui/InComesWindow.fxml","Entradas a Inventario");
     }
 
-    public void addProductWindow(ActionEvent actionEvent) throws IOException {
+    public void addProductWindow() throws IOException {
         stageChanger("Ui/AddProductWindow.fxml","Agregar Producto");
     }
 
-    public void addAreaWindow(ActionEvent actionEvent) throws IOException {
+    public void addAreaWindow() throws IOException {
         stageChanger("Ui/AddAreaWindow.fxml", "Agregar Área");
     }
 
-    public void addProviderWindow(ActionEvent actionEvent) throws IOException {
+    public void addProviderWindow() throws IOException {
         stageChanger("Ui/AddProviderWindow.fxml", "Agregar Proveedor");
     }
 
-    public void ABCAnalyzeWindow(ActionEvent actionEvent) throws IOException {
+    public void ABCAnalyzeWindow() throws IOException {
         stageChanger("Ui/AnalyzeABCWindow.fxml", "Análisis ABC");
     }
 
-    public void AbcVenWindow(ActionEvent actionEvent) throws IOException {
+    public void AbcVenWindow() throws IOException {
         stageChanger("Ui/AbcVenAnalyzeWindow.fxml", "Análisis ABC-VEN");
     }
 
-    public void addUserWindow(ActionEvent actionEvent) throws IOException {
+    public void addUserWindow() throws IOException {
         stageChanger("ui/AddUserWindow.fxml", "Agregar Usuario");
     }
 
-    public void removeUserWindow(ActionEvent actionEvent) throws IOException {
+    public void removeUserWindow() throws IOException {
         stageChanger("Ui/RemoveUserWindow.fxml", "Eliminar Usuario");
+    }
+
+    public void InventoryPoliciesWindow() throws IOException {
+        stageChanger("Ui/InventoryPoliciesWindow.fxml", "Políticas de Inventario");
     }
 }

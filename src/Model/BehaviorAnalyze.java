@@ -2,12 +2,15 @@ package Model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.scene.chart.XYChart;
+
+import java.util.ArrayList;
 
 public class BehaviorAnalyze extends Analyze {
 
     /**
-     * given the list of records and the name of a product, return all the product's records
+     * given the list of records and the name of a product, return all the product's records for the last year
      * @param observableList observable list of records corresponding to a type of product
      * @param productToAnalyze name of the product to analyze
      * */
@@ -19,6 +22,8 @@ public class BehaviorAnalyze extends Analyze {
                 productData.add(record);
             }
         }
+
+        productData = FXCollections.observableArrayList(lastYearOfData(productData));
         return productData;
     }
 
@@ -35,5 +40,28 @@ public class BehaviorAnalyze extends Analyze {
 
         values.setName(productToAnalyze);
         return values;
+    }
+
+    public String chooseBehavior(ObservableList<Records> productDemand){
+        String behaviorString = "";
+        ArrayList<Records> lastYearProductDemand = lastYearOfData(productDemand);
+        int[][] separatedDemandByMonth = separateDataByMonth(lastYearProductDemand);
+        int[][] totalMonthlyDemand = totalMonthlyDemand(separatedDemandByMonth);
+
+        int behavior = chooseBehavior(totalMonthlyDemand);
+
+        switch (behavior){
+            case 0:
+                behaviorString = "constante";
+                break;
+            case 1:
+                behaviorString = "tendencia";
+                break;
+            case 2:
+                behaviorString = "estacional";
+                break;
+        }
+
+        return behaviorString;
     }
 }

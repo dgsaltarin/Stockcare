@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -25,11 +26,16 @@ import java.util.ResourceBundle;
 
 public class BehaviorAnalyzeController extends Operations implements Initializable, ProductsDAO, RecordsDAO {
 
-    @FXML private TableView<Products> productsTableView;
-    @FXML private TableColumn<Products, String> productsTableColumn;
-    @FXML private Button generateAnalyzeButton;
-
-    @FXML private ScatterChart<String, Number> behaviorAnalyzeChart;
+    @FXML
+    private TableView<Products> productsTableView;
+    @FXML
+    private TableColumn<Products, String> productsTableColumn;
+    @FXML
+    private Button generateAnalyzeButton;
+    @FXML
+    private ScatterChart<String, Number> behaviorAnalyzeChart;
+    @FXML
+    private Label behaviorLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -68,7 +74,8 @@ public class BehaviorAnalyzeController extends Operations implements Initializab
         productsTableView.setItems(sortedData);
     }
 
-    public void generateAnalyze(ActionEvent actionEvent) {
+    public void generateAnalyze() {
+        behaviorAnalyzeChart.getData().clear();
         BehaviorAnalyze behaviorAnalyze = new BehaviorAnalyze();
 
         Scene scene = generateAnalyzeButton.getScene();
@@ -76,10 +83,13 @@ public class BehaviorAnalyzeController extends Operations implements Initializab
 
         ObservableList<Records> observableList = FXCollections.observableArrayList(outComesList(typeOfProductCB.getValue().toString()));
         String productToAnalyze = productsTableView.getSelectionModel().getSelectedItem().getName();
+        ObservableList<Records> productData = behaviorAnalyze.productRecordsData(observableList, productToAnalyze);
 
         behaviorAnalyzeChart.setAnimated(false);
-        behaviorAnalyzeChart.getData().add(behaviorAnalyze.generateScatterChart(observableList, productToAnalyze));
+        behaviorAnalyzeChart.getData().add(behaviorAnalyze.generateScatterChart(productData, productToAnalyze));
         behaviorAnalyzeChart.getXAxis().setLabel("Tiempo");
         behaviorAnalyzeChart.getYAxis().setLabel("Cantidad");
+
+        behaviorLabel.setText(behaviorAnalyze.chooseBehavior(productData));
     }
 }

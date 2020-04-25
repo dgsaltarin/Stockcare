@@ -17,28 +17,40 @@ public class AnalyzeABC extends Analyze {
 
     public AnalyzeABC(){}
 
+    /**
+     * receive the data records and a type of products and do an ABC analyze
+     * */
     public ObservableList<AnalyzeABC> ABCAnalyze(ObservableList<Records> observableList, String typeOfProduct){
         ObservableList<AnalyzeABC> AbcAnalyze = FXCollections.observableArrayList();
         //preparing data
         Double accumulatedParticipat = 0.0;
         ArrayList<Records> lastYearData = lastYearOfData(observableList);
-        int[][] monthlyDemand = separateDataByMonth(lastYearData);
-        int[][] averageDemand = averageMonthlyDemand(monthlyDemand, typeOfProduct);
-        sortMatrix(averageDemand,1);
+        monthlyDemand = separateDataByMonth(lastYearData);
+        averageDemands = averageMonthlyDemand(monthlyDemand, typeOfProduct);
+        double[][] averageDemandByPrice = new double[averageDemands.length][2];
+        sortMatrix(averageDemands,1);
 
         HashMap<Integer, String> productList = createHashMapProductList(typeOfProduct);
+        HashMap<Integer, Double> productPriceList = createHashMapProductPrice(typeOfProduct);
+
+        //calculate the average demand taking in count the product's price
+        for (int i = 0; i<averageDemands.length;i++){
+            double productUnitPrice = productPriceList.get(averageDemands[i][0]);
+            averageDemandByPrice[i][0] = averageDemands[i][0];
+            averageDemandByPrice[i][1] = averageDemands[i][1]*productUnitPrice;
+        }
 
         //calculating the total demand for all product
         int totalDemand = 0;
 
-        for (int i = 0; i<averageDemand.length;i++){
-            totalDemand += averageDemand[i][1];
+        for (int i = 0; i<averageDemandByPrice.length;i++){
+            totalDemand += averageDemandByPrice[i][1];
         }
 
-        for (int i=0; i<averageDemand.length;i++){
-            if (averageDemand[i][1]>0){
-                String productName = productList.get(averageDemand[i][0]);
-                Double participation = (double) averageDemand[i][1]/totalDemand;
+        for (int i=0; i<averageDemands.length;i++){
+            if (averageDemands[i][1]>0){
+                String productName = productList.get(averageDemands[i][0]);
+                Double participation = averageDemandByPrice[i][1]/totalDemand;
                 accumulatedParticipat += participation;
                 String classification = "";
                 if(accumulatedParticipat<0.8){
@@ -50,7 +62,7 @@ public class AnalyzeABC extends Analyze {
                 else if(0.95<=accumulatedParticipat){
                     classification ="C";
                 }
-                AnalyzeABC analyze = new AnalyzeABC(productName, averageDemand[i][1], participation, accumulatedParticipat, classification);
+                AnalyzeABC analyze = new AnalyzeABC(productName, averageDemands[i][1], participation, accumulatedParticipat, classification);
                 AbcAnalyze.add(analyze);
             }
         }
@@ -58,6 +70,9 @@ public class AnalyzeABC extends Analyze {
         return AbcAnalyze;
     }
 
+    /**
+     * receive the result from ABC analyze and create a pie chart to illustrate the data
+     * */
     public ObservableList<PieChart.Data> generatePieChart(ObservableList<AnalyzeABC> observableList){
         int aClassification =0;
         int bClassification =0;
