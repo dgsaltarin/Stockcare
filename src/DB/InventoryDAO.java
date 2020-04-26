@@ -111,4 +111,32 @@ public interface InventoryDAO extends IDBConection, ProductsDAO {
         Alerts.successfullAlert("Inventario actualizado de manera exitosa!");
     }
 
+    /**
+     * return all the products in inventory
+     * */
+    default ObservableList<Inventory> getAllInventory(){
+        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+        try (Connection connection = conectToDB()) {
+            String sql = "SELECT * FROM " + TINVENTARIO;
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                Inventory inventoryItem = new Inventory(rs.getInt(TINVENTARIO_ID),
+                        getProductById(rs.getInt(TINVENTARIO_PRODUCTOID)),
+                        rs.getInt(TINVENTARIO_CANTIDAD),
+                        rs.getDouble(TINVENTARIO_PRECIO_UNITARIO),
+                        rs.getDate(TINVENTARIO_VENCIMIENTO));
+                inventory.add(inventoryItem);
+            }
+
+        } catch (SQLDataException e) {
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return inventory;
+    }
+
 }

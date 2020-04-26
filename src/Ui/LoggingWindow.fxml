@@ -22,7 +22,7 @@
       <Label layoutX="52.0" layoutY="300.0" text="Contraseña" />
       <TextField fx:id="userTextField" layoutX="51.0" layoutY="265.0" />
       <PasswordField fx:id="passwordTextField" layoutX="50.0" layoutY="316.0" />
-      <Button layoutX="53.0" layoutY="360.0" fx:id="loggingButton" mnemonicParsing="false" onAction="#loadPrincipalInterface" text="Ingresar" />
+      <Button layoutX="53.0" defaultButton="true" layoutY="360.0" fx:id="loggingButton" mnemonicParsing="false" onAction="#loadPrincipalInterface" text="Ingresar" />
       <Button fx:id="cancelButton" onAction="#cancelLogging" layoutX="178.0" layoutY="360.0" mnemonicParsing="false" text="Cancelar" />
    </children>
 </AnchorPane>

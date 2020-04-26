@@ -18,9 +18,9 @@ public class InventoryPolicies extends Analyze {
 
     //constants of the model
     private double K= 42.916;//cost of put a purchase order
-    private double keepInventory = 0.7669;//percentage of keeping inventory
-    private ArrayList<Double> D = new ArrayList<>();
-    private ArrayList<Double> deviations = new ArrayList<>();
+    private double keepInventory = 0.7669;//percentage of keeping inventory x unit cost
+    private ArrayList<Double> D = new ArrayList<>();//average demand for the product
+    private ArrayList<Double> deviations = new ArrayList<>();//standard Deviation for the products
 
     /**
      * take the product's records from a product's type and give back just the data where the demand is > 0
@@ -92,6 +92,15 @@ public class InventoryPolicies extends Analyze {
                     modelResult = periodicalModel(d, L, P);
                 }
 
+            } if(typeOfProduct.equals("dispositivo médico")||typeOfProduct.equals("insumo")){
+                if(itemClassification.equals("A")){
+                    z = 1.644854;
+                    modelResult = modelQR(d, H, z, deviation, L);
+                }
+                if(itemClassification.equals("B")||itemClassification.equals("C")){
+                    z = 0.841621;
+                    modelResult = modelQR(d, H, z, deviation, L);
+                }
             }
 
             double inventoryCost = modelResult[0]*productPrice.get(itemName);
@@ -103,6 +112,9 @@ public class InventoryPolicies extends Analyze {
         return policies;
     }
 
+    /**
+     * given the product´s demand, calculate the average demand and the standard deviation for a product
+     * */
     private double[] calculateDAndDeviation(ObservableList<Records> productData){
         double[] result = new double[2];
         ArrayList<Records> lastYearDemand = lastYearOfData(productData);
@@ -114,6 +126,9 @@ public class InventoryPolicies extends Analyze {
         return result;
     }
 
+    /**
+     * inventory model to calculate the inventory policies
+     * */
     public double[] modelQR(double D, double h, double z, double des, double L){
         double[] polity = new double[2];
         polity[0] = ((Math.sqrt((2*K*D)/h)+(z*des)));
@@ -121,6 +136,9 @@ public class InventoryPolicies extends Analyze {
         return polity;
     }
 
+    /**
+     * inventory model to calculate the inventory policies
+     * */
     public double[] periodicalModel(double D, double L, double P){
         double[] polity = new double[2];
         polity[0] = (D*(L+P));
