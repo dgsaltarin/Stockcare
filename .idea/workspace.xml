@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="560f59f7-38e0-4e85-958b-2c4599094a4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/InventorySupervision.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/Model/InventorySupervisionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/LoggingWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Ui/LoggingWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockCare/Ui/principalInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockCare/Ui/principalInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB/InventoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/InventoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/InventoryPolicies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/InventoryPolicies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/LoggingWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/LoggingWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/PrincipalInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/PrincipalInterface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Analyze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Analyze.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,35 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/InventorySupervision.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="55" column="87" lean-forward="true" selection-start-line="55" selection-start-column="87" selection-end-line="55" selection-end-column="87" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3243#3244#0" expanded="true" />
-                <element signature="e#3277#3278#0" expanded="true" />
-                <element signature="e#3345#3346#0" expanded="true" />
-                <element signature="e#3391#3392#0" expanded="true" />
-                <element signature="e#3419#3420#0" expanded="true" />
-                <element signature="e#3443#3444#0" expanded="true" />
-                <element signature="e#3477#3478#0" expanded="true" />
-                <element signature="e#3498#3499#0" expanded="true" />
-                <element signature="e#3530#3531#0" expanded="true" />
-                <element signature="e#3561#3562#0" expanded="true" />
-                <element signature="e#3606#3607#0" expanded="true" />
-                <element signature="e#3646#3647#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/InventoryPolicies.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="29" column="92" lean-forward="true" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
+            <state relative-caret-position="646">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,52 +29,53 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/InventoryPoliciesController.java">
+        <entry file="file://$PROJECT_DIR$/src/controllers/LoggingWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-403">
-              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            <state relative-caret-position="425">
+              <caret line="59" column="82" selection-start-line="59" selection-start-column="82" selection-end-line="59" selection-end-column="82" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#5291#5292#0" expanded="true" />
+                <element signature="e#5321#5322#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/BehaviorAnalyzeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="84" selection-start-line="84" selection-end-line="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/Model/InventorySupervisionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/Analyze.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="363" lean-forward="true" selection-start-line="363" selection-end-line="363" />
+            <state relative-caret-position="290">
+              <caret line="132" column="25" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DB/InventoryDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/AnalyzeABC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="113" column="7" lean-forward="true" selection-start-line="113" selection-start-column="7" selection-end-line="113" selection-end-column="7" />
+            <state relative-caret-position="425">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="e#4399#4400#0" expanded="true" />
+                <element signature="e#4433#4434#0" expanded="true" />
+                <element signature="e#4470#4471#0" expanded="true" />
+                <element signature="e#4506#4507#0" expanded="true" />
+                <element signature="e#4556#4557#0" expanded="true" />
+                <element signature="e#4602#4603#0" expanded="true" />
+                <element signature="e#4650#4651#0" expanded="true" />
+                <element signature="e#4694#4695#0" expanded="true" />
+                <element signature="e#4735#4736#0" expanded="true" />
+                <element signature="e#4772#4773#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/PrincipalInterfaceController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="86" column="52" lean-forward="true" selection-start-line="86" selection-start-column="52" selection-end-line="86" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/Ui/InventoryPoliciesWindow.fxml" />
         <option value="$PROJECT_DIR$/src/Model/BehaviorAnalyze.java" />
         <option value="$PROJECT_DIR$/src/Model/AnalyzeABC.java" />
-        <option value="$PROJECT_DIR$/src/Model/Analyze.java" />
         <option value="$PROJECT_DIR$/src/tests/controllers/InventoryPoliciesControllerTest.java" />
         <option value="$PROJECT_DIR$/src/controllers/InventoryPoliciesController.java" />
         <option value="$PROJECT_DIR$/src/Ui/LoggingWindow.fxml" />
@@ -188,6 +156,7 @@
         <option value="$PROJECT_DIR$/src/Model/InventoryPolicies.java" />
         <option value="$PROJECT_DIR$/src/tests/Model/InventorySupervisionTest.java" />
         <option value="$PROJECT_DIR$/src/Model/InventorySupervision.java" />
+        <option value="$PROJECT_DIR$/src/Model/Analyze.java" />
       </list>
     </option>
   </component>
@@ -285,7 +254,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InventorySupervisionTest.inventoryPolicySupervision">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="StockCare" />
@@ -359,8 +328,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InventorySupervisionTest.inventoryPolicySupervision" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.InventorySupervisionTest.inventoryPolicySupervision" />
         <item itemvalue="JUnit.InventorySupervisionTest.expirationDateSupervision" />
         <item itemvalue="JUnit.InventoryPoliciesControllerTest.generatePolicies" />
         <item itemvalue="JUnit.BehaviorAnalyzeTest.productRecordsdata" />
@@ -745,8 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/PrincipalInterfaceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="95" column="53" selection-start-line="95" selection-start-column="53" selection-end-line="95" selection-end-column="53" />
+        <state relative-caret-position="323">
+          <caret line="86" column="52" lean-forward="true" selection-start-line="86" selection-start-column="52" selection-end-line="86" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -794,8 +763,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/AnalyzeABC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="425">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#4399#4400#0" expanded="true" />
             <element signature="e#4433#4434#0" expanded="true" />
@@ -864,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Analyze.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="363" lean-forward="true" selection-start-line="363" selection-end-line="363" />
+        <state relative-caret-position="290">
+          <caret line="132" column="25" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -898,22 +867,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/InventorySupervision.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="55" column="87" lean-forward="true" selection-start-line="55" selection-start-column="87" selection-end-line="55" selection-end-column="87" />
+        <state relative-caret-position="646">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3243#3244#0" expanded="true" />
-            <element signature="e#3277#3278#0" expanded="true" />
-            <element signature="e#3345#3346#0" expanded="true" />
-            <element signature="e#3391#3392#0" expanded="true" />
-            <element signature="e#3419#3420#0" expanded="true" />
-            <element signature="e#3443#3444#0" expanded="true" />
-            <element signature="e#3477#3478#0" expanded="true" />
-            <element signature="e#3498#3499#0" expanded="true" />
-            <element signature="e#3530#3531#0" expanded="true" />
-            <element signature="e#3561#3562#0" expanded="true" />
-            <element signature="e#3606#3607#0" expanded="true" />
-            <element signature="e#3646#3647#0" expanded="true" />
           </folding>
         </state>
       </provider>

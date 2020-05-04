@@ -129,6 +129,8 @@ public class Analyze implements ProductsDAO {
             // the '>' Operator
             if (entry1[col] < entry2[col])
                 return 1;
+            else if (entry1[col] == entry2[col])
+                return 0;
             else
                 return -1;
         });  // End of function call sort().
