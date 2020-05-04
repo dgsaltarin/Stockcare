@@ -35,7 +35,6 @@ public class InventorySupervision extends InventoryPolicies implements Inventory
             if (item.getExpirationDate().before(actualDate)||days<=30){
                 productsInRisk.add(item);
             }
-            System.out.println(days);
         }
 
         return  productsInRisk;
