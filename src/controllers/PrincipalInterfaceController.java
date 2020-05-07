@@ -42,7 +42,9 @@ public class PrincipalInterfaceController implements Initializable {
     @FXML
     private TableColumn<InventoryPolicies, Integer> quantityColumn;
 
-
+    /**
+     * call a stage and shows it
+     * */
     private void stageChanger(String stageUrl, String tittle) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(stageUrl));

@@ -4,7 +4,6 @@ import DB.ProductsDAO;
 import Model.Products;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -29,7 +28,7 @@ public class AddProductController extends Operations implements Initializable, P
         venCB.setItems(venClassification);
     }
 
-    public void addProduct(ActionEvent actionEvent) {
+    public void addProduct() {
 
         String productName = productNameTextField.getText();
         Integer productCode = Integer.parseInt(productCodeTextField.getText());

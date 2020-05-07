@@ -2,7 +2,6 @@ package controllers;
 
 import DB.ProvidersDAO;
 import Model.Providers;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -15,7 +14,7 @@ public class AddProviderController implements ProvidersDAO {
     @FXML private TextField emailTextField;
     @FXML private TextField cityTextField;
 
-    public void addProvider(ActionEvent actionEvent) {
+    public void addProvider() {
 
         if(addressTextField.getText().isEmpty()|| nitTextField.getText().isEmpty()
         ||providerNameTextField.getText().isEmpty()||phonenumberTextField.getText().isEmpty()

@@ -21,22 +21,33 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PurchaseOrderController extends Operations implements Initializable, ProvidersDAO, ProductsDAO, PurchaseOrderDAO {
 
-    @FXML private ComboBox providersCB;
-    @FXML private TableView<Products> productsTableView;
-    @FXML private TableColumn<Products, String> productsColumnP;
-    @FXML private TableColumn<Products, Integer> codeColumnP;
-    @FXML private TextField filterTextField;
-    @FXML private Label orderNumber;
-    @FXML private TableView<PurchaseOrder> ordersTableView;
-    @FXML private TableColumn<PurchaseOrder, Integer> codeColumn;
-    @FXML private TableColumn<PurchaseOrder, String> nameColumn;
-    @FXML private TableColumn<PurchaseOrder, Integer> quantityColumn;
+    @FXML
+    private ComboBox providersCB;
+    @FXML
+    private TableView<Products> productsTableView;
+    @FXML
+    private TableColumn<Products, String> productsColumnP;
+    @FXML
+    private TableColumn<Products, Integer> codeColumnP;
+    @FXML
+    private TextField filterTextField;
+    @FXML
+    private Label orderNumber;
+    @FXML
+    private TableView<PurchaseOrder> ordersTableView;
+    @FXML
+    private TableColumn<PurchaseOrder, Integer> codeColumn;
+    @FXML
+    private TableColumn<PurchaseOrder, String> nameColumn;
+    @FXML
+    private TableColumn<PurchaseOrder, Integer> quantityColumn;
 
     public PurchaseOrder purchaseOrder;
     private int productCode;
@@ -61,7 +72,7 @@ public class PurchaseOrderController extends Operations implements Initializable
     /***
      * @description get the list of products once the user select a categrory
      */
-     public void fillProducts() {
+    public void fillProducts() {
         ObservableList<Products> productsList = FXCollections.observableArrayList(productsNames(typeOfProductCB.getValue().toString()));
 
         codeColumnP.setCellValueFactory(new PropertyValueFactory<>("code"));
@@ -96,11 +107,11 @@ public class PurchaseOrderController extends Operations implements Initializable
 
     /**
      * Call the quantity window when the user double click on a product
-     * */
+     */
     @FXML
     public void clickItem(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        if(mouseEvent.getClickCount()==2){
-            if(!providersCB.getSelectionModel().isEmpty()&&!typeOfProductCB.getSelectionModel().isEmpty()) {
+        if (mouseEvent.getClickCount() == 2) {
+            if (!providersCB.getSelectionModel().isEmpty() && !typeOfProductCB.getSelectionModel().isEmpty()) {
                 //get the init data for the purchase order
                 productCode = productsTableView.getSelectionModel().getSelectedItem().getCode();
                 productName = productsTableView.getSelectionModel().getSelectedItem().getName();
@@ -125,10 +136,9 @@ public class PurchaseOrderController extends Operations implements Initializable
                 window.initModality(Modality.APPLICATION_MODAL);
                 window.setScene(scene);
                 window.showAndWait();
-            }else if(providersCB.getSelectionModel().isEmpty()){
+            } else if (providersCB.getSelectionModel().isEmpty()) {
                 Alerts.notSelectionAlert("Seleccione un proveedor!");
-            }
-            else if(typeOfProductCB.getSelectionModel().isEmpty()){
+            } else if (typeOfProductCB.getSelectionModel().isEmpty()) {
                 Alerts.notSelectionAlert("Seleccione el tipo de producto!");
             }
         }
@@ -136,15 +146,15 @@ public class PurchaseOrderController extends Operations implements Initializable
 
 
     /**
-     *clear the table in case of a mistake
-     * */
+     * clear the table in case of a mistake
+     */
     public void clearTable() {
         ordersTableView.getItems().clear();
     }
 
     /**
-     *generate the report order and set the data into the data base
-     * */
+     * generate the report order and set the data into the data base
+     */
     public void generateOrder(ActionEvent actionEvent) {
         ObservableList<PurchaseOrder> observableList = ordersTableView.getItems();
         ReportWindowController reportWindowController = new ReportWindowController();

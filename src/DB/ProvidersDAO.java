@@ -8,41 +8,9 @@ import static DB.DataBase.*;
 
 public interface ProvidersDAO extends IDBConection  {
 
-    default ArrayList<Providers> providerList(){
-        ArrayList<Providers> providersL = new ArrayList<>();
-
-        try{
-            Connection connection = conectToDB();
-            String sql = "SELECT * FROM " + TPROVEEDORES;
-
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            ResultSet rs = preparedStatement.executeQuery();
-
-            while (rs.next()){
-                Providers provider = new Providers(
-                        rs.getInt(TPROVEEDORES_ID),
-                        rs.getString(TPROVEEDORES_NOMBRE),
-                        rs.getString(TPROVEEDORES_NIT),
-                        rs.getString(TPROVEEDORES_EMAIL),
-                        rs.getString(TPROVEEDORES_TELEFONO),
-                        rs.getString(TPROVEEDORES_CIUDAD),
-                        rs.getString(TPROVEEDORES_DIRECCIÓN));
-                providersL.add(provider);
-            }
-
-        } catch (SQLDataException e){
-            e.printStackTrace();
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return providersL;
-    }
-
     /***
      * @desciption get the provider's name
      */
-
     default ArrayList<String> providerName(){
         ArrayList<String> providersL = new ArrayList<>();
 
@@ -68,6 +36,9 @@ public interface ProvidersDAO extends IDBConection  {
         return providersL;
     }
 
+    /**
+     * get a provider id according to his name
+     * */
     default Integer getProvidersCodeByName(String name){
         int providersCode = 0;
 
@@ -101,6 +72,9 @@ public interface ProvidersDAO extends IDBConection  {
         return providersCode;
     }
 
+    /**
+     * get a provider's information according to an id
+     * */
     default Providers getProviderById(int id){
         Providers provider = null;
 
@@ -133,6 +107,9 @@ public interface ProvidersDAO extends IDBConection  {
         return  provider;
     }
 
+    /**
+     * set a new provider inside the data base
+     * */
     default void addNewProvider(Providers provider){
 
         try{Connection connection = conectToDB();

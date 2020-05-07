@@ -2,78 +2,85 @@ package DB;
 
 import Model.Alerts;
 import Model.Areas;
-import Model.Providers;
 
-import java.awt.geom.Area;
 import java.sql.*;
 import java.util.ArrayList;
+
 import static DB.DataBase.*;
 
 public interface AreasDAO extends IDBConection {
 
-    default ArrayList<String> getAreasName(){
+    /**
+     * get the area's name
+     * */
+    default ArrayList<String> getAreasName() {
         ArrayList<String> areasName = new ArrayList<>();
 
-        try{Connection connection = conectToDB();
+        try {
+            Connection connection = conectToDB();
 
             String sql = "SELECT * FROM " + TAREAS;
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
 
-            while (rs.next()){
+            while (rs.next()) {
                 Areas area = new Areas(rs.getString(TAREAS_NOMBRE));
                 areasName.add(area.getName());
             }
 
-        }catch (SQLDataException e){
+        } catch (SQLDataException e) {
             e.printStackTrace();
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return areasName;
     }
 
-    default Integer getAreaIdByName(String name){
+    /**
+     * get the area's information according to a provided name
+     * */
+    default Integer getAreaIdByName(String name) {
         int areaId = 0;
 
-        try{
+        try {
             Connection connection = conectToDB();
-            String sql = "SELECT * FROM " + TAREAS + " WHERE " + TAREAS_NOMBRE + " = '" +name
+            String sql = "SELECT * FROM " + TAREAS + " WHERE " + TAREAS_NOMBRE + " = '" + name
                     + "' LIMIT 1";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
 
-            while (rs.next()){
+            while (rs.next()) {
                 Areas area = new Areas(
                         rs.getInt(TAREAS_ID),
                         rs.getString(TAREAS_NOMBRE));
                 areaId = area.getId();
             }
 
-        } catch (SQLDataException e){
+        } catch (SQLDataException e) {
             e.printStackTrace();
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return areaId;
     }
 
-    default void addNewArea(Areas area){
+    /**
+     * set a new area inside the data base
+     * */
+    default void addNewArea(Areas area) {
 
-        try{Connection connection = conectToDB();
+        try {
+            Connection connection = conectToDB();
 
             String sql = "INSERT INTO " + TAREAS + " VALUES(?,?)";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setNull(1,Types.NULL);
+            preparedStatement.setNull(1, Types.NULL);
             preparedStatement.setString(2, area.getName());
 
             preparedStatement.executeUpdate();

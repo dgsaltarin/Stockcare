@@ -9,12 +9,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.chart.ScatterChart;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -43,7 +41,7 @@ public class BehaviorAnalyzeController extends Operations implements Initializab
 
     }
 
-    public void fillTable(javafx.event.ActionEvent actionEvent) {
+    public void fillTable() {
         ObservableList<Products> productsList = FXCollections.observableArrayList(productsNames(typeOfProductCB.getValue().toString()));
 
         productsTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -74,6 +72,9 @@ public class BehaviorAnalyzeController extends Operations implements Initializab
         productsTableView.setItems(sortedData);
     }
 
+    /**
+     * handle all the necessary methods for the behavior analyze
+     * */
     public void generateAnalyze() {
         behaviorAnalyzeChart.getData().clear();
         BehaviorAnalyze behaviorAnalyze = new BehaviorAnalyze();

@@ -28,18 +28,28 @@ import java.util.ResourceBundle;
 
 public class OutComesController extends Operations implements Initializable, AreasDAO, InventoryDAO, ProductsDAO, OutComesDAO {
 
-    @FXML private TableView<Inventory> inventoryTableView;
-    @FXML private TableColumn<Inventory, Integer> quantityColumnI;
-    @FXML private TableColumn<Inventory, String> productsColumnI;
-    @FXML private TableColumn<Inventory, Double> unitPriceColumnI;
-
-    @FXML private TableView<Records> outComeTableView;
-    @FXML private TableColumn<Records, Integer> codeColumn;
-    @FXML private TableColumn<Records, String> nameColumn;
-    @FXML private TableColumn<Records, Integer> quantityColumn;
-    @FXML private TableColumn<Records, Double> unitPriceColumn;
-    @FXML private TableColumn<Records, Double> totalPriceColumn;
-    @FXML private ComboBox areasCB;
+    @FXML
+    private TableView<Inventory> inventoryTableView;
+    @FXML
+    private TableColumn<Inventory, Integer> quantityColumnI;
+    @FXML
+    private TableColumn<Inventory, String> productsColumnI;
+    @FXML
+    private TableColumn<Inventory, Double> unitPriceColumnI;
+    @FXML
+    private TableView<Records> outComeTableView;
+    @FXML
+    private TableColumn<Records, Integer> codeColumn;
+    @FXML
+    private TableColumn<Records, String> nameColumn;
+    @FXML
+    private TableColumn<Records, Integer> quantityColumn;
+    @FXML
+    private TableColumn<Records, Double> unitPriceColumn;
+    @FXML
+    private TableColumn<Records, Double> totalPriceColumn;
+    @FXML
+    private ComboBox areasCB;
 
     private Integer productId;
     private Integer userId;
@@ -64,14 +74,17 @@ public class OutComesController extends Operations implements Initializable, Are
         outComeTableView.setItems(OutcomesList);
     }
 
+    /**
+     * call the method that handle the update of the inventory
+     * */
     private void updateInventoryTable() {
-            inventoryTableView.getSelectionModel().getSelectedItem().setQuantity(remainingProduct);
-            inventoryTableView.refresh();
+        inventoryTableView.getSelectionModel().getSelectedItem().setQuantity(remainingProduct);
+        inventoryTableView.refresh();
     }
 
     /**
      * once a product's category have been choose, show all the available products on inventory for an outcome
-     * */
+     */
     public void fillProducts() {
         ObservableList<Inventory> inventoryList = FXCollections.observableArrayList(getInventory(typeOfProductCB.getValue().toString()));
 
@@ -106,12 +119,12 @@ public class OutComesController extends Operations implements Initializable, Are
     }
 
     /**
-     *call the quantity window when the user double click on a product
-     * */
+     * call the quantity window when the user double click on a product
+     */
     @FXML
     public void clickItem(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        if(mouseEvent.getClickCount()==2){
-            if(!areasCB.getSelectionModel().isEmpty()&&!typeOfProductCB.getSelectionModel().isEmpty()) {
+        if (mouseEvent.getClickCount() == 2) {
+            if (!areasCB.getSelectionModel().isEmpty() && !typeOfProductCB.getSelectionModel().isEmpty()) {
                 //set the initial information for the outcome record
                 Date date = new Date();
                 productId = inventoryTableView.getSelectionModel().getSelectedItem().getProductId();
@@ -120,7 +133,7 @@ public class OutComesController extends Operations implements Initializable, Are
                 remainingProduct = inventoryTableView.getSelectionModel().getSelectedItem().getQuantity();
                 userId = 1143155845;
 
-                records = new Records(date, 0, getProductById(productId), areaId, userId, unitPrice ,0.0);
+                records = new Records(date, 0, getProductById(productId), areaId, userId, unitPrice, 0.0);
 
                 //create an instance of the quantityController
                 FXMLLoader loader = new FXMLLoader();
@@ -142,10 +155,9 @@ public class OutComesController extends Operations implements Initializable, Are
                 window.showAndWait();
                 remainingProduct = controller.getProductRemaining();
                 updateInventoryTable();
-            }else if(areasCB.getSelectionModel().isEmpty()){
+            } else if (areasCB.getSelectionModel().isEmpty()) {
                 Alerts.notSelectionAlert("Seleccione un area!");
-            }
-            else if(typeOfProductCB.getSelectionModel().isEmpty()){
+            } else if (typeOfProductCB.getSelectionModel().isEmpty()) {
                 Alerts.notSelectionAlert("Seleccione el tipo de producto!");
             }
         }
@@ -153,7 +165,7 @@ public class OutComesController extends Operations implements Initializable, Are
 
     /**
      * takes all the selected products and call the methods for update the inventory and save the outcome record
-     * */
+     */
     public void generateOutCome() {
         ObservableList<Records> outComeRecords = outComeTableView.getItems();
         ObservableList<Inventory> inventoryUpdate = inventoryTableView.getItems();
@@ -165,7 +177,7 @@ public class OutComesController extends Operations implements Initializable, Are
 
     /**
      * clear the table
-     * */
+     */
     public void clearTable() {
         outComeTableView.getItems().clear();
     }

@@ -41,6 +41,9 @@ public interface ProductsDAO extends IDBConection {
         return products;
     }
 
+    /**
+     * get all the product's name from a type of product
+     * */
     default ArrayList<Products> productsNames(String typeOfProduct){
         ArrayList<Products> products = new ArrayList<>();
 
@@ -64,6 +67,9 @@ public interface ProductsDAO extends IDBConection {
         return products;
     }
 
+    /**
+     * get a product's information according to a provided product's id
+     * */
     default Products getProductById(Integer id){
         Products product = null;
 
@@ -88,6 +94,9 @@ public interface ProductsDAO extends IDBConection {
         return product;
     }
 
+    /**
+     * set a new product inside the data base
+     * */
     default void addNewProduct(Products product){
 
         try{ Connection connection = conectToDB();

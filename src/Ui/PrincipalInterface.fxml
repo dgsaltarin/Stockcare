@@ -8,66 +8,68 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="965.0" stylesheets="@../Resources/PrincipalInterfaceStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PrincipalInterfaceController">
+<AnchorPane prefHeight="400.0" prefWidth="965.0" style="-fx-background-color: #BBDEFB;"
+            stylesheets="@../Resources/PrincipalInterfaceStyle.css" xmlns="http://javafx.com/fxml"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PrincipalInterfaceController">
     <children>
-        <MenuBar id="menuBar" fx:id="menuBar" layoutY="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #2196F3;">
+        <MenuBar id="menuBar" fx:id="menuBar" layoutY="2.0" maxHeight="1.7976931348623157E308"
+                 maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0"
+                 prefWidth="600.0" style="-fx-background-color: #2196F3;">
             <menus>
                 <Menu id="menuSee" mnemonicParsing="false" text="Ver">
                     <items>
-                        <MenuItem id="menuProducts" mnemonicParsing="false" onAction="#ProductsWindow" text="Productos" />
-                        <MenuItem id="menuRecords" mnemonicParsing="false" onAction="#recordsWindow" text="Registros" />
-                        <MenuItem mnemonicParsing="false" onAction="#inventoryWindow" text="Inventario" />
+                        <MenuItem id="menuProducts" mnemonicParsing="false" onAction="#ProductsWindow"
+                                  text="Productos"/>
+                        <MenuItem id="menuRecords" mnemonicParsing="false" onAction="#recordsWindow" text="Registros"/>
+                        <MenuItem mnemonicParsing="false" onAction="#inventoryWindow" text="Inventario"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Operaciones">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#purchaseOrderWindow" text="Orden De Compra" />
-                        <MenuItem mnemonicParsing="false" onAction="#InComesWindow" text="Entrada de Productos" />
-                        <MenuItem mnemonicParsing="false" onAction="#outComeWindow" text="Salida de Inventario" />
+                        <MenuItem mnemonicParsing="false" onAction="#purchaseOrderWindow" text="Orden De Compra"/>
+                        <MenuItem mnemonicParsing="false" onAction="#InComesWindow" text="Entrada de Productos"/>
+                        <MenuItem mnemonicParsing="false" onAction="#outComeWindow" text="Salida de Inventario"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Análisis">
                     <items>
-                        <MenuItem fx:id="behavior" mnemonicParsing="false" onAction="#behaviorWindow" text="Análisis de Comportamiento" />
-                        <MenuItem mnemonicParsing="false" onAction="#ABCAnalyzeWindow" text="Análisis ABC" />
-                        <MenuItem mnemonicParsing="false" onAction="#AbcVenWindow" text="Análisis ABC-VEN" />
-                        <MenuItem mnemonicParsing="false" onAction="#InventoryPoliciesWindow" text="Politicas de Inventario" />
+                        <MenuItem fx:id="behavior" mnemonicParsing="false" onAction="#behaviorWindow"
+                                  text="Análisis de Comportamiento"/>
+                        <MenuItem mnemonicParsing="false" onAction="#ABCAnalyzeWindow" text="Análisis ABC"/>
+                        <MenuItem mnemonicParsing="false" onAction="#AbcVenWindow" text="Análisis ABC-VEN"/>
+                        <MenuItem mnemonicParsing="false" onAction="#InventoryPoliciesWindow"
+                                  text="Politicas de Inventario"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Agregar">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#addProductWindow" text="Producto" />
-                        <MenuItem mnemonicParsing="false" onAction="#addAreaWindow" text="Área" />
-                        <MenuItem mnemonicParsing="false" onAction="#addProviderWindow" text="Proveedor" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Datos">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Importar" />
-                        <MenuItem mnemonicParsing="false" text="Exportar" />
+                        <MenuItem mnemonicParsing="false" onAction="#addProductWindow" text="Producto"/>
+                        <MenuItem mnemonicParsing="false" onAction="#addAreaWindow" text="Área"/>
+                        <MenuItem mnemonicParsing="false" onAction="#addProviderWindow" text="Proveedor"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Usuarios">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#addUserWindow" text="Agregar Usuario" />
-                        <MenuItem mnemonicParsing="false" onAction="#removeUserWindow" text="Eliminar Usuario" />
+                        <MenuItem mnemonicParsing="false" onAction="#addUserWindow" text="Agregar Usuario"/>
+                        <MenuItem mnemonicParsing="false" onAction="#removeUserWindow" text="Eliminar Usuario"/>
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-      <TableView fx:id="inventoryTableView" layoutX="14.0" layoutY="45.0" prefHeight="200.0" prefWidth="415.0">
-        <columns>
-          <TableColumn fx:id="productInventoryColumn" prefWidth="256.0" text="Producto" />
-          <TableColumn fx:id="expirationDateColumn" prefWidth="158.0" text="Fecha de Vencimiento" />
-        </columns>
-      </TableView>
-      <TableView fx:id="inventoryPoliciesTableView" layoutX="496.0" layoutY="45.0" prefHeight="200.0" prefWidth="464.0">
-        <columns>
-          <TableColumn fx:id="productPolicyColumn" prefWidth="248.0" text="Producto" />
-          <TableColumn fx:id="RColumn" prefWidth="114.0" text="Punto de Reorden" />
-            <TableColumn fx:id="quantityColumn" prefWidth="101.0" text="Cantidad Actual" />
-        </columns>
-      </TableView>
-      <Separator layoutX="460.0" layoutY="51.0" orientation="VERTICAL" prefHeight="200.0" />
+        <TableView fx:id="inventoryTableView" layoutX="14.0" layoutY="45.0" prefHeight="200.0" prefWidth="415.0">
+            <columns>
+                <TableColumn fx:id="productInventoryColumn" prefWidth="256.0" text="Producto"/>
+                <TableColumn fx:id="expirationDateColumn" prefWidth="158.0" text="Fecha de Vencimiento"/>
+            </columns>
+        </TableView>
+        <TableView fx:id="inventoryPoliciesTableView" layoutX="496.0" layoutY="45.0" prefHeight="200.0"
+                   prefWidth="464.0">
+            <columns>
+                <TableColumn fx:id="productPolicyColumn" prefWidth="248.0" text="Producto"/>
+                <TableColumn fx:id="RColumn" prefWidth="114.0" text="Punto de Reorden"/>
+                <TableColumn fx:id="quantityColumn" prefWidth="101.0" text="Cantidad Actual"/>
+            </columns>
+        </TableView>
+        <Separator layoutX="460.0" layoutY="51.0" orientation="VERTICAL" prefHeight="200.0"/>
     </children>
 </AnchorPane>

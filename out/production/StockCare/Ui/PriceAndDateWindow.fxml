@@ -6,12 +6,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="147.0" prefWidth="434.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PriceAndDateController">
-   <children>
-      <Label layoutX="70.0" layoutY="14.0" text="Ingrese precio unitario y la fecha de expiración:" />
-      <Label layoutX="37.0" layoutY="57.0" text="\$:" />
-      <TextField fx:id="priceTextField" layoutX="57.0" layoutY="52.0" onKeyPressed="#evaluateValue" />
-      <Button fx:id="priceButton" defaultButton="true" layoutX="158.0" layoutY="101.0" mnemonicParsing="false" onAction="#addPrice" text="Agregar Valores" />
-      <DatePicker fx:id="expirationDatePicker" layoutX="246.0" layoutY="52.0" />
-   </children>
+<AnchorPane prefHeight="147.0" prefWidth="434.0" style="-fx-background-color: #2196F3;"
+            stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PriceAndDateController">
+    <children>
+        <Label layoutX="70.0" layoutY="14.0" text="Ingrese precio unitario y la fecha de expiración:"/>
+        <Label layoutX="37.0" layoutY="57.0" text="\$:"/>
+        <TextField fx:id="priceTextField" layoutX="57.0" layoutY="52.0" onKeyPressed="#evaluateValue"/>
+        <Button fx:id="priceButton" defaultButton="true" layoutX="158.0" layoutY="101.0" mnemonicParsing="false"
+                onAction="#addPrice" text="Agregar Valores"/>
+        <DatePicker fx:id="expirationDatePicker" layoutX="246.0" layoutY="52.0"/>
+    </children>
 </AnchorPane>

@@ -1,6 +1,5 @@
 package DB;
 
-import Model.Alerts;
 import Model.Users;
 
 import java.sql.*;
@@ -9,6 +8,9 @@ import static DB.DataBase.*;
 
 public interface UserDAO extends IDBConection {
 
+    /**
+     * get the list of all users
+     * */
     default ArrayList<Users> getUsersList(){
         ArrayList<Users> usersList = new ArrayList<>();
 
@@ -36,6 +38,9 @@ public interface UserDAO extends IDBConection {
         return usersList;
     }
 
+    /**
+     * get an user's information according to an id
+     * */
     default Users getUserByUser(String user){
         Users users = new Users();
 
@@ -65,5 +70,4 @@ public interface UserDAO extends IDBConection {
         return users;
     }
 
-    default void addNewUser(){}
 }

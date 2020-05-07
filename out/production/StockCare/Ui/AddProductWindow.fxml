@@ -6,21 +6,24 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="294.0" prefWidth="545.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddProductController">
-   <children>
-      <Label layoutX="18.0" layoutY="30.0" text="Escoja el tipo de Producto:" />
-      <Label layoutX="37.0" layoutY="75.0" text="Nombre del Producto*:" />
-      <Label layoutX="79.0" layoutY="114.0" text="Código CUM*:" />
-      <Label layoutX="98.0" layoutY="154.0" text="Fabricante*:" />
-      <Label layoutX="117.0" layoutY="194.0" text="Precio*:" />
-      <Label layoutX="18.0" layoutY="263.0" text="* = Campo obligatorio." />
-      <Label layoutX="353.0" layoutY="33.0" text="Clasificación VEN:" />
-      <TextField fx:id="priceTextField" layoutX="188.0" layoutY="192.0" />
-      <TextField fx:id="manufacturerTextField" layoutX="188.0" layoutY="154.0" />
-      <TextField fx:id="productCodeTextField" layoutX="188.0" layoutY="114.0" />
-      <TextField fx:id="productNameTextField" layoutX="188.0" layoutY="75.0" />
-      <ComboBox fx:id="venCB" layoutX="470.0" layoutY="30.0" prefHeight="25.0" prefWidth="61.0" />
-      <ComboBox fx:id="typeOfProductCB" layoutX="188.0" layoutY="30.0" prefWidth="150.0" />
-      <Button fx:id="addProductButton" onAction="#addProduct" layoutX="188.0" layoutY="234.0" mnemonicParsing="false" text="Agregar Producto" />
-   </children>
+<AnchorPane prefHeight="294.0" prefWidth="545.0" style="-fx-background-color: #2196F3;"
+            stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddProductController">
+    <children>
+        <Label layoutX="18.0" layoutY="30.0" text="Escoja el tipo de Producto:"/>
+        <Label layoutX="37.0" layoutY="75.0" text="Nombre del Producto*:"/>
+        <Label layoutX="79.0" layoutY="114.0" text="Código CUM*:"/>
+        <Label layoutX="98.0" layoutY="154.0" text="Fabricante*:"/>
+        <Label layoutX="117.0" layoutY="194.0" text="Precio*:"/>
+        <Label layoutX="18.0" layoutY="263.0" text="* = Campo obligatorio."/>
+        <Label layoutX="353.0" layoutY="33.0" text="Clasificación VEN:"/>
+        <TextField fx:id="priceTextField" layoutX="188.0" layoutY="192.0"/>
+        <TextField fx:id="manufacturerTextField" layoutX="188.0" layoutY="154.0"/>
+        <TextField fx:id="productCodeTextField" layoutX="188.0" layoutY="114.0"/>
+        <TextField fx:id="productNameTextField" layoutX="188.0" layoutY="75.0"/>
+        <ComboBox fx:id="venCB" layoutX="470.0" layoutY="30.0" prefHeight="25.0" prefWidth="61.0"/>
+        <ComboBox fx:id="typeOfProductCB" layoutX="188.0" layoutY="30.0" prefWidth="150.0"/>
+        <Button fx:id="addProductButton" onAction="#addProduct" layoutX="188.0" layoutY="234.0" mnemonicParsing="false"
+                text="Agregar Producto"/>
+    </children>
 </AnchorPane>

@@ -5,7 +5,6 @@ import Model.Alerts;
 import Model.Users;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -31,7 +30,9 @@ public class AddUserController implements Initializable, UserDAO {
     @FXML
     private PasswordField password2TextField;
 
-
+    /**
+     * set the new user on the data base
+     * */
     public void addUser() {
         Users users = new Users();
         if (!idTextField.getText().isEmpty() && !userTextField.getText().isEmpty() && !nameTextField.getText().isEmpty()

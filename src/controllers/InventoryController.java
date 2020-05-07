@@ -8,7 +8,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
@@ -21,26 +20,33 @@ import java.util.Date;
 
 public class InventoryController implements InventoryDAO {
 
-    @FXML RadioButton medicamento;
-    @FXML RadioButton dispositivoM;
-    @FXML RadioButton insumos;
-    @FXML TableView inventoryTable;
-    @FXML TableColumn<Inventory, String> nameColumn;
-    @FXML TableColumn<Inventory, Integer> quantityColumn;
-    @FXML TableColumn<Inventory, Double> unitPriceColumn;
-    @FXML TableColumn<Inventory, Date> expirationColumn;
-    @FXML TextField filterField;
+    @FXML
+    RadioButton medicamento;
+    @FXML
+    RadioButton dispositivoM;
+    @FXML
+    RadioButton insumos;
+    @FXML
+    TableView inventoryTable;
+    @FXML
+    TableColumn<Inventory, String> nameColumn;
+    @FXML
+    TableColumn<Inventory, Integer> quantityColumn;
+    @FXML
+    TableColumn<Inventory, Double> unitPriceColumn;
+    @FXML
+    TableColumn<Inventory, Date> expirationColumn;
+    @FXML
+    TextField filterField;
 
-    public void fillTable(ActionEvent actionEvent) {
+    public void fillTable() {
 
         String typeofProduct = "";
-        if (medicamento.isSelected()){
+        if (medicamento.isSelected()) {
             typeofProduct = "medicamento";
-        }
-        else if (dispositivoM.isSelected()){
+        } else if (dispositivoM.isSelected()) {
             typeofProduct = "dispositivo medico";
-        }
-        else if (insumos.isSelected()){
+        } else if (insumos.isSelected()) {
             typeofProduct = "insumo";
         } else
             Alerts.notSelectionAlert("Seleccione algúnn tipo de producto!");
@@ -80,10 +86,13 @@ public class InventoryController implements InventoryDAO {
         inventoryTable.setItems(sortedData);
     }
 
-    public void generateReport(ActionEvent actionEvent) throws IOException {
+    /**
+     * call the report window and send the data
+     * */
+    public void generateReport() throws IOException {
         ObservableList<Inventory> observableList = inventoryTable.getItems();
 
-        if (observableList.isEmpty()){
+        if (observableList.isEmpty()) {
             Alerts.notSelectionAlert("La tabla se encuentra vacia!");
             return;
         }

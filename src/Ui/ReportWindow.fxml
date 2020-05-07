@@ -6,22 +6,26 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="104.0" prefWidth="291.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReportWindowController">
-   <children>
-      <Label layoutX="11.0" layoutY="14.0" text="Escoja el formato en el que desea el reporte:" fx:id="label" textFill="#212121">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Button fx:id="pdfFormatButton" onAction="#generatePDFReport" layoutX="79.0" layoutY="53.0" mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" text="PDF" textFill="#212121">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="excelFormatButton" onAction="#generateExcelReport" layoutX="170.0" layoutY="53.0" mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" text="EXCEL" textFill="#212121">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
-   </children>
+<AnchorPane prefHeight="104.0" prefWidth="291.0" style="-fx-background-color: #2196F3;" xmlns="http://javafx.com/fxml"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReportWindowController">
+    <children>
+        <Label layoutX="11.0" layoutY="14.0" text="Escoja el formato en el que desea el reporte:" fx:id="label"
+               textFill="#212121">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Label>
+        <Button fx:id="pdfFormatButton" onAction="#generatePDFReport" layoutX="79.0" layoutY="53.0"
+                mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" text="PDF" textFill="#212121">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Button>
+        <Button fx:id="excelFormatButton" onAction="#generateExcelReport" layoutX="170.0" layoutY="53.0"
+                mnemonicParsing="false" style="-fx-background-color: #BBDEFB;" text="EXCEL" textFill="#212121">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

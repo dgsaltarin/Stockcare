@@ -6,15 +6,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="377.0" prefWidth="883.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AbcVenAnalyzeController">
-   <children>
-      <TableView fx:id="abcVenTableView" layoutX="14.0" layoutY="30.0" prefHeight="336.0" prefWidth="457.0">
-        <columns>
-          <TableColumn fx:id="productColumn" prefWidth="227.0" text="Producto " />
-          <TableColumn fx:id="abcColumn" prefWidth="117.0" text="Clasificación ABC" />
-            <TableColumn fx:id="venColumn" prefWidth="112.0" text="Clasificación VEN" />
-        </columns>
-      </TableView>
-      <PieChart fx:id="abcVenPieChart" layoutX="480.0" layoutY="30.0" prefHeight="336.0" prefWidth="398.0" />
-   </children>
+<AnchorPane prefHeight="377.0" prefWidth="883.0" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AbcVenAnalyzeController">
+    <children>
+        <TableView fx:id="abcVenTableView" layoutX="14.0" layoutY="30.0" prefHeight="336.0" prefWidth="457.0">
+            <columns>
+                <TableColumn fx:id="productColumn" prefWidth="227.0" text="Producto "/>
+                <TableColumn fx:id="abcColumn" prefWidth="117.0" text="Clasificación ABC"/>
+                <TableColumn fx:id="venColumn" prefWidth="112.0" text="Clasificación VEN"/>
+            </columns>
+        </TableView>
+        <PieChart fx:id="abcVenPieChart" layoutX="480.0" layoutY="30.0" prefHeight="336.0" prefWidth="398.0"/>
+    </children>
 </AnchorPane>

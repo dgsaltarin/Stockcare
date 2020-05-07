@@ -7,23 +7,27 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="765.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InventoryPoliciesController">
-   <children>
-      <TableView layoutX="27.0" fx:id="policiesTableView" layoutY="163.0" prefHeight="200.0" prefWidth="720.0">
-        <columns>
-          <TableColumn fx:id="productsColumn" prefWidth="178.0" text="Producto" />
-          <TableColumn fx:id="classificationColumn" minWidth="0.0" prefWidth="89.0" text="Clasificación" />
-            <TableColumn fx:id="behaviorColumn" minWidth="0.0" prefWidth="108.0" text="Comportamiento" />
-            <TableColumn fx:id="demandColumn" minWidth="0.0" prefWidth="84.0" text="Demanda M." />
-            <TableColumn fx:id="QColumn" minWidth="0.0" prefWidth="94.0" text="Cuanto Pedir" />
-            <TableColumn fx:id="RColumn" prefWidth="98.0" text="Cuando Pedir" />
-            <TableColumn fx:id="costColumn" prefWidth="68.0" text="Costo" />
-        </columns>
-      </TableView>
-      <RadioButton fx:id="medicineRB" layoutX="154.0" layoutY="22.0" mnemonicParsing="false" text="Medicamento" />
-      <RadioButton fx:id="medicalDeviceRB" layoutX="154.0" layoutY="58.0" mnemonicParsing="false" text="Dispositivo Médico" />
-      <RadioButton fx:id="insumRB" layoutX="154.0" layoutY="93.0" mnemonicParsing="false" text="Insumo" />
-      <Label layoutX="27.0" layoutY="22.0" text="Tipo de producto:" />
-      <Button layoutX="310.0" layoutY="89.0" onAction="#generatePolicies" mnemonicParsing="false" text="Generar Politicas" />
-   </children>
+<AnchorPane prefHeight="400.0" prefWidth="765.0" style="-fx-background-color: #2196F3;"
+            stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InventoryPoliciesController">
+    <children>
+        <TableView layoutX="27.0" fx:id="policiesTableView" layoutY="163.0" prefHeight="200.0" prefWidth="720.0">
+            <columns>
+                <TableColumn fx:id="productsColumn" prefWidth="178.0" text="Producto"/>
+                <TableColumn fx:id="classificationColumn" minWidth="0.0" prefWidth="89.0" text="Clasificación"/>
+                <TableColumn fx:id="behaviorColumn" minWidth="0.0" prefWidth="108.0" text="Comportamiento"/>
+                <TableColumn fx:id="demandColumn" minWidth="0.0" prefWidth="84.0" text="Demanda M."/>
+                <TableColumn fx:id="QColumn" minWidth="0.0" prefWidth="94.0" text="Cuanto Pedir"/>
+                <TableColumn fx:id="RColumn" prefWidth="98.0" text="Cuando Pedir"/>
+                <TableColumn fx:id="costColumn" prefWidth="68.0" text="Costo"/>
+            </columns>
+        </TableView>
+        <RadioButton fx:id="medicineRB" layoutX="154.0" layoutY="22.0" mnemonicParsing="false" text="Medicamento"/>
+        <RadioButton fx:id="medicalDeviceRB" layoutX="154.0" layoutY="58.0" mnemonicParsing="false"
+                     text="Dispositivo Médico"/>
+        <RadioButton fx:id="insumRB" layoutX="154.0" layoutY="93.0" mnemonicParsing="false" text="Insumo"/>
+        <Label layoutX="27.0" layoutY="22.0" text="Tipo de producto:"/>
+        <Button layoutX="310.0" layoutY="89.0" onAction="#generatePolicies" mnemonicParsing="false"
+                text="Generar Politicas"/>
+    </children>
 </AnchorPane>

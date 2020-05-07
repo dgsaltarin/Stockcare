@@ -17,6 +17,7 @@ public class PriceAndDateController {
     private TextField priceTextField;
     @FXML
     private DatePicker expirationDatePicker;
+
     private Double unitPrice;
     private Date expirationDate;
 

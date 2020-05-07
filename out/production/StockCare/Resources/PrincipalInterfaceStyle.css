@@ -11,3 +11,13 @@
     -fx-font-family: 'sans-serif';
     -fx-background-color: #BBDEFB;
 }
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: #2196F3;
+}
+
+.table-column{
+    -fx-background-color: #BBDEFB;
+}

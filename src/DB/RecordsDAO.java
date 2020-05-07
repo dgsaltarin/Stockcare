@@ -9,6 +9,9 @@ import static DB.DataBase.*;
 
 public interface RecordsDAO extends IDBConection, ProductsDAO {
 
+    /**
+     * get the list of outcomes
+     * */
     default ArrayList<Records> outComesList(String typeOfProduct){
         ArrayList<Records> outComes = new ArrayList<>();
 
@@ -42,6 +45,9 @@ public interface RecordsDAO extends IDBConection, ProductsDAO {
         return outComes;
     }
 
+    /**
+     * get the outcomes list just exactly how it is inside the data base
+     * */
     default ArrayList<Records> getRowOutComes(String typeOfProduct){
         ArrayList<Records> outComes = new ArrayList<>();
 
@@ -72,6 +78,9 @@ public interface RecordsDAO extends IDBConection, ProductsDAO {
         return outComes;
     }
 
+    /**
+     * get the list of incomes from a type of product
+     * */
     default ArrayList<Records> inComesList(String typeOfProduct){
         ArrayList<Records> outComes = new ArrayList<>();
 

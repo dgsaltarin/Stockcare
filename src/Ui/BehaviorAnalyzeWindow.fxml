@@ -15,36 +15,44 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="573.0" prefWidth="660.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BehaviorAnalyzeController">
-   <children>
-      <Label layoutX="19.0" layoutY="14.0" text="Escoja el tipo de Producto:">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></Label>
-      <Button fx:id="generateAnalyzeButton" layoutX="544.0" layoutY="136.0" mnemonicParsing="false" onAction="#generateAnalyze" style="-fx-background-color: #BBDEFB;" text="Análizar">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></Button>
-      <ComboBox fx:id="typeOfProductCB" layoutX="19.0" layoutY="40.0" onAction="#fillTable" prefWidth="150.0" />
-      <TableView fx:id="productsTableView" layoutX="226.0" layoutY="43.0" prefHeight="119.0" prefWidth="311.0">
-        <columns>
-          <TableColumn fx:id="productsTableColumn" prefWidth="321.0" style="-fx-background-color: #BBDEFB;" text="Productos" />
-        </columns>
-      </TableView>
-      <TextField fx:id="filterTextField" layoutX="281.0" layoutY="12.0" />
-      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="231.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/search_26px.png" />
-         </image></ImageView>
-      <ScatterChart fx:id="behaviorAnalyzeChart" layoutX="19.0" layoutY="173.0" prefHeight="350.0" prefWidth="609.0">
-        <xAxis>
-          <CategoryAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-      </ScatterChart>
-      <Separator layoutX="189.0" layoutY="19.0" orientation="VERTICAL" prefHeight="145.0" prefWidth="0.0" />
-      <Label fx:id="behaviorLabel" layoutX="278.0" layoutY="543.0" prefHeight="16.0" prefWidth="6.0" />
-   </children>
+<AnchorPane prefHeight="573.0" prefWidth="660.0" style="-fx-background-color: #2196F3;"
+            stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BehaviorAnalyzeController">
+    <children>
+        <Label layoutX="19.0" layoutY="14.0" text="Escoja el tipo de Producto:">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Label>
+        <Button fx:id="generateAnalyzeButton" layoutX="544.0" layoutY="136.0" mnemonicParsing="false"
+                onAction="#generateAnalyze" style="-fx-background-color: #BBDEFB;" text="Análizar">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Button>
+        <ComboBox fx:id="typeOfProductCB" layoutX="19.0" layoutY="40.0" onAction="#fillTable" prefWidth="150.0"/>
+        <TableView fx:id="productsTableView" layoutX="226.0" layoutY="43.0" prefHeight="119.0" prefWidth="311.0">
+            <columns>
+                <TableColumn fx:id="productsTableColumn" prefWidth="321.0" style="-fx-background-color: #BBDEFB;"
+                             text="Productos"/>
+            </columns>
+        </TableView>
+        <TextField fx:id="filterTextField" layoutX="281.0" layoutY="12.0"/>
+        <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="231.0" layoutY="7.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../images/search_26px.png"/>
+            </image>
+        </ImageView>
+        <ScatterChart fx:id="behaviorAnalyzeChart" layoutX="19.0" layoutY="173.0" prefHeight="350.0" prefWidth="609.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT"/>
+            </yAxis>
+        </ScatterChart>
+        <Separator layoutX="189.0" layoutY="19.0" orientation="VERTICAL" prefHeight="145.0" prefWidth="0.0"/>
+        <Label fx:id="behaviorLabel" layoutX="278.0" layoutY="543.0" prefHeight="16.0" prefWidth="6.0"/>
+    </children>
 </AnchorPane>

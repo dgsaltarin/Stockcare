@@ -7,20 +7,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="364.0" prefWidth="401.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddUserController">
-   <children>
-      <Label layoutX="10.0" layoutY="36.0" text="Número de documento de identidad:" />
-      <Label layoutX="181.0" layoutY="84.0" text="Usuario:" />
-      <Label layoutX="117.0" layoutY="129.0" text="Nombre Completo:" />
-      <Label layoutX="160.0" layoutY="228.0" text="Contraseña:" />
-      <Label layoutX="98.0" layoutY="279.0" text="Repita su Contraseña:" />
-      <TextField fx:id="idTextField" layoutX="238.0" layoutY="32.0" />
-      <TextField fx:id="userTextField" layoutX="238.0" layoutY="79.0" />
-      <TextField fx:id="nameTextField" layoutX="238.0" layoutY="124.0" />
-      <PasswordField fx:id="password1TextField" layoutX="238.0" layoutY="223.0" />
-      <PasswordField fx:id="password2TextField" layoutX="238.0" layoutY="274.0" />
-      <Button fx:id="addUserButton" layoutX="238.0" layoutY="316.0" mnemonicParsing="false" onAction="#addUser" text="Agregar Usuario" />
-      <Label layoutX="130.0" layoutY="175.0" text="Tipo de Usuario:" />
-      <ComboBox fx:id="typeOfUserCB" layoutX="238.0" layoutY="170.0" prefWidth="150.0" />
-   </children>
+<AnchorPane prefHeight="364.0" prefWidth="401.0" style="-fx-background-color: #2196F3;"
+            stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddUserController">
+    <children>
+        <Label layoutX="10.0" layoutY="36.0" text="Número de documento de identidad:"/>
+        <Label layoutX="181.0" layoutY="84.0" text="Usuario:"/>
+        <Label layoutX="117.0" layoutY="129.0" text="Nombre Completo:"/>
+        <Label layoutX="160.0" layoutY="228.0" text="Contraseña:"/>
+        <Label layoutX="98.0" layoutY="279.0" text="Repita su Contraseña:"/>
+        <TextField fx:id="idTextField" layoutX="238.0" layoutY="32.0"/>
+        <TextField fx:id="userTextField" layoutX="238.0" layoutY="79.0"/>
+        <TextField fx:id="nameTextField" layoutX="238.0" layoutY="124.0"/>
+        <PasswordField fx:id="password1TextField" layoutX="238.0" layoutY="223.0"/>
+        <PasswordField fx:id="password2TextField" layoutX="238.0" layoutY="274.0"/>
+        <Button fx:id="addUserButton" layoutX="238.0" layoutY="316.0" mnemonicParsing="false" onAction="#addUser"
+                text="Agregar Usuario"/>
+        <Label layoutX="130.0" layoutY="175.0" text="Tipo de Usuario:"/>
+        <ComboBox fx:id="typeOfUserCB" layoutX="238.0" layoutY="170.0" prefWidth="150.0"/>
+    </children>
 </AnchorPane>

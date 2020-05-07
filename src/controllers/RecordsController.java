@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.io.IOException;
 import java.net.URL;
 import java.time.Instant;
@@ -22,21 +23,36 @@ import java.util.ResourceBundle;
 
 public class RecordsController implements Initializable, RecordsDAO {
 
-    @FXML private ComboBox comboBox;
-    @FXML private RadioButton medicamentos;
-    @FXML private RadioButton dispositivosM;
-    @FXML private RadioButton insumos;
-    @FXML private TableView<Records> recordsTableView;
-    @FXML private TableColumn<Records, String> productColumn;
-    @FXML private TableColumn<Records, Integer> quantityColumn;
-    @FXML private TableColumn<Records, String> areaColumn;
-    @FXML private TableColumn<Records, String> dateColumn;
-    @FXML private TableColumn<Records, String> userColumn;
-    @FXML private TableColumn<Records, String> unitPriceColumn;
-    @FXML private TableColumn<Records, String> totalPriceColumn;
-    @FXML private TextField filterTextField;
-    @FXML private DatePicker initDate;
-    @FXML private DatePicker finalDate;
+    @FXML
+    private ComboBox comboBox;
+    @FXML
+    private RadioButton medicamentos;
+    @FXML
+    private RadioButton dispositivosM;
+    @FXML
+    private RadioButton insumos;
+    @FXML
+    private TableView<Records> recordsTableView;
+    @FXML
+    private TableColumn<Records, String> productColumn;
+    @FXML
+    private TableColumn<Records, Integer> quantityColumn;
+    @FXML
+    private TableColumn<Records, String> areaColumn;
+    @FXML
+    private TableColumn<Records, String> dateColumn;
+    @FXML
+    private TableColumn<Records, String> userColumn;
+    @FXML
+    private TableColumn<Records, String> unitPriceColumn;
+    @FXML
+    private TableColumn<Records, String> totalPriceColumn;
+    @FXML
+    private TextField filterTextField;
+    @FXML
+    private DatePicker initDate;
+    @FXML
+    private DatePicker finalDate;
 
     private ObservableList<String> typeOfProducts = FXCollections.observableArrayList("Salidas", "Entradas");
 
@@ -45,31 +61,31 @@ public class RecordsController implements Initializable, RecordsDAO {
         comboBox.setItems(typeOfProducts);
     }
 
+    /**
+     * bring and display all the records depending of the type of products and type of record
+     * */
     public void fillTable() {
         String typeofProduct = "";
-        if (medicamentos.isSelected()){
+        if (medicamentos.isSelected()) {
             typeofProduct = "medicamento";
-        }
-        else if (dispositivosM.isSelected()){
+        } else if (dispositivosM.isSelected()) {
             typeofProduct = "dispositivo medico";
-        }
-        else if (insumos.isSelected()){
+        } else if (insumos.isSelected()) {
             typeofProduct = "insumo";
         } else
             Alerts.notSelectionAlert("Seleccione algún tipo de producto!");
 
         ObservableList<Records> recordsList = null;
 
-        if(comboBox.getSelectionModel().isEmpty()){
+        if (comboBox.getSelectionModel().isEmpty()) {
             Alerts.notSelectionAlert("Escoja el tipo de registro!");
             return;
-        }
-        else {
-            if(comboBox.getValue().toString().equals("Salidas")){
+        } else {
+            if (comboBox.getValue().toString().equals("Salidas")) {
                 recordsList = FXCollections.observableArrayList(outComesList(typeofProduct));
                 areaColumn.setText("Área");
             }
-            if(comboBox.getValue().toString().equals("Entradas")){
+            if (comboBox.getValue().toString().equals("Entradas")) {
                 recordsList = FXCollections.observableArrayList(inComesList(typeofProduct));
                 areaColumn.setText("Proveedor");
             }
@@ -114,7 +130,7 @@ public class RecordsController implements Initializable, RecordsDAO {
     public void generateReport() throws IOException {
         ObservableList<Records> observableList = recordsTableView.getItems();
 
-        if (observableList.isEmpty()){
+        if (observableList.isEmpty()) {
             Alerts.notSelectionAlert("La lista esta vacia!");
             return;
         }
@@ -122,10 +138,13 @@ public class RecordsController implements Initializable, RecordsDAO {
         Report.callReportWindow("records", observableList);
     }
 
-    public void filtrateByDate(){
+    /**
+     * filtrate the selected records according with the dates selected by the user
+     * */
+    public void filtrateByDate() {
         ObservableList<Records> observableList = recordsTableView.getItems();
 
-        if (observableList.isEmpty()){
+        if (observableList.isEmpty()) {
             Alerts.notSelectionAlert("No se encuentran registros para filtrar!");
             return;
         }
@@ -141,8 +160,8 @@ public class RecordsController implements Initializable, RecordsDAO {
 
         ObservableList<Records> filteredRecords = FXCollections.observableArrayList();
 
-        for (Records record:observableList){
-            if (record.getDateOfRecord().after(initialDate)&&record.getDateOfRecord().before(lastDate)){
+        for (Records record : observableList) {
+            if (record.getDateOfRecord().after(initialDate) && record.getDateOfRecord().before(lastDate)) {
                 filteredRecords.add(record);
             }
         }

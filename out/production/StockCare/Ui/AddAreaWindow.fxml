@@ -6,11 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="152.0" prefWidth="244.0" style="-fx-background-color: #2196F3;" stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddAreaController">
-   <children>
-      <Label layoutX="46.0" layoutY="14.0" text="Nombre  de la nueva área*:" />
-      <TextField fx:id="areaNameTextField" layoutX="55.0" layoutY="46.0" />
-      <Button fx:id="addAreaButton" onAction="#addArea" layoutX="80.0" layoutY="83.0" mnemonicParsing="false" text="Agregar Área" />
-      <Label layoutX="12.0" layoutY="119.0" text="* = Campo obligaorio." />
-   </children>
+<AnchorPane prefHeight="152.0" prefWidth="244.0" style="-fx-background-color: #2196F3;"
+            stylesheets="@../Resources/WindowStyle.css" xmlns="http://javafx.com/fxml"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddAreaController">
+    <children>
+        <Label layoutX="46.0" layoutY="14.0" text="Nombre  de la nueva área*:"/>
+        <TextField fx:id="areaNameTextField" layoutX="55.0" layoutY="46.0"/>
+        <Button fx:id="addAreaButton" onAction="#addArea" layoutX="80.0" layoutY="83.0" mnemonicParsing="false"
+                text="Agregar Área"/>
+        <Label layoutX="12.0" layoutY="119.0" text="* = Campo obligaorio."/>
+    </children>
 </AnchorPane>

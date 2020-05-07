@@ -1,12 +1,10 @@
 package controllers;
 
-import DB.ProductsDAO;
 import DB.RecordsDAO;
 import Model.AnalyzeABC;
 import Model.Records;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
@@ -34,7 +32,10 @@ public class AnalyzeABCController extends Operations implements Initializable, R
         typeOfProductCB.setItems(typeOfProducts);
     }
 
-    public void generateAnalyze(ActionEvent actionEvent) {
+    /**
+     * generate ABC analyze
+     * */
+    public void generateAnalyze() {
         String typeOfProduct = typeOfProductCB.getSelectionModel().getSelectedItem().toString();
         AnalyzeABC analyzeABC = new AnalyzeABC();
 
