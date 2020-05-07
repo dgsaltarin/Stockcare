@@ -58,10 +58,12 @@ public class PrincipalInterfaceController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         menuBar.setMinWidth(screenSize.width);
-        inventorySupervision();
     }
 
-    private void inventorySupervision() {
+    /**
+     * handle all the methods and data related with the inventory supervision
+     * */
+    public void inventorySupervision() {
         InventorySupervision inventorySupervision = new InventorySupervision();
         ObservableList<Inventory> inventoryOnRisk = inventorySupervision.expirationDateSupervision();
         ObservableList<InventorySupervision> policiesOnRisk = inventorySupervision.inventoryPolicySupervision();

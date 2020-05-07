@@ -4,6 +4,7 @@ import Model.Alerts;
 import Model.Users;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,7 +16,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
+import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
@@ -51,8 +52,10 @@ public class LoggingWindowController implements Initializable {
                     uiUrl = "Ui/PrincipalInterfaceForAuxiliar.fxml";
                 }
 
-
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(uiUrl));
+                //load the principal interface and its controller
+                FXMLLoader principalLoader = new FXMLLoader();
+                principalLoader.setLocation(getClass().getClassLoader().getResource(uiUrl));
+                Parent root = principalLoader.load();
                 stage.setScene(new Scene(root));
                 stage.setTitle("StockCare");
                 stage.getIcons().add(new Image("images/application_icon.png"));
@@ -60,6 +63,36 @@ public class LoggingWindowController implements Initializable {
                 Stage loggingStage = (Stage) loggingButton.getScene().getWindow();
                 loggingStage.close();
                 stage.show();
+                PrincipalInterfaceController principalInterfaceController = principalLoader.getController();
+
+                //load the progress bar window and its controller
+                FXMLLoader progressBarLoader = new FXMLLoader();
+                progressBarLoader.setLocation(getClass().getClassLoader().getResource("Ui/ProgressBarWindow.fxml"));
+                Parent progressBarRoot = progressBarLoader.load();
+                Stage progressBarStage = new Stage();
+                progressBarStage.setScene(new Scene(progressBarRoot));
+                progressBarStage.initStyle(StageStyle.UNDECORATED);
+                ProgressBarController progressBarController = progressBarLoader.getController();
+
+                //create and run the thread to handle with the progress bar and show the pop up window
+                Task<Void> progressBarTask = new Task<Void>() {
+                    @Override
+                    protected Void call() throws Exception {
+                        principalInterfaceController.inventorySupervision();
+                        return null;
+                    }
+                };
+
+                progressBarTask.setOnSucceeded(event -> {
+                    progressBarStage.close();
+                });
+
+                progressBarStage.show();
+
+                Thread thread = new Thread(progressBarTask);
+                thread.start();
+                progressBarController.progressBar.progressProperty().bind(progressBarTask.progressProperty());
+
             }
             else {
                 Alerts.notSelectionAlert("Usuario o contraseña incorrectos");

@@ -14,15 +14,14 @@ public class InventorySupervision extends InventoryPolicies implements Inventory
     private double R;
     private int quantity;
 
+    /**
+     * evaluate every product in stock to see if it close to expiration date
+     * */
     public ObservableList<Inventory> expirationDateSupervision(){
-        ObservableList<Inventory> productsInRisk = FXCollections.observableArrayList();
-
-        for (int i=0;i<3;i++){
-
-        }
+        ObservableList<Inventory> productsOnRisk = FXCollections.observableArrayList();
         ObservableList<Inventory> inventoryList = getAllInventory();
 
-        //future date is a date 30 in the future from the actual date
+        //future date is a date 30 days in the future from the actual date
         Date futureDate;
         Date actualDate = new Date();
         Calendar cal = Calendar.getInstance();
@@ -30,18 +29,21 @@ public class InventorySupervision extends InventoryPolicies implements Inventory
         cal.set(Calendar.MONTH, (cal.get(Calendar.MONTH)+1));
         futureDate = cal.getTime();
 
+        //take every item in stock and evaluate the expiration 30, if tis is inside the next 30 days or is already passed
         for (Inventory item:inventoryList){
             int days = (int) ((item.getExpirationDate().getTime()-futureDate.getTime())/86400000);
             if (item.getExpirationDate().before(actualDate)||days<=30){
-                productsInRisk.add(item);
+                productsOnRisk.add(item);
             }
         }
 
-        return  productsInRisk;
+        return  productsOnRisk;
     }
 
+    /**
+     * compare the inventory with the inventory policies in order to detect products that needs to be purchased
+     * */
     public ObservableList<InventorySupervision> inventoryPolicySupervision(){
-
         ObservableList<InventoryPolicies> policies = getAllInventoryPolicies();
         ObservableList<InventorySupervision> itemOnRick = FXCollections.observableArrayList();
         ObservableList<Inventory> allInventory = getAllInventory();
@@ -54,8 +56,10 @@ public class InventorySupervision extends InventoryPolicies implements Inventory
         for (InventoryPolicies item:policies){
             InventorySupervision inventorySupervisionItem = new InventorySupervision();
             for (Inventory inventoryItem:allInventory) {
+                //evaluate if there is any products in stock
                 if (!productNames.contains(item.getProductName())){
                     inventorySupervisionItem = new InventorySupervision(item.getProductName(), item.getWhenToOrder(), 0);
+                //evaluate if the product's quantity if lower than the reorder point,
                 } if (productNames.contains(item.getProductName())||inventoryItem.getQuantity()<item.getWhenToOrder()){
                     inventorySupervisionItem = new InventorySupervision(item.getProductName(), item.getWhenToOrder(), inventoryItem.getQuantity());
                 }
@@ -65,6 +69,9 @@ public class InventorySupervision extends InventoryPolicies implements Inventory
         return itemOnRick;
     }
 
+    /**
+     * get all products in stock
+     * */
     private ObservableList<InventoryPolicies> getAllInventoryPolicies(){
         ObservableList<InventoryPolicies> policies = FXCollections.observableArrayList();
 
